@@ -211,11 +211,12 @@ MonoBehaviour:
   player: {fileID: 0}
   explosionVFX: {fileID: 3472978729823498716, guid: 9a605a21a77b7b240b79876a7304cfa6, type: 3}
   detectionRadius: 10
+  minStandoffDistance: 1.5
   maxSpeed: 3
   acceleration: 6
   explosionTime: 5
   deathExplosionDelay: 2
-  blinkColor: {r: 0.77254903, g: 0.45614648, b: 0.06274507, a: 1}
+  blinkColor: {r: 1, g: 0.5524862, b: 0, a: 1}
   blinkBaseFrequency: 0.5
   blinkEndFrequency: 0.1
 --- !u!114 &1284151467833713017
