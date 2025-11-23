@@ -41,8 +41,8 @@ public class SkeletonController : MonoBehaviour, IEnemyDataProvider, IMeleeHost
     [Tooltip("Duración de emerger (s)")]
     [SerializeField] private float undergroundEmergeDuration = 0.5f;
 
-    [SerializeField] private float meleeAttackRange = 1.2f;
-    [SerializeField] private float meleeCooldown = 0.7f;
+    [SerializeField] public float meleeAttackRange = 0.8f;
+    [SerializeField] public float meleeCooldown = 0.7f;
     private float nextMeleeAllowedTime = 0f;
 
     [SerializeField] private EnemyAttack attack;
@@ -123,7 +123,7 @@ public class SkeletonController : MonoBehaviour, IEnemyDataProvider, IMeleeHost
         var underGround = new UnderGroundAttackState(this, undergroundBuryDuration, undergroundEmergeDuration);
         var spawnMin = new SpawnMinionState(this, minionEntries, 1.5f);
         var death = new EnemyDeathState(this);
-        var melee = new MeleeAttackState(this /* IMeleeHost */);
+        var melee = new MeleeAttackState(this);
 
         // FSM arranca en SpawnState
         fsm = new FSM<EnemyInputs>(spawn);
@@ -167,7 +167,7 @@ public class SkeletonController : MonoBehaviour, IEnemyDataProvider, IMeleeHost
         fsm.Update();
 
         // 2) Si seguimos en spawn/minions/underground, no procesamos visión ni movimiento
-        if (IsSpawning() || IsSpawningMinions() || fsm.GetCurrentState() is UnderGroundAttackState)
+        if (IsSpawning() || IsSpawningMinions() ||  IsMeleeing() || fsm.GetCurrentState() is UnderGroundAttackState)
             return;
 
 

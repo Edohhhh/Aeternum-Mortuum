@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7020505024538918472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &846397729155503383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626699383060443861}
+  m_Layer: 3
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626699383060443861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846397729155503383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7020505024538918472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877343131739269937
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +95,7 @@ Transform:
   m_GameObject: {fileID: 877343131739269937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.12, y: 2.07, z: 0}
+  m_LocalPosition: {x: 4.761884, y: 1.8126367, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72,6 +103,7 @@ Transform:
   - {fileID: 2349986695903919356}
   - {fileID: 7235092533120155390}
   - {fileID: 1748234911984678235}
+  - {fileID: 626699383060443861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5200693623469085276
@@ -118,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 19a48c273e699344789bafa1e0e9ed23, type: 3}
+  m_Sprite: {fileID: -2917767336089874202, guid: 9f9bc66487e10d544941e29d77dbd1f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,17 +195,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03191328, y: 0.0024117827}
   m_SpriteTilingProperty:
-    border: {x: 0.17, y: 0.17, z: 0.17, w: 0.17}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 0.8125, y: 1.0625}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.50785065, y: 0.81212103}
   m_EdgeRadius: 0
 --- !u!50 &3022763197870531852
 Rigidbody2D:
@@ -215,22 +247,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  minionPrefab: {fileID: 6151308743498699048, guid: f2fe2258aca6b3040b72a5516ce41d97, type: 3}
-  minionSpawnPoints:
-  - {fileID: 134373634833113870}
-  - {fileID: 2349986695903919356}
-  - {fileID: 7235092533120155390}
-  - {fileID: 1748234911984678235}
+  minionEntries:
+  - prefab: {fileID: 7460429868912593326, guid: 66c7741e70877429fa80ff187c586c60, type: 3}
+    spawnPoint: {fileID: 134373634833113870}
+  - prefab: {fileID: 7460429868912593326, guid: 66c7741e70877429fa80ff187c586c60, type: 3}
+    spawnPoint: {fileID: 2349986695903919356}
   detectionRadius: 10
-  maxSpeed: 10
-  acceleration: 25
-  spawnAnimDuration: 0.8
+  maxSpeed: 3
+  acceleration: 5
+  spawnAnimDuration: 0
   underGroundCooldown: 20
-  spawnMinionsCooldown: 13
-  initialSpawnMinionDelay: 1
-  postSpawnUnderGroundDelay: 2
+  spawnMinionsCooldown: 1000
+  initialSpawnMinionDelay: 2
+  postSpawnUnderGroundDelay: 1
   undergroundBuryDuration: 2
   undergroundEmergeDuration: 1
+  meleeAttackRange: 1
+  meleeCooldown: 0.7
+  attack: {fileID: 5576333358777174784}
 --- !u!114 &5576333358777174784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +278,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  useCollisionDamage: 0
+  attackPoint: {fileID: 626699383060443861}
+  hitRadius: 1
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &7973404268105082884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,9 +296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f010c1686c1f44293edb0e1cdabf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 125
+  currentHealth: 175
   impactEffectPrefab: {fileID: 8469386765634269291, guid: fe7c86aa95b57d0459e01e17175ee2b7, type: 3}
+  hitParticlePrefab: {fileID: 0}
+  damageNumberPrefab: {fileID: 784950756064908022, guid: cb52f7cb821b7499cbf468b37d6727fa, type: 3}
 --- !u!114 &1091851103451175204
 MonoBehaviour:
   m_ObjectHideFlags: 0

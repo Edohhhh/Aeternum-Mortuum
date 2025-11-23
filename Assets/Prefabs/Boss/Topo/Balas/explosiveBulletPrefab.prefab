@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  warningTime: 0.5
+  blinkSpeed: 15
+  warningColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!58 &6117041633974369220
 CircleCollider2D:
   m_ObjectHideFlags: 0

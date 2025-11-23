@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 9055595316373319974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8369741, y: -2.2365656, z: 0}
+  m_LocalPosition: {x: 4.677376, y: -1.6429037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -150,7 +150,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0025615692, y: -0.005123019}
+  m_Offset: {x: 0.0005450249, y: -0.033112347}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -160,7 +160,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8309412, y: 0.70286584}
+  m_Size: {x: 0.56686497, y: 0.37349093}
   m_EdgeRadius: 0
 --- !u!50 &2356995642818604627
 Rigidbody2D:
@@ -216,7 +216,7 @@ MonoBehaviour:
   damage: 0.5
   useCollisionDamage: 1
   attackPoint: {fileID: 0}
-  hitRadius: 0.8
+  hitRadius: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -295,8 +295,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

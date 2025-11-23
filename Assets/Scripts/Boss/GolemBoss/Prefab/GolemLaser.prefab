@@ -115,6 +115,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
+  warmupTime: 1
   followDelay: 0.5
   historyWindow: 2
   turnRateDegPerSec: 120
