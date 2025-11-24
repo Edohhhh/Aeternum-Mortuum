@@ -15,7 +15,8 @@ public class PlayerHealth : MonoBehaviour
     private bool regenActive = false;
 
     [Header("Invulnerability")]
-    public float invulnerableTime = 1f;
+    // ⬇️ DURACIÓN DE LA INVULNERABILIDAD AL RECIBIR DAÑO
+    public float invulnerableTime = 2f;
     private bool invulnerable = false;
 
     private Coroutine regenRoutine;
@@ -30,11 +31,17 @@ public class PlayerHealth : MonoBehaviour
     public float healAmount = 1f;
 
     [Header("Curas (ya NO se reinician por escena)")]
-    public int healsLeft; // se toma desde HealthDataNashe
+    public int healsLeft;
+
+    // Cacheamos los colliders y el renderer para no buscarlos cada vez
+    private Collider2D[] playerColliders;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
+        playerColliders = GetComponentsInChildren<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -43,9 +50,11 @@ public class PlayerHealth : MonoBehaviour
         if (healthUI != null)
             healthUI.Initialize(maxHealth);
 
-        // Cargar curas desde el sistema persistente
-        healsLeft = HealthDataNashe.Instance.healsLeft;
-        UpdateHealCounterUI();
+        if (HealthDataNashe.Instance != null)
+        {
+            healsLeft = HealthDataNashe.Instance.healsLeft;
+            UpdateHealCounterUI();
+        }
 
         if (regenRoutine != null)
             StopCoroutine(regenRoutine);
@@ -76,7 +85,6 @@ public class PlayerHealth : MonoBehaviour
 
         ModifyHealthFlat(healAmount);
 
-        // Q restada
         HealthDataNashe.Instance.healsLeft--;
         healsLeft = HealthDataNashe.Instance.healsLeft;
 
@@ -89,7 +97,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount, Vector2 sourcePosition, float knockbackForce = 10f, float knockbackDuration = 0.2f)
     {
-        if (IsInvulnerable || (playerController != null && playerController.stateMachine.CurrentState == playerController.KnockbackState))
+        if (IsInvulnerable ||
+            (playerController != null &&
+             playerController.stateMachine.CurrentState == playerController.KnockbackState))
             return;
 
         currentHealth -= amount;
@@ -101,15 +111,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
-        Vector2 knockDir = (transform.position - (Vector3)sourcePosition).normalized;
-        if (knockDir == Vector2.zero) knockDir = Vector2.up;
-
-        var knockback = playerController.KnockbackState;
-        knockback.SetKnockback(knockDir, knockbackForce, knockbackDuration);
-        playerController.stateMachine.ChangeState(knockback);
-
-        StartCoroutine(DamageFlash());
-        StartCoroutine(TemporaryInvulnerability());
+        StartCoroutine(InvulnerabilityRoutine());
 
         if (enableRegeneration)
             RestartRegenDelay();
@@ -133,10 +135,69 @@ public class PlayerHealth : MonoBehaviour
         ModifyHealthFlat(delta);
     }
 
-    private IEnumerator TemporaryInvulnerability()
+    // --- LÓGICA DE INVULNERABILIDAD MODIFICADA ---
+    private IEnumerator InvulnerabilityRoutine()
     {
         invulnerable = true;
-        yield return new WaitForSeconds(invulnerableTime);
+
+        // 1. Buscar a todos los enemigos activos en la escena por su Tag
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Hacemos que el Player ignore las colisiones con estos enemigos
+        foreach (GameObject enemy in enemies)
+        {
+            // Verificamos null por seguridad
+            if (enemy != null)
+            {
+                // Obtenemos todos los colliders del enemigo (puede tener varios, box, circle, en hijos, etc.)
+                Collider2D[] enemyColliders = enemy.GetComponentsInChildren<Collider2D>();
+
+                foreach (Collider2D enemyCol in enemyColliders)
+                {
+                    foreach (Collider2D playerCol in playerColliders)
+                    {
+                        // 'true' significa IGNORAR colisión entre estos dos
+                        Physics2D.IgnoreCollision(playerCol, enemyCol, true);
+                    }
+                }
+            }
+        }
+
+        // 2. Parpadeo (Flicker) durante el tiempo de invulnerabilidad
+        float elapsed = 0f;
+        float flickerSpeed = 0.15f;
+
+        while (elapsed < invulnerableTime)
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+
+            yield return new WaitForSeconds(flickerSpeed);
+            elapsed += flickerSpeed;
+        }
+
+        // 3. Restaurar estado normal
+        if (spriteRenderer != null) spriteRenderer.enabled = true;
+
+        // Reactivamos las colisiones con los enemigos que encontramos antes
+        foreach (GameObject enemy in enemies)
+        {
+            // Es importante chequear si el enemigo sigue vivo (no es null)
+            if (enemy != null)
+            {
+                Collider2D[] enemyColliders = enemy.GetComponentsInChildren<Collider2D>();
+
+                foreach (Collider2D enemyCol in enemyColliders)
+                {
+                    foreach (Collider2D playerCol in playerColliders)
+                    {
+                        // 'false' significa DEJAR DE IGNORAR (volver a chocar)
+                        Physics2D.IgnoreCollision(playerCol, enemyCol, false);
+                    }
+                }
+            }
+        }
+
         invulnerable = false;
     }
 
@@ -162,17 +223,6 @@ public class PlayerHealth : MonoBehaviour
         regenActive = false;
     }
 
-    private IEnumerator DamageFlash()
-    {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr == null) yield break;
-
-        Color originalColor = sr.color;
-        sr.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
-        sr.color = originalColor;
-    }
-
     public void UpdateUI()
     {
         if (healthUI != null)
@@ -181,7 +231,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealCounterUI()
     {
-        if (healCounterUI != null)
+        if (healCounterUI != null && HealthDataNashe.Instance != null)
             healCounterUI.SetHealsRemaining(
                 HealthDataNashe.Instance.healsLeft,
                 HealthDataNashe.Instance.maxHeals

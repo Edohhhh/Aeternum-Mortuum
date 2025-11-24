@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PoorGuyDialogue
   m_EditorClassIdentifier: 
   npcName: Valado
-  npcPortrait: {fileID: -4505372766037573410, guid: 6a2d33ec110a5ce4c9d2e4f98d181594, type: 3}
+  npcPortrait: {fileID: -802300504452200322, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
   dialogueLines:
   - Odio aquel guardia.
   - 'No deja pasar a nadie al portal '

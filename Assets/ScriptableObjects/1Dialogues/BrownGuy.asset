@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BrownGuy
   m_EditorClassIdentifier: 
   npcName: BrownFella
-  npcPortrait: {fileID: 0}
+  npcPortrait: {fileID: 5187719381752478824, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
   dialogueLines:
   - TAN CERCA! NUNCA TOCARA NADA BUENO?!
   - Oh, hola, buen dia supongo...

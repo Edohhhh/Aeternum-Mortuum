@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bartender Layout2
   m_EditorClassIdentifier: 
   npcName: Bartender
-  npcPortrait: {fileID: 7481529506853502804, guid: 4b8aa57e80bbc4c688b9314355fe3fca, type: 3}
+  npcPortrait: {fileID: 6733801781611119783, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
   dialogueLines:
   - Buenos dias.
   - Lo lamento, no tengo tiempo para preparar bebidas.

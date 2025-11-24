@@ -26456,7 +26456,7 @@ MonoBehaviour:
   enableRegeneration: 0
   regenerationRate: 2
   regenDelay: 3
-  invulnerableTime: 1
+  invulnerableTime: 2
   healthUI: {fileID: 9783276}
   healCounterUI: {fileID: 1715398204}
   healAmount: 1

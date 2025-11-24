@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   npcName: King
-  npcPortrait: {fileID: 0}
+  npcPortrait: {fileID: -5341379728564284133, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
   dialogueLines:
   - Si... Aun puedo quedarme...
   - Buenas tardes, no me distraigas estoy en racha.
