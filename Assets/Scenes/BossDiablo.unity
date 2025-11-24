@@ -10152,7 +10152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2533637577598832714, guid: d521527c5118b61438819f4d000b992e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13282,9 +13282,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1849560199}
     - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a4_holdTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: a4_rightMid
       value: 
       objectReference: {fileID: 523273543606194044, guid: 63e7f4fc91652854c920cf66f940f3ec, type: 3}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a4_warnTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: a4_leftSpawn
       value: 
