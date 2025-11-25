@@ -3875,7 +3875,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &869381346
+--- !u!1 &884963216
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3883,8 +3883,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 869381348}
-  - component: {fileID: 869381347}
+  - component: {fileID: 884963218}
+  - component: {fileID: 884963217}
   m_Layer: 0
   m_Name: Musica
   m_TagString: Untagged
@@ -3892,22 +3892,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &869381347
+--- !u!82 &884963217
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869381346}
+  m_GameObject: {fileID: 884963216}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6735070044237822930, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6839e464e11e2344897a76fa26c136bd, type: 3}
   m_Resource: {fileID: 8300000, guid: 6839e464e11e2344897a76fa26c136bd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.015
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3989,16 +3989,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &869381348
+--- !u!4 &884963218
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869381346}
+  m_GameObject: {fileID: 884963216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1220204, y: 0.018135652, z: -0.09139585}
+  m_LocalPosition: {x: -12.68792, y: -0.93382573, z: -0.031226642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7893,4 +7893,4 @@ SceneRoots:
   - {fileID: 857793666}
   - {fileID: 2031936185}
   - {fileID: 845693485}
-  - {fileID: 869381348}
+  - {fileID: 884963218}

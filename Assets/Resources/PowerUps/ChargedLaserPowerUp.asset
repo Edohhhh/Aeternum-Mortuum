@@ -18,7 +18,7 @@ MonoBehaviour:
   chargeRate: 0.1
   dischargeRate: 0.05
   laserBeamPrefab: {fileID: 8118559782372147317, guid: cf21406cf77ab4ad39fdc0063dd1b812, type: 3}
-  baseDamagePerSecond: 2
+  baseDamagePerSecond: 6
   baseMaxDistance: 15
   baseDuration: 4
   baseKnockbackForce: 5

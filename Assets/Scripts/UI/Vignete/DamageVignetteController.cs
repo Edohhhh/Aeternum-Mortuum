@@ -4,19 +4,27 @@ using UnityEngine.UI;
 public class DamageVignetteController : MonoBehaviour
 {
     [Header("References")]
-    public PlayerHealth playerHealth;        // Asignar desde inspector
-    public Image vignetteImage;             // Imagen del UI que hace el vignette
+    public PlayerHealth playerHealth;
 
-    [Header("Flash Settings")]
-    public float flashAlpha = 0.65f;        // Opacidad cuando recibe daño
-    public float flashDuration = 0.25f;     // Duración del flash
+    [Header("UI Images")]
+    public Image damageVignette;   // Imagen roja
+    public Image healVignette;     // Imagen verde
 
-    [Header("Low HP Settings")]
-    public float lowHPAlpha = 0.45f;        // Opacidad constante cuando tiene 1 HP
-    public float lowHPThreshold = 1f;       // Vida mínima
-    public float fadeSpeed = 5f;
+    [Header("Damage Flash")]
+    public float damageFlashAlpha = 0.65f;
+    public float damageFlashDuration = 0.25f;
+    public float damageFadeSpeed = 5f;
+    public float lowHPAlpha = 0.45f;
+    public float lowHPThreshold = 1f;
 
-    private float targetAlpha = 0f;
+    [Header("Heal Flash")]
+    public float healFlashAlpha = 0.45f;
+    public float healFlashDuration = 0.25f;
+    public float healFadeSpeed = 5f;
+
+    private float damageTargetAlpha = 0f;
+    private float healTargetAlpha = 0f;
+
     private float lastHealth;
 
     private void Start()
@@ -27,52 +35,87 @@ public class DamageVignetteController : MonoBehaviour
 
     private void Update()
     {
-        if (playerHealth == null || vignetteImage == null)
+        if (playerHealth == null)
             return;
 
-        // Detectar daño
-        if (playerHealth.currentHealth < lastHealth)
+        float current = playerHealth.currentHealth;
+
+        // --- Detectar daño ---
+        if (current < lastHealth)
         {
             TriggerDamageFlash();
         }
 
-        // Si vida = 1 o menos → Vignette constante
-        if (playerHealth.currentHealth <= lowHPThreshold && playerHealth.currentHealth > 0)
+        // --- Detectar curación ---
+        if (current > lastHealth)
         {
-            targetAlpha = lowHPAlpha;
+            TriggerHealFlash();
+        }
+
+        // --- Low HP constante en la imagen de daño ---
+        if (current <= lowHPThreshold && current > 0)
+        {
+            damageTargetAlpha = lowHPAlpha;
         }
         else
         {
-            // Si no está en 1hp y no está flasheando → se apaga
-            if (targetAlpha != flashAlpha)
-                targetAlpha = 0f;
+            // si no está low HP y no está flasheando → se apaga
+            if (damageTargetAlpha != damageFlashAlpha)
+                damageTargetAlpha = 0f;
         }
 
-        // Fade de alpha
-        Color c = vignetteImage.color;
-        c.a = Mathf.Lerp(c.a, targetAlpha, Time.deltaTime * fadeSpeed);
-        vignetteImage.color = c;
+        // --- Fade de daño ---
+        if (damageVignette != null)
+        {
+            Color c = damageVignette.color;
+            c.a = Mathf.Lerp(c.a, damageTargetAlpha, Time.deltaTime * damageFadeSpeed);
+            damageVignette.color = c;
+        }
 
-        // Guardar vida anterior
-        lastHealth = playerHealth.currentHealth;
+        // --- Fade de cura ---
+        if (healVignette != null)
+        {
+            Color c = healVignette.color;
+            c.a = Mathf.Lerp(c.a, healTargetAlpha, Time.deltaTime * healFadeSpeed);
+            healVignette.color = c;
+        }
+
+        lastHealth = current;
     }
 
+    // ---------------- DAMAGE FLASH ----------------
     public void TriggerDamageFlash()
     {
-        StopAllCoroutines();
+        StopCoroutine(nameof(DamageFlashCoroutine));
         StartCoroutine(DamageFlashCoroutine());
     }
 
     private System.Collections.IEnumerator DamageFlashCoroutine()
     {
-        targetAlpha = flashAlpha;
+        damageTargetAlpha = damageFlashAlpha;
 
-        yield return new WaitForSeconds(flashDuration);
+        yield return new WaitForSeconds(damageFlashDuration);
 
-        // Si está en 1 HP no se apaga después del flash
         if (playerHealth.currentHealth <= lowHPThreshold)
-            targetAlpha = lowHPAlpha;
+            damageTargetAlpha = lowHPAlpha;
         else
-            targetAlpha = 0f;
+            damageTargetAlpha = 0f;
+    }
+
+    // ---------------- HEAL FLASH ----------------
+    public void TriggerHealFlash()
+    {
+        StopCoroutine(nameof(HealFlashCoroutine));
+        StartCoroutine(HealFlashCoroutine());
+    }
+
+    private System.Collections.IEnumerator HealFlashCoroutine()
+    {
+        healTargetAlpha = healFlashAlpha;
+
+        yield return new WaitForSeconds(healFlashDuration);
+
+        healTargetAlpha = 0f;
     }
 }
+

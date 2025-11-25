@@ -13,30 +13,32 @@ public class NPC : MonoBehaviour
 
     [Header("Interacción")]
     public KeyCode interactKey = KeyCode.F;
-    [Tooltip("Sprite (asset) que indica que se puede interactuar")]
     public Sprite interactIcon;
-    [Tooltip("Opcional: SpriteRenderer de la escena si querés usar uno existente")]
     public SpriteRenderer interactRendererInScene;
     public float spriteOffsetY = 2f;
     public string playerTag = "Player";
     public string iconSortingLayer = "UI";
     public int iconSortingOrder = 50;
 
-    // ===== Candado global de diálogo (uno a la vez) =====
+    // ===== IMPORTANTE =====
+    [Header("NPC Importante")]
+    public bool isImportantNPC = false;     // Se tilda desde inspector
+    public Sprite importantIcon;            // Sprite del "!"
+    public float importantIconOffsetY = 2.7f;
+    private SpriteRenderer importantIconRenderer;
+    private bool hasSpokenBefore = false;   // Para ocultar el "!" después de hablar
+
     private static NPC currentActiveNPC = null;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private bool playerInRange;
 
-    // Renderer creado en runtime
     private SpriteRenderer runtimeIconRenderer;
-
-    // Cache animador UI
     private UIDialogueAnimator dialogueAnimator;
 
-    // ===== NUEVO: Cierre por distancia =====
-    [Header("Distancia máxima para mantener el diálogo")]
+
+    [Header("Distancia para mantener el diálogo")]
     public float maxDialogueDistance = 3.5f;
     private Transform player;
 
@@ -50,6 +52,9 @@ public class NPC : MonoBehaviour
             dialogueAnimator = dialoguePanel.GetComponent<UIDialogueAnimator>();
         }
 
+        // ========================
+        //   ICONO DE INTERACCIÓN F
+        // ========================
         SpriteRenderer target = interactRendererInScene;
         if (target == null)
         {
@@ -64,29 +69,51 @@ public class NPC : MonoBehaviour
         target.sortingLayerName = iconSortingLayer;
         target.sortingOrder = iconSortingOrder;
         target.enabled = false;
+
+        // ========================
+        //    ICONO IMPORTANTE (!)
+        // ========================
+        if (isImportantNPC && importantIcon != null)
+        {
+            var go = new GameObject("ImportantIcon");
+            go.transform.SetParent(transform);
+            go.transform.localPosition = new Vector3(0f, importantIconOffsetY, 0f); // ← USAMOS LA VARIABLE
+
+            importantIconRenderer = go.AddComponent<SpriteRenderer>();
+            importantIconRenderer.sprite = importantIcon;
+            importantIconRenderer.sortingLayerName = iconSortingLayer;
+            importantIconRenderer.sortingOrder = iconSortingOrder + 5;
+
+            importantIconRenderer.enabled = !hasSpokenBefore;
+        }
+
     }
 
     void Update()
     {
-        // Mantener icono en posición
+        // Mantener iconos arriba del NPC
         if (runtimeIconRenderer != null)
         {
             var pos = transform.position;
             pos.y += spriteOffsetY;
             runtimeIconRenderer.transform.position = pos;
         }
+        if (importantIconRenderer != null)
+        {
+            var pos = transform.position;
+            pos.y += importantIconOffsetY;   // ← ahora configurable
+            importantIconRenderer.transform.position = pos;
+        }
+
 
         UpdateIconVisibility();
 
-        // Interacción
         if (playerInRange && Input.GetKeyDown(interactKey))
             Interact();
 
-        // ===== NUEVO: cierre automático si se aleja demasiado =====
         if (isDialogueActive && player != null)
         {
             float dist = Vector2.Distance(transform.position, player.position);
-
             if (dist > maxDialogueDistance)
                 EndDialogue();
         }
@@ -122,6 +149,13 @@ public class NPC : MonoBehaviour
 
         SetIconVisible(false);
 
+        // ===== IMPORTANTE: hablar por 1ra vez → ocultar "!" =====
+        if (isImportantNPC && importantIconRenderer != null)
+        {
+            hasSpokenBefore = true;
+            importantIconRenderer.enabled = false;
+        }
+
         StartCoroutine(TypeLine());
     }
 
@@ -130,8 +164,7 @@ public class NPC : MonoBehaviour
         if (isTyping)
         {
             StopAllCoroutines();
-            if (dialogueText != null)
-                dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
         else if (++dialogueIndex < dialogueData.dialogueLines.Length)
@@ -147,11 +180,11 @@ public class NPC : MonoBehaviour
     IEnumerator TypeLine()
     {
         isTyping = true;
-        if (dialogueText != null) dialogueText.SetText("");
+        dialogueText.SetText("");
 
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
-            if (dialogueText != null) dialogueText.text += letter;
+            dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
@@ -169,7 +202,7 @@ public class NPC : MonoBehaviour
     {
         StopAllCoroutines();
         isDialogueActive = false;
-        if (dialogueText != null) dialogueText.SetText("");
+        dialogueText.SetText("");
 
         if (dialoguePanel != null)
         {
@@ -179,18 +212,14 @@ public class NPC : MonoBehaviour
                 dialogueAnimator.AnimateOut(() =>
                 {
                     dialoguePanel.SetActive(false);
-
-                    if (currentActiveNPC == this)
-                        currentActiveNPC = null;
-
+                    if (currentActiveNPC == this) currentActiveNPC = null;
                     UpdateIconVisibility();
                 });
-
                 return;
             }
         }
 
-        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        dialoguePanel.SetActive(false);
 
         if (currentActiveNPC == this)
             currentActiveNPC = null;
@@ -198,13 +227,16 @@ public class NPC : MonoBehaviour
         UpdateIconVisibility();
     }
 
-    // ==== Proximidad física mediante trigger ====
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
         {
             playerInRange = true;
             UpdateIconVisibility();
+
+            // ===== Importante: ocultar "!" si entra al rango F =====
+            if (isImportantNPC && importantIconRenderer != null && !hasSpokenBefore)
+                importantIconRenderer.enabled = false;
         }
     }
 
@@ -215,13 +247,15 @@ public class NPC : MonoBehaviour
             playerInRange = false;
             UpdateIconVisibility();
 
-            // ===== Nuevo: cerrar diálogo al salir del rango ====
             if (isDialogueActive)
                 EndDialogue();
+
+            // ===== Volver a mostrar "!" si nunca habló =====
+            if (isImportantNPC && importantIconRenderer != null && !hasSpokenBefore)
+                importantIconRenderer.enabled = true;
         }
     }
 
-    // ===== Icono =====
     void UpdateIconVisibility()
     {
         bool visible = playerInRange && !isDialogueActive && currentActiveNPC == null;

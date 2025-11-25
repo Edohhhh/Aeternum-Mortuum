@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f237664be8da64da7108553970df7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 6
   knockbackForce: 0
   knockbackDir: {x: 0, y: 0}
   globalDamageInterval: 1

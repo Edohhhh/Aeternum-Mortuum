@@ -430,7 +430,7 @@ MonoBehaviour:
     roomName: BossDiablo
   winRoom:
     id: 28
-    roomName: Victory
+    roomName: Cutscene Final Neutral
   easyRooms:
   - id: 1
     roomName: LoopSlime1
