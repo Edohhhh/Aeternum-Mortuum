@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RockHard
   m_EditorClassIdentifier: 
   label: Rock Hard
-  description: "Aumenta el da\xF1o e 3 unidades y el cooldown en 2 segundos y decrementa
-    la velocidad en 2 unidades"
+  description: "Aumenta el da\xF1o en 3 unidades y el cooldown en 2 segundos y decrementa
+    la velocidad en 2 unidades."
   icon: {fileID: -7925918792525977022, guid: 63de7dd5abe2542a089ae9281a6c599a, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 1}

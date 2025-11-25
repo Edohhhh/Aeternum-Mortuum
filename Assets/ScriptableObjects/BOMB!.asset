@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BOMB!
   m_EditorClassIdentifier: 
   label: Bomb
-  description: "Cada combo de jugador crea una bomba que provoca da\xF1o"
+  description: Cada primer golpe de jugador hay una probabilidad de generar una bomba.
   icon: {fileID: 3253419203303204372, guid: 63aba4ffe629649458ab8216c5e4ac7b, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

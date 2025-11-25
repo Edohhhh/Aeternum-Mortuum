@@ -3579,14 +3579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7478948551070900938, guid: 520a54dc57c9a4eee90f30d3752de033, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4279,6 +4279,14 @@ PlayableDirector:
   - key: {fileID: 6778362746080806368, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
     value: {fileID: 449602524}
   - key: {fileID: 1738909212456698612, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1893132225}
+  - key: {fileID: -5384531018093037768, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 557138809}
+  - key: {fileID: -5448354714784108313, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 464230744}
+  - key: {fileID: 1673959103955171866, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 449602524}
+  - key: {fileID: -5684578885689198408, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
     value: {fileID: 1893132225}
   m_ExposedReferences:
     m_References: []

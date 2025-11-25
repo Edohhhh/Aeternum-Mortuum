@@ -3678,7 +3678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4170,8 +4170,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 1
   m_colorMode: 1
   m_fontColorGradient:
@@ -4541,6 +4541,30 @@ PlayableDirector:
   - key: {fileID: 1733324760687456145, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
     value: {fileID: 449602524}
   - key: {fileID: 3790270362567662787, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1893132225}
+  - key: {fileID: -3265330783555472217, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1405551032}
+  - key: {fileID: -8999917250009629629, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 767743591}
+  - key: {fileID: 9090667361958046306, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 557138809}
+  - key: {fileID: 8938123374498875637, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 464230744}
+  - key: {fileID: 4178134958401080408, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 449602524}
+  - key: {fileID: 6749197090728265038, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1893132225}
+  - key: {fileID: -7898853117090372553, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1405551032}
+  - key: {fileID: -4931765243992662230, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 767743591}
+  - key: {fileID: -810694934017886582, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 557138809}
+  - key: {fileID: -3255887922836919056, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 464230744}
+  - key: {fileID: 6524400808053782038, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 449602524}
+  - key: {fileID: -1941541721280682764, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
     value: {fileID: 1893132225}
   m_ExposedReferences:
     m_References: []

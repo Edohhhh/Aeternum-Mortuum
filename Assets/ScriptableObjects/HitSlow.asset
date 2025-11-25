@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HitSlow
   m_EditorClassIdentifier: 
   label: Hit Slow
-  description: Atacar a un enemigo aplica enlentecer. (Dura 5 segundos)
+  description: Atacar a un enemigo aplica congelacion. (Dura 5 segundos)
   icon: {fileID: 7910451321189131583, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
