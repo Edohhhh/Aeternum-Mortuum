@@ -16,7 +16,11 @@ public class SpectralCompanionPowerUp : PowerUp
         if (instance != null) return;
 
         instance = GameObject.Instantiate(companionPrefab);
-        var companion = instance.AddComponent<SpectralCompanion>();
+
+        var companion = instance.GetComponent<SpectralCompanion>();
+        if (companion == null)
+            companion = instance.AddComponent<SpectralCompanion>();
+
         companion.bulletPrefab = bulletPrefab;
         companion.Initialize(player.transform, player.moveSpeed * speedMultiplier, fireInterval, damagePerShot);
 

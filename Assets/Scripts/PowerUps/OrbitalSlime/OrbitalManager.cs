@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
 public class OrbitalManager : MonoBehaviour
 {
@@ -12,18 +12,18 @@ public class OrbitalManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnDestroy()
+    public void AddStack(OrbitalPowerUp cfg, PlayerController newPlayer)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+        config = cfg;
 
-    public void AddStack(OrbitalPowerUp config, PlayerController player)
-    {
-        this.config = config;
-        this.player = player;
+        if (player != newPlayer)
+        {
+            ClearOrbitalsInternal();
+            stackCount = 0;
+            player = newPlayer;
+        }
 
         stackCount++;
         RebuildOrbitals();
@@ -31,20 +31,19 @@ public class OrbitalManager : MonoBehaviour
 
     private void RebuildOrbitals()
     {
-        // Limpiar los anteriores
-        foreach (var orb in orbitals)
-            if (orb != null) Destroy(orb);
+        // limpiar instancias viejas
+        ClearOrbitalsInternal();
 
-        orbitals.Clear();
+        if (config == null || player == null || stackCount <= 0)
+            return;
 
-        // Crear todos los orbitales según el stack
         for (int i = 0; i < stackCount; i++)
         {
-            var go = Instantiate(config.orbitalPrefab);
+            var go = Object.Instantiate(config.orbitalPrefab);
             var orbital = go.AddComponent<PlayerOrbital>();
 
             float angleOffset = (360f / stackCount) * i;
-            float adjustedSpeed = config.rotationSpeed * Mathf.Sign((i % 2 == 0) ? 1 : -1);
+            float adjustedSpeed = config.rotationSpeed * ((i % 2 == 0) ? 1f : -1f);
 
             orbital.Initialize(player.transform, config.orbitRadius, adjustedSpeed, config.damagePerSecond);
             orbital.SetInitialAngle(angleOffset);
@@ -55,29 +54,15 @@ public class OrbitalManager : MonoBehaviour
 
     public void ClearOrbitals()
     {
-        foreach (var orb in orbitals)
-            if (orb != null) Destroy(orb);
-
-        orbitals.Clear();
+        ClearOrbitalsInternal();
         stackCount = 0;
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void ClearOrbitalsInternal()
     {
-        // Al cambiar de escena, volver a asignar al jugador
-        StartCoroutine(ReassignPlayer());
-    }
+        foreach (var orb in orbitals)
+            if (orb != null) Object.Destroy(orb);
 
-    private System.Collections.IEnumerator ReassignPlayer()
-    {
-        PlayerController found = null;
-        while (found == null)
-        {
-            found = Object.FindFirstObjectByType<PlayerController>();
-            yield return null;
-        }
-
-        player = found;
-        RebuildOrbitals();
+        orbitals.Clear();
     }
 }

@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using Object = UnityEngine.Object;
 
 [CreateAssetMenu(fileName = "OrbitalPowerUp", menuName = "PowerUps/Orbital Slime")]
 public class OrbitalPowerUp : PowerUp
@@ -18,7 +19,6 @@ public class OrbitalPowerUp : PowerUp
             Object.DontDestroyOnLoad(go);
         }
 
-        // En lugar de reemplazar, acumulamos
         manager.AddStack(this, player);
     }
 
@@ -28,6 +28,7 @@ public class OrbitalPowerUp : PowerUp
         if (manager != null)
         {
             manager.ClearOrbitals();
+            Object.Destroy(manager.gameObject); // opcional: limpiar el singleton
         }
     }
 }

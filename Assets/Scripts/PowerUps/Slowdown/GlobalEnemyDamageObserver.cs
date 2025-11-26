@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -17,9 +17,12 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
     private Dictionary<GameObject, Coroutine> slowCoroutines = new();
 
     [Header("Auto Hook")]
-    [Tooltip("Cada cu�ntos segundos se escanean enemigos nuevos para agregarles EnemyDamageHook.")]
+    [Tooltip("Cada cuántos segundos se escanean enemigos nuevos para agregarles EnemyDamageHook.")]
     public float rescanInterval = 0.5f;
     private float rescanTimer = 0f;
+
+    // 🔥 Nuevo: flag para saber si el slow está activo o no
+    [HideInInspector] public bool isActive = true;
 
     private void Awake()
     {
@@ -28,6 +31,9 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
 
     private void Update()
     {
+        // 👇 Si no está activo, no escaneamos ni hacemos nada
+        if (!isActive) return;
+
         rescanTimer -= Time.deltaTime;
         if (rescanTimer <= 0f)
         {
@@ -37,12 +43,17 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
     }
 
     /// <summary>
-    /// Llamado por EnemyDamageHook cuando un enemigo recibe da�o.
+    /// Llamado por EnemyDamageHook cuando un enemigo recibe daño.
     /// </summary>
     public static void RegisterDamage(GameObject enemyObject)
     {
         var observer = Object.FindAnyObjectByType<GlobalEnemyDamageObserver>();
-        if (observer != null && enemyObject != null && enemyObject.CompareTag("Enemy"))
+        if (observer == null) return;
+
+        // 👇 Si está desactivado, ignoramos el daño
+        if (!observer.isActive) return;
+
+        if (enemyObject != null && enemyObject.CompareTag("Enemy"))
         {
             observer.TryApplySlow(enemyObject);
         }
@@ -71,7 +82,7 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
     {
         if (enemy == null) return;
 
-        // Si ya est� ralentizado, no lo aplicamos de nuevo
+        // Si ya está ralentizado, no lo aplicamos de nuevo
         if (slowCoroutines.ContainsKey(enemy)) return;
 
         Coroutine routine = StartCoroutine(ApplySlowViaReflection(enemy));
@@ -95,7 +106,7 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
 
         if (maxSpeedField == null || maxSpeedField.FieldType != typeof(float))
         {
-            Debug.LogWarning($"[Slow] {enemy.name} no tiene 'maxSpeed' accesible por reflexi�n.");
+            Debug.LogWarning($"[Slow] {enemy.name} no tiene 'maxSpeed' accesible por reflexión.");
             yield break;
         }
 
@@ -116,7 +127,7 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
             );
         }
 
-        // Mantener el slow por la duraci�n
+        // Mantener el slow por la duración
         yield return new WaitForSeconds(duration);
 
         // Restaurar velocidad
@@ -133,5 +144,14 @@ public class GlobalEnemyDamageObserver : MonoBehaviour
         }
 
         slowCoroutines.Remove(enemy);
+    }
+
+    //apagar el efecto globalmente (no más slows nuevos)
+    public void DisableSlowGlobally()
+    {
+        isActive = false;
+        Debug.Log("[GlobalEnemyDamageObserver] Slow desactivado globalmente por perk removida.");
+        // Dejamos que las corutinas actuales terminen solas,
+        // así no rompemos estados intermedios.
     }
 }

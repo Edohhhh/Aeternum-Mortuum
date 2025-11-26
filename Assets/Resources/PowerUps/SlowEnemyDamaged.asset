@@ -15,5 +15,6 @@ MonoBehaviour:
   duration: 5
   isPermanent: 1
   effect: {fileID: 0}
-  slowPercent: 0.2
+  slowPercent: 0.9
   Powerduration: 2
+  slowEffectPrefab: {fileID: 5154085664488990372, guid: 7653f474ebd414782a71ea8ede8db4dc, type: 3}

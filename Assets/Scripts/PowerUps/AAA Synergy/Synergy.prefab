@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4064316569044388743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7921937975155116145}
+  - component: {fileID: 4574146356994537915}
+  m_Layer: 0
+  m_Name: Synergy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7921937975155116145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064316569044388743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8318074, y: 1.4658867, z: 0.042435084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4574146356994537915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064316569044388743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8251633f92a20174f853f6cd7cb02a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoEvaluateOnStart: 1
+  synergies:
+  - synergyName: Lava Trail
+    ingredients:
+    - {fileID: 11400000, guid: b1e5878ffbc449a4195d7c83e1f9e9ad, type: 2}
+    - {fileID: 11400000, guid: 6b30df873c4f97a4a94020195c632376, type: 2}
+    resultPerk: {fileID: 11400000, guid: da4266ea1844f0b4ba751422707a3e6a, type: 2}
+  - synergyName: Frozen Trail
+    ingredients:
+    - {fileID: 11400000, guid: 72adfdfced03aff4c8046f902675e52e, type: 2}
+    - {fileID: 11400000, guid: b1e5878ffbc449a4195d7c83e1f9e9ad, type: 2}
+    resultPerk: {fileID: 11400000, guid: 18ecc02c792afed4f94d561b19e467a8, type: 2}
+  - synergyName: Bubonic Plague
+    ingredients:
+    - {fileID: 11400000, guid: 988f26508f57a2c418ed3d7ed45cbb3a, type: 2}
+    - {fileID: 11400000, guid: b1e5878ffbc449a4195d7c83e1f9e9ad, type: 2}
+    resultPerk: {fileID: 11400000, guid: 0ec686d4010c0e94f87595dac12f4d71, type: 2}
+  - synergyName: Fire Book
+    ingredients:
+    - {fileID: 11400000, guid: 6b30df873c4f97a4a94020195c632376, type: 2}
+    - {fileID: 11400000, guid: b9901d54866ec45c5aafbbd3a9333bf3, type: 2}
+    resultPerk: {fileID: 11400000, guid: 4d1040544f876c745b1265be94c9d358, type: 2}
+  - synergyName: Ice Book
+    ingredients:
+    - {fileID: 11400000, guid: 72adfdfced03aff4c8046f902675e52e, type: 2}
+    - {fileID: 11400000, guid: b9901d54866ec45c5aafbbd3a9333bf3, type: 2}
+    resultPerk: {fileID: 11400000, guid: 4d1040544f876c745b1265be94c9d358, type: 2}

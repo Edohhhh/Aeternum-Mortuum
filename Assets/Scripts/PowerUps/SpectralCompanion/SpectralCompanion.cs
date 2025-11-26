@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class SpectralCompanion : MonoBehaviour
 {
@@ -7,10 +6,10 @@ public class SpectralCompanion : MonoBehaviour
     public float fireInterval = 3f;
     public int damage = 1;
     public float speed = 5f;
-    public float followDistance = 1.0f; // Distancia detrás del jugador
+    public float followDistance = 1.0f;
 
     private Transform player;
-    private SpriteRenderer playerSpriteRenderer; // Para saber hacia dónde mira
+    private SpriteRenderer playerSpriteRenderer;
     private float fireTimer;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -36,7 +35,8 @@ public class SpectralCompanion : MonoBehaviour
         if (player == null)
         {
             var foundPlayer = GameObject.FindWithTag("Player");
-            if (foundPlayer != null)
+
+            if (foundPlayer != null && foundPlayer.transform != this.transform)
             {
                 player = foundPlayer.transform;
                 playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
@@ -47,20 +47,15 @@ public class SpectralCompanion : MonoBehaviour
             }
         }
 
-        // 🧭 Calcular posición DETRÁS del jugador
         Vector3 behindPosition = CalculateBehindPosition();
-
-        // 🐾 Moverse suavemente hacia esa posición
         transform.position = Vector3.MoveTowards(transform.position, behindPosition, speed * Time.deltaTime);
 
-        // 👀 Mirar hacia el enemigo más cercano (opcional, como antes)
         Transform closestEnemy = FindClosestEnemy();
         if (closestEnemy != null)
         {
             LookAtTarget(closestEnemy.position);
         }
 
-        // 🔫 Disparar
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireInterval)
         {
@@ -72,12 +67,10 @@ public class SpectralCompanion : MonoBehaviour
     private Vector3 CalculateBehindPosition()
     {
         if (playerSpriteRenderer == null)
-            return player.position; // fallback
+            return player.position;
 
-        // Determinar dirección hacia adelante del jugador
         float facingDirection = playerSpriteRenderer.flipX ? -1f : 1f;
 
-        // Posición detrás = posición del jugador - (dirección * distancia)
         Vector3 behindOffset = new Vector3(-facingDirection * followDistance, 0f, 0f);
         return player.position + behindOffset;
     }
@@ -92,6 +85,8 @@ public class SpectralCompanion : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
+            if (enemy == null) continue;
+
             float dist = Vector2.Distance(transform.position, enemy.transform.position);
             if (dist < closestDist)
             {
@@ -107,7 +102,7 @@ public class SpectralCompanion : MonoBehaviour
         if (spriteRenderer == null) return;
 
         float direction = targetPosition.x - transform.position.x;
-        spriteRenderer.flipX = direction < 0; // true = mira izquierda
+        spriteRenderer.flipX = direction < 0;
     }
 
     private void Shoot(Transform targetEnemy)
@@ -116,6 +111,7 @@ public class SpectralCompanion : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         SpectralBullet bulletScript = bullet.GetComponent<SpectralBullet>();
+
         if (bulletScript != null)
         {
             bulletScript.damage = damage;

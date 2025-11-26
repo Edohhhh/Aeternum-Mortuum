@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDamageHook : MonoBehaviour
 {
@@ -25,17 +25,19 @@ public class PlayerDamageHook : MonoBehaviour
         }
         else if (playerHealth.currentHealth > lastHealth)
         {
-
             lastHealth = playerHealth.currentHealth;
         }
     }
 
     public static void Attach(PlayerController player, PlayerHurtSlowObserver observer)
     {
+        if (player == null || observer == null) return;
+
         var hook = player.GetComponent<PlayerDamageHook>();
         if (hook == null)
             hook = player.gameObject.AddComponent<PlayerDamageHook>();
 
+        hook.OnPlayerDamaged -= observer.OnPlayerDamaged;
         hook.OnPlayerDamaged += observer.OnPlayerDamaged;
     }
 }

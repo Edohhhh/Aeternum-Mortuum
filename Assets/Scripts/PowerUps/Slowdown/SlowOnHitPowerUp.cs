@@ -9,7 +9,7 @@ public class SlowOnHitPowerUp : PowerUp
     public float Slowduration = 2f;
 
     [Header("VFX")]
-    public GameObject slowEffectPrefab; // <-- tu prefab de partícula
+    public GameObject slowEffectPrefab;
 
     public override void Apply(PlayerController player)
     {
@@ -27,12 +27,19 @@ public class SlowOnHitPowerUp : PowerUp
         observer.duration = Slowduration;
         observer.slowEffectPrefab = slowEffectPrefab;
 
+        // Asegurarnos que esté activo cuando se aplica la perk
+        observer.isActive = true;
+
         // Agregar hook a todos los enemigos activos (primera pasada)
         observer.AttachHooksToExistingEnemies();
     }
 
     public override void Remove(PlayerController player)
     {
-        // Nada, efecto manejado por el observer
+        var observer = Object.FindAnyObjectByType<GlobalEnemyDamageObserver>();
+        if (observer != null)
+        {
+            observer.DisableSlowGlobally();
+        }
     }
 }
