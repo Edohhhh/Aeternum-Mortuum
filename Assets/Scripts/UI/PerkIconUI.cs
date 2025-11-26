@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; // ¡Necesario para detectar el ratón!
+using UnityEngine.EventSystems; // Necesario para detectar el ratón
 
 public class PerkIconUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -9,7 +9,6 @@ public class PerkIconUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private PowerUpEffect powerUpEffect;
     private InventoryTooltipUI tooltip;
 
-    // 1. Inicializa este icono con los datos del ScriptableObject
     public void Initialize(PowerUpEffect effect, InventoryTooltipUI tooltipUI)
     {
         this.powerUpEffect = effect;
@@ -18,19 +17,22 @@ public class PerkIconUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (iconImage == null)
             iconImage = GetComponent<Image>();
 
-        iconImage.sprite = powerUpEffect.icon;
+        if (powerUpEffect != null)
+            iconImage.sprite = powerUpEffect.icon;
     }
 
-    // 2. Cuando el ratón entra
     public void OnPointerEnter(PointerEventData eventData)
     {
+        // DEBUG: Si esto no sale en consola, el Raycast Target de la IMAGEN de este objeto está apagado
+        // o no hay EventSystem en la escena.
+        Debug.Log($"Mouse encima del perk: {gameObject.name}");
+
         if (tooltip != null && powerUpEffect != null)
         {
             tooltip.Show(powerUpEffect.label, powerUpEffect.description);
         }
     }
 
-    // 3. Cuando el ratón sale
     public void OnPointerExit(PointerEventData eventData)
     {
         if (tooltip != null)

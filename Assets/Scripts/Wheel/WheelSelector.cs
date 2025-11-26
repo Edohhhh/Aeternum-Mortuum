@@ -31,8 +31,6 @@ public class WheelSelector : MonoBehaviour
     [Header("Controlador de la UI de ruletas")]
     [SerializeField] private EasyUI.PickerWheelUI.WheelUIController wheelUIController;
 
-
-
     private List<PickerWheel> ruletasInstanciadas = new List<PickerWheel>();
     private PickerWheel ruletaSeleccionada;
 
@@ -142,7 +140,6 @@ public class WheelSelector : MonoBehaviour
 
         if (wheelUIController != null)
         {
-            // Oculta el texto de "Seleccione..."
             wheelUIController.OcultarTextoInstruccion();
         }
 
@@ -240,7 +237,18 @@ public class WheelSelector : MonoBehaviour
             return;
         }
 
+        // 1. Aplicamos el premio al jugador
         wheel.AplicarUltimoPremio();
+
+        // ✅ 2. ACTUALIZACIÓN DEL HUD (INVENTARIO)
+        // Buscamos el HUD y forzamos la recarga de los iconos de Perks
+        PlayerStatsHUD hud = FindObjectOfType<PlayerStatsHUD>();
+        if (hud != null)
+        {
+            hud.ActualizarInventarioUI();
+        }
+        // ----------------------------------------------------
+
         wheel.MostrarPopupUltimoPremio();
 
         if (confettiPrefab != null)
@@ -267,8 +275,6 @@ public class WheelSelector : MonoBehaviour
         }
         else
             Debug.LogError("❌ No se encontró GameObject con tag 'Player'.");
-
-        //RoomManager.Instance.LoadNextRoomWithDelay();
 
         foreach (var set in ruletaUISets)
         {
@@ -298,8 +304,6 @@ public class WheelSelector : MonoBehaviour
             ruletaSeleccionada.Spin();
     }
 
-    // ✅ --- LÍNEAS CORREGIDAS ---
-    // Faltaba "public void" y había texto basura
     public void ConfirmarRuletaSeleccionada()
     {
         if (ruletaSeleccionada != null)
@@ -309,7 +313,6 @@ public class WheelSelector : MonoBehaviour
                 Debug.Log($"✅ Premio confirmado: {premio.Label} x{premio.Amount}");
         }
     }
-    // ✅ --- FIN DE LA CORRECCIÓN ---
 
     public void MostrarNombreRuletaSeleccionada()
     {

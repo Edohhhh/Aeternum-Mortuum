@@ -19,7 +19,7 @@ public class InventoryTooltipUI : MonoBehaviour
 
     private void Update()
     {
-        // Seguir el mouse en pantalla
+        // Seguir el mouse si el tooltip es visible
         if (canvasGroup.alpha > 0f)
         {
             Vector2 pos;
@@ -28,7 +28,8 @@ public class InventoryTooltipUI : MonoBehaviour
                 Input.mousePosition,
                 mainCamera,
                 out pos);
-            // Ajuste para que el tooltip no tape el ratón
+
+            // Offset para que no tape el cursor
             rectTransform.anchoredPosition = pos + new Vector2(40, -40);
         }
     }
@@ -39,12 +40,10 @@ public class InventoryTooltipUI : MonoBehaviour
         descriptionText.text = description;
 
         gameObject.SetActive(true);
-        canvasGroup.blocksRaycasts = false;
+        canvasGroup.blocksRaycasts = false; // IMPORTANTE: El tooltip nunca debe bloquear raycast
 
-        // ✅ --- MODIFICADO ---
-        // Añadimos SetUpdate(true) para que el fade funcione si el juego está pausado
+        // Animación ignorando TimeScale (funciona en pausa)
         canvasGroup.DOFade(1f, 0.2f).From(0f).SetUpdate(true);
-        // ✅ --- FIN ---
     }
 
     public void Hide()
