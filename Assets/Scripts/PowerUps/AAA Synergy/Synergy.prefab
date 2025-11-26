@@ -70,4 +70,4 @@ MonoBehaviour:
     ingredients:
     - {fileID: 11400000, guid: 72adfdfced03aff4c8046f902675e52e, type: 2}
     - {fileID: 11400000, guid: b9901d54866ec45c5aafbbd3a9333bf3, type: 2}
-    resultPerk: {fileID: 11400000, guid: 4d1040544f876c745b1265be94c9d358, type: 2}
+    resultPerk: {fileID: 11400000, guid: e6925dcd9bd086c419c31b4e16a741c0, type: 2}

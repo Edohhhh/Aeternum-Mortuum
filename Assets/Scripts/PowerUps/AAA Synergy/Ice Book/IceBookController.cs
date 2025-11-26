@@ -1,29 +1,34 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class IceBookController : MonoBehaviour
 {
-    [Header("Prefab del cono de hielo")]
+    [Header("Prefab del hielo")]
     public GameObject iceBookPrefab;
 
-    [Header("Stats")]
-    public float damagePerSecond = 3f;
+    [Header("Olas de hielo")]
+    public int shardsPerWave = 5;
+    public float shardSpacing = 0.5f;
+    public float iceOffset = 0.7f;
+    public float fireCooldown = 0.3f;
+
+    [Header("Recoil")]
+    public float recoilForce = 4f;
+
+    [Header("Origen del hielo")]
+    public Transform iceOrigin;
+
+    [Header("Config de congelación")]
     public float freezeDuration = 2f;
-    public float recoilForce = 5f;
-
-    [Header("Origen del disparo")]
-    [Tooltip("Punto desde donde sale el cono. Si es nulo, se usa la posición del jugador.")]
-    public Transform fireOrigin;
-
-    [Tooltip("Distancia hacia adelante desde el origen para colocar el cono.")]
-    public float fireOffset = 0.7f;
+    public float tickInterval = 0.2f;
+    public float shardLifeTime = 1.5f;
+    public GameObject freezeVfxPrefab;
 
     private PlayerController player;
     private Rigidbody2D rb;
-
-    private GameObject currentCone;
-    private IceBookHitbox currentHitbox;
     private Camera cam;
+    private float fireTimer = 0f;
 
     private void Awake()
     {
@@ -31,29 +36,20 @@ public class IceBookController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
 
-        if (fireOrigin == null)
-            fireOrigin = transform;
-
-        if (cam == null)
-        {
-            Debug.LogWarning("[IceBook] No hay cámara con tag MainCamera. El apuntado al mouse puede fallar.");
-        }
+        if (iceOrigin == null)
+            iceOrigin = transform;
     }
 
     private void Update()
     {
-        if (!CanCast())
-        {
-            StopCone();
-            return;
-        }
+        fireTimer -= Time.deltaTime;
 
-        bool pressing = Input.GetMouseButton(0); // click izquierdo
-        if (!pressing)
-        {
-            StopCone();
+        if (!CanCast())
             return;
-        }
+
+        bool pressing = Input.GetMouseButton(0);
+        if (!pressing)
+            return;
 
         if (cam == null)
         {
@@ -64,20 +60,19 @@ public class IceBookController : MonoBehaviour
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
-        Vector3 origin = fireOrigin.position;
+        Vector3 origin = iceOrigin.position;
         Vector2 dir = (mouseWorld - origin);
         if (dir.sqrMagnitude < 0.0001f)
             dir = Vector2.right;
         else
             dir.Normalize();
 
-        if (currentCone == null)
+        if (fireTimer <= 0f)
         {
-            SpawnCone(origin, dir);
+            SpawnIceWave(origin, dir);
+            ApplyRecoil(dir);
+            fireTimer = fireCooldown;
         }
-
-        AimCone(origin, dir);
-        ApplyRecoil(dir);
     }
 
     private bool CanCast()
@@ -90,40 +85,34 @@ public class IceBookController : MonoBehaviour
             player.stateMachine.CurrentState != player.KnockbackState;
     }
 
-    private void SpawnCone(Vector3 origin, Vector2 dir)
+    private void SpawnIceWave(Vector3 origin, Vector2 dir)
     {
         if (iceBookPrefab == null) return;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Vector3 pos = origin + (Vector3)(dir * fireOffset);
 
-        currentCone = Instantiate(
-            iceBookPrefab,
-            pos,
-            Quaternion.AngleAxis(angle, Vector3.forward)
-        );
+        for (int i = 0; i < shardsPerWave; i++)
+        {
+            float dist = iceOffset + shardSpacing * i;
+            Vector3 pos = origin + (Vector3)(dir * dist);
 
-        currentHitbox = currentCone.GetComponent<IceBookHitbox>();
-        if (currentHitbox == null)
-            currentHitbox = currentCone.AddComponent<IceBookHitbox>();
+            GameObject shard = Instantiate(
+                iceBookPrefab,
+                pos,
+                Quaternion.AngleAxis(angle, Vector3.forward)
+            );
 
-        currentHitbox.damagePerSecond = damagePerSecond;
-        currentHitbox.freezeDuration = freezeDuration;
-        currentHitbox.SetDirection(dir);
-    }
+            var hitbox = shard.GetComponent<IceBookHitbox>();
+            if (hitbox == null)
+                hitbox = shard.AddComponent<IceBookHitbox>();
 
-    private void AimCone(Vector3 origin, Vector2 dir)
-    {
-        if (currentCone == null) return;
+            hitbox.freezeDuration = freezeDuration;
+            hitbox.tickInterval = tickInterval;
+            hitbox.lifeTime = shardLifeTime;
+            hitbox.freezeVfxPrefab = freezeVfxPrefab;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Vector3 pos = origin + (Vector3)(dir * fireOffset);
-
-        currentCone.transform.position = pos;
-        currentCone.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        if (currentHitbox != null)
-            currentHitbox.SetDirection(dir);
+            hitbox.SetDirection(dir);
+        }
     }
 
     private void ApplyRecoil(Vector2 dir)
@@ -131,21 +120,6 @@ public class IceBookController : MonoBehaviour
         if (rb == null) return;
 
         Vector2 recoilDir = -dir.normalized;
-        rb.AddForce(recoilDir * recoilForce * Time.deltaTime, ForceMode2D.Force);
-    }
-
-    private void StopCone()
-    {
-        if (currentCone != null)
-        {
-            Destroy(currentCone);
-            currentCone = null;
-            currentHitbox = null;
-        }
-    }
-
-    private void OnDisable()
-    {
-        StopCone();
+        rb.AddForce(recoilDir * recoilForce, ForceMode2D.Impulse);
     }
 }

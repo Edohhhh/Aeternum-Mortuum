@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 415518628754211213}
   - component: {fileID: 122822238507599764}
   - component: {fileID: 29887440817804175}
+  - component: {fileID: 4885130986288211052}
   m_Layer: 0
   m_Name: FireBookCone
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,6 +139,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond: 2
-  tickInterval: 0.2
+  tickInterval: 1
   burnDamagePerSecond: 2
-  burnDuration: 3
+  burnDuration: 1
+  lifeTime: 1.5
+--- !u!114 &4885130986288211052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214315993427655892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020002d8bbb77524780929314ae8b210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireVFXModel: {fileID: 3187335676342716918, guid: dc88d07bbb1564b5e957c96555c1bbde, type: 3}
+  localPosition: {x: 0, y: 0, z: 0}
+  localRotation: {x: 0, y: 0, z: 0}
+  localScale: {x: 1, y: 1, z: 1}
+  sortingLayer: Effects
+  sortingOrder: 15

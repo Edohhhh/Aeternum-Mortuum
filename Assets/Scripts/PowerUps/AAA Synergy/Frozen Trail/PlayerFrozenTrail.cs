@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class PlayerFrozenTrail : MonoBehaviour
@@ -7,12 +7,16 @@ public class PlayerFrozenTrail : MonoBehaviour
     [Tooltip("Porcentaje de slow (0.2 = 20%)")]
     public float slowPercent = 0.2f;
 
-    [Tooltip("Duraci�n del slow en segundos")]
+    [Tooltip("Duración del slow en segundos")]
     public float slowDuration = 2f;
+
+    [Header("Partículas de hielo")]
+    [Tooltip("Prefab de partículas que se aplica en los enemigos ralentizados")]
+    public GameObject slowVfxPrefab;
 
     [Header("Charco")]
     [SerializeField]
-    [Tooltip("Cu�nto dura este charco de hielo en el mundo")]
+    [Tooltip("Cuánto dura este charco de hielo en el mundo")]
     private float lifetime = 3f;
 
     private void Awake()
@@ -30,11 +34,11 @@ public class PlayerFrozenTrail : MonoBehaviour
     {
         if (!other.CompareTag("Enemy")) return;
 
-        // Encontrar o agregar el componente que maneja el slow
         var slowComp = other.GetComponent<FrozenTrailOnEnemy>();
         if (slowComp == null)
             slowComp = other.gameObject.AddComponent<FrozenTrailOnEnemy>();
 
-        slowComp.ApplySlow(slowPercent, slowDuration);
+        // ⬇️ Ahora pasa también el prefab de partículas
+        slowComp.ApplySlow(slowPercent, slowDuration, slowVfxPrefab);
     }
 }

@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625b664f24e6b21459fb306589bb3f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDamagePerSecond: 2
-  burnDuration: 5
+  burnDamagePerSecond: 3
+  burnDuration: 2
+  burnVfxPrefab: {fileID: 3136861855704684453, guid: 71abcaebec5c54a6a81e56e4120af493, type: 3}
   lifetime: 1

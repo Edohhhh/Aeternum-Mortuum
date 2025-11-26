@@ -16,6 +16,12 @@ MonoBehaviour:
   isPermanent: 0
   effect: {fileID: 0}
   iceBookPrefab: {fileID: 3214315993427655892, guid: 788b4b76e95171946b73a4eba6d0f6aa, type: 3}
-  damagePerSecond: 3
+  recoilForce: 0.5
+  shardsPerWave: 2
+  shardSpacing: 1
+  iceOffset: 0.7
+  fireCooldown: 0.8
   freezeDuration: 2
-  recoilForce: 5
+  tickInterval: 0.2
+  shardLifeTime: 1.5
+  freezeVfxPrefab: {fileID: 5154085664488990372, guid: 7653f474ebd414782a71ea8ede8db4dc, type: 3}

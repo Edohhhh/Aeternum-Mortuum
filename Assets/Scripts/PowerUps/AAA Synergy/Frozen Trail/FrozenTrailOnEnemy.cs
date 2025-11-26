@@ -10,6 +10,10 @@ public class FrozenTrailOnEnemy : MonoBehaviour
     private float originalSpeed;
     private Coroutine slowRoutine;
 
+    // VFX
+    private GameObject slowVfxPrefab;
+    private GameObject vfxInstance;
+
     private void Awake()
     {
         controller = GetComponent<MonoBehaviour>();
@@ -30,9 +34,19 @@ public class FrozenTrailOnEnemy : MonoBehaviour
         originalSpeed = (float)maxSpeedField.GetValue(controller);
     }
 
+    // Versión vieja (por compatibilidad), sin VFX explícito
     public void ApplySlow(float slowPercent, float duration)
     {
+        ApplySlow(slowPercent, duration, null);
+    }
+
+    // Versión nueva: con VFX mientras dure el slow
+    public void ApplySlow(float slowPercent, float duration, GameObject vfxPrefab)
+    {
         if (controller == null || maxSpeedField == null) return;
+
+        if (vfxPrefab != null)
+            slowVfxPrefab = vfxPrefab;
 
         // Si ya hay un slow corriendo, lo reiniciamos
         if (slowRoutine != null)
@@ -43,12 +57,23 @@ public class FrozenTrailOnEnemy : MonoBehaviour
 
     private IEnumerator SlowRoutine(float slowPercent, float duration)
     {
-        // Por seguridad, siempre volvemos al original antes de recalcular
+        // Siempre volver al original antes de recalcular
         maxSpeedField.SetValue(controller, originalSpeed);
 
         float slowedSpeed = originalSpeed * (1f - Mathf.Clamp01(slowPercent));
         maxSpeedField.SetValue(controller, slowedSpeed);
-        // Debug.Log($"[FrozenTrail] {gameObject.name} slowed to {slowedSpeed}");
+
+        // Crear VFX solo si tenemos prefab y todavía no hay VFX
+        if (slowVfxPrefab != null && vfxInstance == null)
+        {
+            vfxInstance = Instantiate(
+                slowVfxPrefab,
+                transform.position,
+                Quaternion.identity,
+                transform
+            );
+            vfxInstance.transform.localPosition = Vector3.zero;
+        }
 
         float elapsed = 0f;
         while (elapsed < duration)
@@ -59,6 +84,30 @@ public class FrozenTrailOnEnemy : MonoBehaviour
 
         // Restaurar velocidad original
         maxSpeedField.SetValue(controller, originalSpeed);
+
+        // Destruir VFX
+        if (vfxInstance != null)
+        {
+            Destroy(vfxInstance);
+            vfxInstance = null;
+        }
+
+        slowRoutine = null;
+    }
+
+    private void OnDisable()
+    {
+        // Seguridad extra si el enemigo se destruye estando ralentizado
+        if (controller != null && maxSpeedField != null)
+        {
+            maxSpeedField.SetValue(controller, originalSpeed);
+        }
+
+        if (vfxInstance != null)
+        {
+            Destroy(vfxInstance);
+            vfxInstance = null;
+        }
 
         slowRoutine = null;
     }

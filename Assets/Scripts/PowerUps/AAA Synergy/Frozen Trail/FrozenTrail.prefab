@@ -149,4 +149,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowPercent: 0.2
   slowDuration: 2
+  slowVfxPrefab: {fileID: 5154085664488990372, guid: 7653f474ebd414782a71ea8ede8db4dc, type: 3}
   lifetime: 3

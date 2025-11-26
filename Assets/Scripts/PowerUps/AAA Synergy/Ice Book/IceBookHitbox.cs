@@ -5,16 +5,19 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 public class IceBookHitbox : MonoBehaviour
 {
-    [Header("Daño")]
-    public float damagePerSecond = 3f;
+    [Header("Congelación")]
+    public float freezeDuration = 2f;
+    public GameObject freezeVfxPrefab;
+
+    [Header("Tick de aplicación")]
+    [Tooltip("Cada cuántos segundos se vuelve a intentar aplicar congelación mientras el enemigo esté dentro.")]
     public float tickInterval = 0.2f;
 
-    [Header("Freeze")]
-    [Tooltip("Duración del congelamiento en segundos.")]
-    public float freezeDuration = 2f;
+    [Header("Vida del hielo")]
+    public float lifeTime = 1.5f;
 
-    private readonly HashSet<EnemyHealth> enemiesInside = new();
-    private Vector2 currentDirection = Vector2.right;
+    private HashSet<EnemyHealth> enemies = new();
+    private Vector2 direction = Vector2.right;
 
     private void Awake()
     {
@@ -24,61 +27,62 @@ public class IceBookHitbox : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(DamageLoop());
+        StartCoroutine(FreezeLoop());
+
+        if (lifeTime > 0f)
+            StartCoroutine(LifeRoutine());
     }
 
     private void OnDisable()
     {
         StopAllCoroutines();
-        enemiesInside.Clear();
+        enemies.Clear();
     }
 
     public void SetDirection(Vector2 dir)
     {
-        if (dir.sqrMagnitude > 0.0001f)
-            currentDirection = dir.normalized;
+        if (dir.sqrMagnitude > 0.01f)
+            direction = dir.normalized;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
 
-        var enemy = other.GetComponent<EnemyHealth>();
-        if (enemy != null)
-            enemiesInside.Add(enemy);
+        var hp = other.GetComponent<EnemyHealth>();
+        if (hp != null) enemies.Add(hp);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
 
-        var enemy = other.GetComponent<EnemyHealth>();
-        if (enemy != null)
-            enemiesInside.Remove(enemy);
+        var hp = other.GetComponent<EnemyHealth>();
+        if (hp != null) enemies.Remove(hp);
     }
 
-    private IEnumerator DamageLoop()
+    private IEnumerator FreezeLoop()
     {
         while (true)
         {
-            int damage = Mathf.CeilToInt(damagePerSecond * tickInterval);
-
-            foreach (var enemy in enemiesInside)
+            foreach (var enemy in enemies)
             {
                 if (enemy == null) continue;
 
-                // Daño directo por estar en el cono de hielo
-                enemy.TakeDamage(damage, currentDirection, 0f);
-
-                // Congelar o refrescar congelación
                 var freeze = enemy.GetComponent<IceBookFreezeOnEnemy>();
                 if (freeze == null)
                     freeze = enemy.gameObject.AddComponent<IceBookFreezeOnEnemy>();
 
-                freeze.StartFreeze(freezeDuration);
+                freeze.StartFreeze(freezeDuration, freezeVfxPrefab);
             }
 
             yield return new WaitForSeconds(tickInterval);
         }
+    }
+
+    private IEnumerator LifeRoutine()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
     }
 }

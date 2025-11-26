@@ -5,65 +5,126 @@ using System.Reflection;
 [DisallowMultipleComponent]
 public class IceBookFreezeOnEnemy : MonoBehaviour
 {
-    private MonoBehaviour controllerWithSpeed;
-    private FieldInfo maxSpeedField;
-    private float originalSpeed;
+    [Header("Freeze")]
+    public float freezeDuration = 2f;
+
+    [Header("VFX")]
+    public GameObject iceEffectPrefab;
+
     private Coroutine freezeRoutine;
 
-    private void Awake()
+    // Cache del controller y su campo maxSpeed
+    private MonoBehaviour movementController;
+    private FieldInfo maxSpeedField;
+
+    private float originalSpeed;
+    private bool isFrozen = false;
+    private GameObject vfxInstance;
+
+    public void StartFreeze(float duration, GameObject vfxPrefab)
     {
-        // Buscar algún componente con campo 'maxSpeed' float (igual que tus otros slows)
-        var comps = GetComponents<MonoBehaviour>();
-        foreach (var c in comps)
+        freezeDuration = duration;
+        iceEffectPrefab = vfxPrefab;
+
+        if (!TryResolveMovementController())
+            return;
+
+        // Si NO estaba congelado aún, congelar ahora
+        if (!isFrozen)
         {
-            if (c == null) continue;
+            originalSpeed = (float)maxSpeedField.GetValue(movementController);
+            maxSpeedField.SetValue(movementController, 0f);
+            isFrozen = true;
 
-            var t = c.GetType();
-            var f = t.GetField("maxSpeed",
-                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-
-            if (f != null && f.FieldType == typeof(float))
+            // Crear VFX
+            if (iceEffectPrefab != null && vfxInstance == null)
             {
-                controllerWithSpeed = c;
-                maxSpeedField = f;
-                originalSpeed = (float)maxSpeedField.GetValue(controllerWithSpeed);
-                break;
+                vfxInstance = Instantiate(
+                    iceEffectPrefab,
+                    transform.position,
+                    Quaternion.identity,
+                    transform
+                );
             }
         }
 
-        if (controllerWithSpeed == null || maxSpeedField == null)
-        {
-            Debug.LogWarning($"[IceBook] {gameObject.name} no tiene campo 'maxSpeed' accesible para congelar.");
-        }
-    }
-
-    public void StartFreeze(float duration)
-    {
-        if (controllerWithSpeed == null || maxSpeedField == null) return;
-
+        // Reiniciar timer de congelación (refrescar duración)
         if (freezeRoutine != null)
             StopCoroutine(freezeRoutine);
 
-        freezeRoutine = StartCoroutine(FreezeRoutine(duration));
+        freezeRoutine = StartCoroutine(FreezeTimer());
     }
 
-    private IEnumerator FreezeRoutine(float duration)
+    private bool TryResolveMovementController()
     {
-        // Reset al valor original antes de congelar (por si había otros efectos)
-        maxSpeedField.SetValue(controllerWithSpeed, originalSpeed);
+        if (movementController != null && maxSpeedField != null)
+            return true;
 
-        // Congelar: velocidad = 0
-        maxSpeedField.SetValue(controllerWithSpeed, 0f);
+        var controller = GetComponent<MonoBehaviour>();
+        if (controller == null)
+            return false;
 
-        float elapsed = 0f;
-        while (elapsed < duration)
+        var field = controller.GetType().GetField(
+            "maxSpeed",
+            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance
+        );
+
+        if (field == null || field.FieldType != typeof(float))
         {
-            elapsed += Time.deltaTime;
+            Debug.LogWarning($"[IceBook] {name} no tiene 'maxSpeed' accesible por reflexión.");
+            return false;
+        }
+
+        movementController = controller;
+        maxSpeedField = field;
+        return true;
+    }
+
+    private IEnumerator FreezeTimer()
+    {
+        float t = 0f;
+        while (t < freezeDuration)
+        {
+            t += Time.deltaTime;
             yield return null;
         }
 
-        // Restaurar velocidad original
-        maxSpeedField.SetValue(controllerWithSpeed, originalSpeed);
+        Unfreeze();
+    }
+
+    private void Unfreeze()
+    {
+        if (!isFrozen) return;
+
+        if (movementController != null && maxSpeedField != null)
+        {
+            maxSpeedField.SetValue(movementController, originalSpeed);
+        }
+
+        if (vfxInstance != null)
+        {
+            Destroy(vfxInstance);
+            vfxInstance = null;
+        }
+
+        isFrozen = false;
         freezeRoutine = null;
+    }
+
+    private void OnDisable()
+    {
+        // Por si el enemigo se destruye/desactiva congelado, restaurar
+        if (isFrozen && movementController != null && maxSpeedField != null)
+        {
+            maxSpeedField.SetValue(movementController, originalSpeed);
+        }
+
+        if (vfxInstance != null)
+        {
+            Destroy(vfxInstance);
+            vfxInstance = null;
+        }
+
+        isFrozen = false;
     }
 }

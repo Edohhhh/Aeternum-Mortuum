@@ -3579,7 +3579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3636,6 +3636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 776431812}
   - component: {fileID: 776431811}
+  - component: {fileID: 776431813}
   m_Layer: 0
   m_Name: ResetGame
   m_TagString: Untagged
@@ -3671,6 +3672,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &776431813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776431810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7da22396cc041ac968a492a3c0ce8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &845693480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,7 +4324,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1660262265}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: fe23f4309b78d44829cbd9c9a4dc2405, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4332,6 +4345,14 @@ PlayableDirector:
   - key: {fileID: 1673959103955171866, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
     value: {fileID: 449602524}
   - key: {fileID: -5684578885689198408, guid: bcd18bd54b5c442008c7fa243b9e41a2, type: 2}
+    value: {fileID: 1893132225}
+  - key: {fileID: 1095166421075309302, guid: fe23f4309b78d44829cbd9c9a4dc2405, type: 2}
+    value: {fileID: 557138809}
+  - key: {fileID: -7148288219809920841, guid: fe23f4309b78d44829cbd9c9a4dc2405, type: 2}
+    value: {fileID: 464230744}
+  - key: {fileID: -2654470337565385727, guid: fe23f4309b78d44829cbd9c9a4dc2405, type: 2}
+    value: {fileID: 449602524}
+  - key: {fileID: 3959143436124258080, guid: fe23f4309b78d44829cbd9c9a4dc2405, type: 2}
     value: {fileID: 1893132225}
   m_ExposedReferences:
     m_References: []

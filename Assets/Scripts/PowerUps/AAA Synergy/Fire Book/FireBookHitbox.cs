@@ -1,15 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider2D))]
 public class FireBookHitbox : MonoBehaviour
 {
+    [Header("Daño directo")]
     public float damagePerSecond = 4f;
     public float tickInterval = 0.2f;
 
+    [Header("Quemadura")]
     public float burnDamagePerSecond = 2f;
     public float burnDuration = 5f;
+
+    [Header("Vida de la llama")]
+    public float lifeTime = 1.5f;
 
     private HashSet<EnemyHealth> enemies = new();
     private Vector2 direction = Vector2.right;
@@ -23,6 +28,9 @@ public class FireBookHitbox : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(DamageLoop());
+
+        if (lifeTime > 0f)
+            StartCoroutine(LifeRoutine());
     }
 
     private void OnDisable()
@@ -74,5 +82,11 @@ public class FireBookHitbox : MonoBehaviour
 
             yield return new WaitForSeconds(tickInterval);
         }
+    }
+
+    private IEnumerator LifeRoutine()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
     }
 }

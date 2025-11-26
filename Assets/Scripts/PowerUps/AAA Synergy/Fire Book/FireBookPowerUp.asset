@@ -19,4 +19,8 @@ MonoBehaviour:
   damagePerSecond: 4
   burnDamagePerSecond: 2
   burnDuration: 5
-  recoilForce: 5
+  recoilForce: 0.5
+  flamesPerWave: 5
+  flameSpacing: 0.5
+  fireOffset: 0.7
+  fireCooldown: 0.3

@@ -1,23 +1,26 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class PlayerLavaTrail : MonoBehaviour
 {
     [Header("Quemadura")]
-    [Tooltip("Da�o por segundo que aplica la quemadura")]
+    [Tooltip("Daño por segundo que aplica la quemadura")]
     public float burnDamagePerSecond = 2f;
 
-    [Tooltip("Duraci�n de la quemadura en segundos")]
+    [Tooltip("Duración de la quemadura en segundos")]
     public float burnDuration = 5f;
+
+    [Header("Partículas de quemadura")]
+    [Tooltip("Prefab de partículas que se mostrará en los enemigos quemados")]
+    public GameObject burnVfxPrefab;
 
     [Header("Charco")]
     [SerializeField]
-    [Tooltip("Cu�nto dura este charco de lava en el mundo")]
+    [Tooltip("Cuánto dura este charco de lava en el mundo")]
     private float lifetime = 3f;
 
     private void Awake()
     {
-        // Aseguramos que el collider sea trigger
         var col = GetComponent<Collider2D>();
         if (col != null) col.isTrigger = true;
     }
@@ -34,12 +37,11 @@ public class PlayerLavaTrail : MonoBehaviour
         var health = other.GetComponent<EnemyHealth>();
         if (health == null) return;
 
-        // Buscar o agregar el componente de quemadura en el enemigo
         var burn = other.GetComponent<LavaBurnOnEnemy>();
         if (burn == null)
             burn = other.gameObject.AddComponent<LavaBurnOnEnemy>();
 
-        // Iniciar / refrescar quemadura
-        burn.StartBurn(burnDamagePerSecond, burnDuration);
+        // 🔥 Ahora le pasamos también el prefab de partículas
+        burn.StartBurn(burnDamagePerSecond, burnDuration, burnVfxPrefab);
     }
 }

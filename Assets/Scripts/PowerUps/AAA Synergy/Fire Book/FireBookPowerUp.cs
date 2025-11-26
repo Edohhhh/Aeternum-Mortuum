@@ -4,7 +4,7 @@ using Object = UnityEngine.Object;
 [CreateAssetMenu(fileName = "FireBookPowerUp", menuName = "PowerUps/Fire Book")]
 public class FireBookPowerUp : PowerUp
 {
-    [Header("Prefab del cono de fuego")]
+    [Header("Prefab de la llama")]
     public GameObject fireBookPrefab;
 
     [Header("Daño directo")]
@@ -15,21 +15,33 @@ public class FireBookPowerUp : PowerUp
     public float burnDuration = 5f;
 
     [Header("Recoil")]
-    public float recoilForce = 5f;
+    public float recoilForce = 4f;
+
+    [Header("Olas de fuego")]
+    public int flamesPerWave = 5;
+    public float flameSpacing = 0.5f;
+    public float fireOffset = 0.7f;
+    public float fireCooldown = 0.3f;
 
     public override void Apply(PlayerController player)
     {
-        if (player == null) return;
+        if (!player) return;
 
         var controller = player.GetComponent<FireBookController>();
-        if (controller == null)
+        if (!controller)
             controller = player.gameObject.AddComponent<FireBookController>();
 
         controller.fireBookPrefab = fireBookPrefab;
+        controller.recoilForce = recoilForce;
+
+        controller.flamesPerWave = flamesPerWave;
+        controller.flameSpacing = flameSpacing;
+        controller.fireOffset = fireOffset;
+        controller.fireCooldown = fireCooldown;
+
         controller.damagePerSecond = damagePerSecond;
         controller.burnDamagePerSecond = burnDamagePerSecond;
         controller.burnDuration = burnDuration;
-        controller.recoilForce = recoilForce;
 
         controller.enabled = true;
     }
@@ -38,6 +50,6 @@ public class FireBookPowerUp : PowerUp
     {
         var controller = player.GetComponent<FireBookController>();
         if (controller != null)
-            controller.enabled = false;
+            Object.Destroy(controller);
     }
 }
