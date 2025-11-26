@@ -194,7 +194,7 @@ MonoBehaviour:
   maxHealth: 8
   currentHealth: 0.5
   impactEffectPrefab: {fileID: 0}
-  hitParticlePrefab: {fileID: 2431281845710396424, guid: fa282b3efd0494b0dbcd18668ca44750, type: 3}
+  hitParticlePrefab: {fileID: 0}
   damageNumberPrefab: {fileID: 784950756064908022, guid: cb52f7cb821b7499cbf468b37d6727fa, type: 3}
 --- !u!114 &7357172924195196955
 MonoBehaviour:

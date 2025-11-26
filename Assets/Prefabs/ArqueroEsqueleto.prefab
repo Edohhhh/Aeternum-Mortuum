@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4340853405562444708}
   - component: {fileID: 2779147776421393633}
   - component: {fileID: 5043765085992283071}
+  - component: {fileID: -1887496554452935895}
   m_Layer: 6
   m_Name: ArqueroEsqueleto
   m_TagString: Enemy
@@ -235,7 +236,7 @@ MonoBehaviour:
   maxHealth: 8
   currentHealth: 8
   impactEffectPrefab: {fileID: 0}
-  hitParticlePrefab: {fileID: 2431281845710396424, guid: fa282b3efd0494b0dbcd18668ca44750, type: 3}
+  hitParticlePrefab: {fileID: 0}
   damageNumberPrefab: {fileID: 784950756064908022, guid: cb52f7cb821b7499cbf468b37d6727fa, type: 3}
 --- !u!114 &2779147776421393633
 MonoBehaviour:
@@ -268,3 +269,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e9345ae54dfbb4aaf1643dcd6bc5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1887496554452935895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460429868912593326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab65f4e62f11844cb7fc1a8be4fd690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  notificarRuleta: 1

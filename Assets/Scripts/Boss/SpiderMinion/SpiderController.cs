@@ -35,6 +35,12 @@ public class SpiderController : MonoBehaviour, IEnemyDataProvider
     {
         EnemyManager.Instance.RegisterEnemy();
 
+        if (player == null)
+        {
+            var p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null) player = p.transform;
+        }
+
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<EnemyHealth>();

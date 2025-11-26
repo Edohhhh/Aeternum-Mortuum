@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 5911680744148976140}
   - component: {fileID: 4230497784573851098}
   - component: {fileID: 164245650215911219}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Topo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +212,8 @@ MonoBehaviour:
   projectileSpeedMultPhase1: 1
   projectileSpeedMultPhase2: 1.25
   projectileSpeedMultPhase3: 1.5
+  fleeSpeed: 2.8
+  fleeDuration: 1.25
   playerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -242,6 +244,8 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 20
   impactEffectPrefab: {fileID: 0}
+  hitParticlePrefab: {fileID: 0}
+  damageNumberPrefab: {fileID: 0}
 --- !u!95 &164245650215911219
 Animator:
   serializedVersion: 7

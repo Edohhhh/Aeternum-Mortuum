@@ -4895,6 +4895,7 @@ GameObject:
   - component: {fileID: 893577819}
   - component: {fileID: 893577818}
   - component: {fileID: 893577817}
+  - component: {fileID: 893577822}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -5044,6 +5045,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893577815}
   m_CullTransparentMesh: 1
+--- !u!114 &893577822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893577815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23443f5f9479545ca910926d63b474d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &922551804
 GameObject:
   m_ObjectHideFlags: 0
@@ -13407,6 +13420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941828957}
   - component: {fileID: 1941828956}
+  - component: {fileID: 1941828958}
   m_Layer: 0
   m_Name: WheelController
   m_TagString: Untagged
@@ -13452,6 +13466,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941828958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6703c65e4adb870469c07380490cc566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {fileID: 1941828956}
 --- !u!1 &1942809790
 GameObject:
   m_ObjectHideFlags: 0

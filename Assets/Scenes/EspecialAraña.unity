@@ -2844,6 +2844,7 @@ GameObject:
   - component: {fileID: 333288952}
   - component: {fileID: 333288951}
   - component: {fileID: 333288950}
+  - component: {fileID: 333288955}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -2993,6 +2994,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333288948}
   m_CullTransparentMesh: 1
+--- !u!114 &333288955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333288948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23443f5f9479545ca910926d63b474d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333799522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5777,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.63949585, y: 0.39202213}
+  m_Offset: {x: -3.6789703, y: 0.39202213}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5774,7 +5787,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2789917, y: 11.173349}
+  m_Size: {x: 8.357941, y: 11.173349}
   m_EdgeRadius: 0
 --- !u!4 &671914299
 Transform:

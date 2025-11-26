@@ -9910,6 +9910,7 @@ GameObject:
   - component: {fileID: 1230052770}
   - component: {fileID: 1230052769}
   - component: {fileID: 1230052768}
+  - component: {fileID: 1230052773}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -10059,6 +10060,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230052766}
   m_CullTransparentMesh: 1
+--- !u!114 &1230052773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230052766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23443f5f9479545ca910926d63b474d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245388821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11434,6 +11447,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1415527648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415527650}
+  - component: {fileID: 1415527649}
+  m_Layer: 0
+  m_Name: NoPerk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1415527649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415527648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3970f9f3bde0d47941651639ed5e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perksToSuppress:
+  - {fileID: 11400000, guid: c86b4ba0e5671c744b02b05d9e18fe87, type: 2}
+--- !u!4 &1415527650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415527648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6584392, y: 4.5040784, z: -0.11074545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439291886
 GameObject:
   m_ObjectHideFlags: 0
@@ -12887,8 +12946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1715398193}
-  damageVignette: {fileID: 1123965510}
-  healVignette: {fileID: 1756608314}
+  damageVignette: {fileID: 1756608314}
+  healVignette: {fileID: 1123965510}
   damageFlashAlpha: 0.65
   damageFlashDuration: 0.25
   damageFadeSpeed: 5
@@ -17495,3 +17554,4 @@ SceneRoots:
   - {fileID: 1515572453}
   - {fileID: 862762114}
   - {fileID: 672634561}
+  - {fileID: 1415527650}

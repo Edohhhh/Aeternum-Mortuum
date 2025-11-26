@@ -760,7 +760,7 @@ MonoBehaviour:
   iconSortingOrder: 50
   isImportantNPC: 1
   importantIcon: {fileID: 21300000, guid: 6dd03d097a8abef4aa2179f902693919, type: 3}
-  importantIconOffsetY: -1.3
+  importantIconOffsetY: 1
   maxDialogueDistance: 3.5
 --- !u!212 &83027759
 SpriteRenderer:
@@ -2561,6 +2561,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256984580}
   m_CullTransparentMesh: 1
+--- !u!1 &265189010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265189012}
+  - component: {fileID: 265189011}
+  m_Layer: 0
+  m_Name: NoPerk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &265189011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265189010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3970f9f3bde0d47941651639ed5e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perksToSuppress:
+  - {fileID: 11400000, guid: c86b4ba0e5671c744b02b05d9e18fe87, type: 2}
+--- !u!4 &265189012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265189010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6584392, y: 4.5040784, z: -0.11074545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266176160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5443924936761860388, guid: c8637d6b7ce7e4ac09fdeddf6e0cb758, type: 3}
@@ -2988,6 +3034,7 @@ GameObject:
   - component: {fileID: 333288952}
   - component: {fileID: 333288951}
   - component: {fileID: 333288950}
+  - component: {fileID: 333288955}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -3137,6 +3184,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333288948}
   m_CullTransparentMesh: 1
+--- !u!114 &333288955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333288948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23443f5f9479545ca910926d63b474d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357176832
 GameObject:
   m_ObjectHideFlags: 0
@@ -23991,3 +24050,4 @@ SceneRoots:
   - {fileID: 251511714}
   - {fileID: 255432740}
   - {fileID: 277580760}
+  - {fileID: 265189012}
