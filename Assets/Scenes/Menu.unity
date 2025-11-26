@@ -461,11 +461,13 @@ MonoBehaviour:
     roomName: bar
   - id: 13
     roomName: BossMimico
+  - id: 14
+    roomName: "Coliseo Ara\xF1a"
   easyCount: 1
   intermediateCount: 1
   mediumCount: 5
   intermediate2Count: 1
-  hardCount: 4
+  hardCount: 5
   generatedRun: []
 --- !u!4 &195921830
 Transform:

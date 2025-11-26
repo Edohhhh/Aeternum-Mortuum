@@ -59,6 +59,8 @@ public class SpiderController : MonoBehaviour, IEnemyDataProvider
 
         follow.AddTransition(EnemyInputs.LostPlayer, idle);
         follow.AddTransition(EnemyInputs.Die, death);
+
+    
     }
 
     private void Update()

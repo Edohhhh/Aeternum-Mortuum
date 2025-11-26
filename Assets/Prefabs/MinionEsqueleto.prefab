@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 12
   currentHealth: 2
-  impactEffectPrefab: {fileID: 8469386765634269291, guid: fe7c86aa95b57d0459e01e17175ee2b7, type: 3}
+  impactEffectPrefab: {fileID: 0}
   hitParticlePrefab: {fileID: 2431281845710396424, guid: fa282b3efd0494b0dbcd18668ca44750, type: 3}
   damageNumberPrefab: {fileID: 784950756064908022, guid: cb52f7cb821b7499cbf468b37d6727fa, type: 3}
 --- !u!95 &-5821440629741557436

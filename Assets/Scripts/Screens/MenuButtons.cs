@@ -5,6 +5,8 @@ public class Buttons : MonoBehaviour
 {
     public void PlayGame()
     {
+        Time.timeScale = 1f;
+
         // Asegurarnos de que exista el RoomRandomizer
         if (RoomRandomizer.Instance == null)
         {

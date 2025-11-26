@@ -182,7 +182,7 @@ MonoBehaviour:
   player: {fileID: 0}
   detectionRadius: 15
   maxSpeed: 5
-  smallWebPrefab: {fileID: 1093883677944505973, guid: 5505fd354add80f41a03d668d113238c, type: 3}
+  smallWebPrefab: {fileID: 9072050454493399845, guid: 95ffb2599549bf9479f23e6d4678a247, type: 3}
   followDelay: 0.1
   idleDuration: 1
   arriveThreshold: 0.1

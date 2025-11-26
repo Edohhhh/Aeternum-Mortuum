@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossTopo.unity
     guid: aef1bc37dd2cd45c79d5fd51a0143c86
+  - enabled: 1
+    path: "Assets/Scenes/Coliseo Ara\xF1a.unity"
+    guid: 749009d91e705a9478c8075fea1ddf3d
   - enabled: 0
     path: Assets/Coliseo Esqueleto bombas.unity
     guid: da522cc6a1a93cc429fc0cf9aa8b3f87
@@ -57,7 +60,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BossDiablo.unity
     guid: 48da5c29d36356546916fe435ea27ed9
   - enabled: 1
-    path: Assets/Coliseo.unity
+    path: Assets/Scenes/Coliseo.unity
     guid: 6ba70f79087901b4cafd0e4ea8c98e33
   - enabled: 1
     path: Assets/Scenes/LoopSlime1.unity
