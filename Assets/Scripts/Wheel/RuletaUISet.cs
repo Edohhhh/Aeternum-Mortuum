@@ -21,6 +21,16 @@ public class RuletaUISet : MonoBehaviour
 
     public void Inicializar(PickerWheel wheel, WheelSelector selector)
     {
+        // ✅ 1. NUEVO: Limpiar botones antiguos antes de crear los nuevos
+        // Esto evita que se sobrepongan botones de temas anteriores o duplicados.
+        if (buttonsContainer != null)
+        {
+            foreach (Transform child in buttonsContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
         linkedWheel = wheel;
 
         // CanvasGroup para oscurecer la ruleta
@@ -44,7 +54,7 @@ public class RuletaUISet : MonoBehaviour
                 var obj = Instantiate(theme.spinButtonPrefab, buttonsContainer);
                 spinButton = obj.GetComponent<Button>();
 
-                // ✅ 3. MODIFICADO: Buscar 'TextMeshProUGUI' en lugar de 'Text'
+                // ✅ Buscar 'TextMeshProUGUI' (ajuste que ya tenías)
                 spinButtonText = spinButton.GetComponentInChildren<TextMeshProUGUI>();
             }
 
