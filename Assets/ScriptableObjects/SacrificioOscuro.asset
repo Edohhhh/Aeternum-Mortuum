@@ -17,5 +17,5 @@ MonoBehaviour:
     cambio de perdida de velocidad."
   icon: {fileID: 2462328836089513958, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0.72474015, g: 0, b: 0.8679245, a: 1}
   powerUp: {fileID: 11400000, guid: 897f33a00e89f034291774bbaee95de4, type: 2}

@@ -17,5 +17,5 @@ MonoBehaviour:
     5 segundos)"
   icon: {fileID: -5874140283895155960, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0, g: 0.77781105, b: 1, a: 0}
   powerUp: {fileID: 11400000, guid: 22761d473b034fa409604d3f934eb632, type: 2}

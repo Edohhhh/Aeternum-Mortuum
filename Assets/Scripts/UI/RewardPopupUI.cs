@@ -11,17 +11,26 @@ public class RewardPopupUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rewardName;
     [SerializeField] private TextMeshProUGUI rewardDescription;
 
-    [Header("Configuración")]
+    [Header("Configuraci?n")]
     [SerializeField] private float fadeDuration = 0.3f;
-    [SerializeField] private float autoHideTime = 3f;
+    [SerializeField] private KeyCode closeKey = KeyCode.F;
 
     private Tween fadeTween;
+    private bool isVisible = false;
 
     private void Awake()
     {
-        popupCanvas.alpha = 0;
+        popupCanvas.alpha = 0f;
         popupCanvas.interactable = false;
         popupCanvas.blocksRaycasts = false;
+    }
+
+    private void Update()
+    {
+        if (isVisible && Input.GetKeyDown(closeKey))
+        {
+            Hide();
+        }
     }
 
     public void ShowReward(Sprite sprite, string name, string description)
@@ -32,16 +41,19 @@ public class RewardPopupUI : MonoBehaviour
 
         popupCanvas.interactable = true;
         popupCanvas.blocksRaycasts = true;
+
         fadeTween?.Kill();
         fadeTween = popupCanvas.DOFade(1f, fadeDuration);
 
-        // Ocultar automáticamente después de unos segundos
-        CancelInvoke(nameof(Hide));
-        Invoke(nameof(Hide), autoHideTime);
+        isVisible = true;
     }
 
     public void Hide()
     {
+        if (!isVisible) return;
+
+        isVisible = false;
+
         fadeTween?.Kill();
         fadeTween = popupCanvas.DOFade(0f, fadeDuration)
             .OnComplete(() =>

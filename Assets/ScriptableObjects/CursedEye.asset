@@ -17,5 +17,5 @@ MonoBehaviour:
     es inutil*'
   icon: {fileID: 5762035117728753134, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0.6754231, g: 0, b: 0.754717, a: 1}
   powerUp: {fileID: 11400000, guid: aac8935743a054c8db809f82fec453da, type: 2}

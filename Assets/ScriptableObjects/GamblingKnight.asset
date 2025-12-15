@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Invoca una maquina tragaperras y prueba tu suerte!
   icon: {fileID: -1919273606, guid: 63de7dd5abe2542a089ae9281a6c599a, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 1}
+  vfxStartColor: {r: 1, g: 0.8700229, b: 0, a: 1}
   powerUp: {fileID: 11400000, guid: 51b56e9779a45be4d8600802acbc10a7, type: 2}

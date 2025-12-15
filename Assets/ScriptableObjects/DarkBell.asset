@@ -17,5 +17,5 @@ MonoBehaviour:
     luego se cura. (Activa 1 sola vez por sala)
   icon: {fileID: -2833207525403889250, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0.6745098, g: 0, b: 0.7529412, a: 1}
   powerUp: {fileID: 11400000, guid: de8df62a0107c4c5b97b539e1745dbf7, type: 2}

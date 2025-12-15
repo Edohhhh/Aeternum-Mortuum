@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Atacar a un enemigo aplica congelacion. (Dura 5 segundos)
   icon: {fileID: 7910451321189131583, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0, g: 0.676517, b: 1, a: 1}
   powerUp: {fileID: 11400000, guid: 72adfdfced03aff4c8046f902675e52e, type: 2}

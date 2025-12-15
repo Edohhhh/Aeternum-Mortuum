@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Atacar a un enemigo tiene un 10% de probabilidad de curar medio corazon
   icon: {fileID: 6433230767143609284, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 1, g: 0, b: 0, a: 1}
   powerUp: {fileID: 11400000, guid: 28d359d4c8b56904a92c44831ee66f4f, type: 2}

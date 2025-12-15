@@ -16,5 +16,5 @@ MonoBehaviour:
   description: "Cada combo de jugador crea un camino de espinas que provoca da\xF1o."
   icon: {fileID: -7896028604689211231, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 0.7376066, g: 0, b: 0.8301887, a: 1}
   powerUp: {fileID: 11400000, guid: e68ca7ca3f4864030b1f2cb79659122e, type: 2}

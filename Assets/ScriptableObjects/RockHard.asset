@@ -17,5 +17,5 @@ MonoBehaviour:
     la velocidad en 2 unidades."
   icon: {fileID: -7925918792525977022, guid: 63de7dd5abe2542a089ae9281a6c599a, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 1}
+  vfxStartColor: {r: 1, g: 0.79383534, b: 0, a: 1}
   powerUp: {fileID: 11400000, guid: d72d0d403999c3d4082cf0c1f098622a, type: 2}

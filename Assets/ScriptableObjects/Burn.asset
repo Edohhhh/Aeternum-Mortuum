@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Atacar a un enemigo aplica Quemadura (Dura 5 segundos)
   icon: {fileID: -5864153785757311042, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 1, g: 1, b: 1, a: 0}
+  vfxStartColor: {r: 1, g: 0.60493207, b: 0, a: 1}
   powerUp: {fileID: 11400000, guid: 6b30df873c4f97a4a94020195c632376, type: 2}

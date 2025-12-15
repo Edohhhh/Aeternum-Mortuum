@@ -17,5 +17,5 @@ MonoBehaviour:
     jugador y provoca da\xF1o."
   icon: {fileID: 7511617788268671622, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
-  vfxStartColor: {r: 0.7264151, g: 0.03769135, b: 0.03769135, a: 1}
+  vfxStartColor: {r: 0.6886828, g: 0, b: 0.8490566, a: 1}
   powerUp: {fileID: 11400000, guid: eca52cc6fcef64cc5b24c52170419da3, type: 2}
