@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98845fb8652284d9caf1c1de16fafd3f, type: 3}
+  m_Name: PoorGuyDialogue 1
+  m_EditorClassIdentifier: 
+  npcName: Valado
+  npcPortrait: {fileID: -802300504452200322, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
+  dialogueLines:
+  - Eyyy, ya moriste!!!
+  - Eso fue...
+  - Lamentable...
+  - Pero al menos podes doblar las rodillas!!!
+  autoProgressLines: 01010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: bf36fc3e7739b9e45a1567b4e9e858df, type: 3}
+  voicePitch: 1

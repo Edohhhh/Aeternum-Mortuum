@@ -1,22 +1,30 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    public enum RunResult
+    {
+        None,
+        Win,
+        Death
+    }
+
+    [Header("Run Result (solo en win/lose screens)")]
+    public RunResult runResult = RunResult.None;
 
     public void PlayAgain()
     {
-        // Asegurarnos de que exista el RoomRandomizer
+        RegisterRunResult();
+
         if (RoomRandomizer.Instance == null)
         {
-            Debug.LogError("[Buttons] No se encontr� un RoomRandomizer en la escena inicial.");
+            Debug.LogError("[MenuButtons] No se encontró RoomRandomizer.");
             return;
         }
 
-        // Generar la run antes de empezar
         RoomRandomizer.Instance.GenerateRun();
 
-        // Cargar la primera sala de la lista
         string firstScene = RoomRandomizer.Instance.GetNextRoom();
 
         if (!string.IsNullOrEmpty(firstScene))
@@ -25,12 +33,36 @@ public class MenuButtons : MonoBehaviour
         }
         else
         {
-            Debug.LogError("[Buttons] La run generada no tiene salas configuradas.");
+            Debug.LogError("[MenuButtons] No hay salas en la run.");
         }
     }
 
     public void Menu()
     {
+        RegisterRunResult();
         SceneManager.LoadScene("Menu");
+    }
+
+    private void RegisterRunResult()
+    {
+        if (runResult == RunResult.None)
+            return;
+
+        if (RunStatsManager.Instance == null)
+        {
+            Debug.LogWarning("RunStatsManager not found");
+            return;
+        }
+
+        switch (runResult)
+        {
+            case RunResult.Win:
+                RunStatsManager.Instance.AddWin();
+                break;
+
+            case RunResult.Death:
+                RunStatsManager.Instance.AddDeath();
+                break;
+        }
     }
 }

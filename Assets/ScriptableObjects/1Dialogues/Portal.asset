@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98845fb8652284d9caf1c1de16fafd3f, type: 3}
+  m_Name: Portal
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcPortrait: {fileID: 6110125572279584631, guid: 2b297fe6ab6bad048a5f2ed2bb57aa2d, type: 3}
+  dialogueLines:
+  - 'Queres usar el portal? '
+  - Debes haber muerto 5 veces.
+  autoProgressLines: 0101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 0}
+  voicePitch: 1

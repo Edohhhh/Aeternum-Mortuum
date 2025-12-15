@@ -18,15 +18,28 @@ public class ResetGameButton : MonoBehaviour
 
         if (player != null)
         {
-            // 🔹 Si hay player en escena (ejemplo: gameplay)
+            // 🔹 Gameplay: reset completo del jugador
             GameDataManager.Instance.ResetPlayerCompletely(player);
         }
         else
         {
-            // 🔹 Si NO hay player (ejemplo: Win/Lose)
+            // 🔹 Win / Lose: reset general
             GameDataManager.Instance.ResetAllWithoutPlayer();
         }
 
-        Debug.Log("[ResetGameButton] Reset ejecutado.");
+        // 🛑 IMPORTANTE: NO tocar RunStatsManager
+        PreserveRunStats();
+
+        Debug.Log("[ResetGameButton] Reset ejecutado (RunStats preservado).");
+    }
+
+    private void PreserveRunStats()
+    {
+        if (RunStatsManager.Instance == null)
+            return;
+
+        // No hacemos nada a propósito
+        // Este método existe solo para dejar explícito
+        // que RunStatsManager NO debe resetearse
     }
 }

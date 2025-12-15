@@ -4384,7 +4384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1660262266}
-  nextSceneName: Menu
+  nextSceneName: Victory
 --- !u!114 &1660262269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4398,7 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1660262266}
-  nextSceneName: Menu
+  nextSceneName: Victory
   skipUI: {fileID: 2089215054}
 --- !u!1 &1749511853
 GameObject:

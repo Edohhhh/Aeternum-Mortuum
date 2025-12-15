@@ -434,18 +434,18 @@ MonoBehaviour:
   easyRooms:
   - id: 1
     roomName: LoopSlime1
-  intermediateRooms:
   - id: 2
-    roomName: bar
+    roomName: Coliseo slime
+  intermediateRooms:
   - id: 3
-    roomName: bar Layout2
+    roomName: bar
   - id: 4
+    roomName: bar Layout2
+  - id: 5
     roomName: bar Rata
   mediumRooms:
-  - id: 5
-    roomName: LoopEsqueleto1
   - id: 6
-    roomName: Coliseo slime
+    roomName: LoopEsqueleto1
   - id: 7
     roomName: BossGolem
   - id: 8
@@ -463,9 +463,9 @@ MonoBehaviour:
     roomName: BossMimico
   - id: 14
     roomName: "Coliseo Ara\xF1a"
-  easyCount: 1
+  easyCount: 2
   intermediateCount: 1
-  mediumCount: 5
+  mediumCount: 4
   intermediate2Count: 1
   hardCount: 5
   generatedRun: []
@@ -4341,6 +4341,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4558552268858977443, guid: 5f358491fc0a43148ab8933f1c1e1dd6, type: 3}
   m_PrefabInstance: {fileID: 318654979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1894020028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894020030}
+  - component: {fileID: 1894020029}
+  m_Layer: 0
+  m_Name: RunStatsManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1894020029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894020028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089a82b8ea493474784216c1b851db48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wins: 0
+  deaths: 0
+--- !u!4 &1894020030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894020028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 944.91254, y: 366.42484, z: 6.6386213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1958175523 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4558552268858977443, guid: 5f358491fc0a43148ab8933f1c1e1dd6, type: 3}
@@ -4753,3 +4799,4 @@ SceneRoots:
   - {fileID: 1734809709}
   - {fileID: 195921830}
   - {fileID: 896787579}
+  - {fileID: 1894020030}

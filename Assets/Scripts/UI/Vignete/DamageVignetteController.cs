@@ -10,6 +10,10 @@ public class DamageVignetteController : MonoBehaviour
     public Image damageVignette;   // Imagen roja
     public Image healVignette;     // Imagen verde
 
+    [Header("Audio")]
+    public AudioSource[] damageAudios; // 🔊 Lista de sonidos de daño (random)
+    public AudioSource healAudio;      // Sonido de curación
+
     [Header("Damage Flash")]
     public float damageFlashAlpha = 0.65f;
     public float damageFlashDuration = 0.25f;
@@ -52,14 +56,13 @@ public class DamageVignetteController : MonoBehaviour
             TriggerHealFlash();
         }
 
-        // --- Low HP constante en la imagen de daño ---
+        // --- Low HP constante ---
         if (current <= lowHPThreshold && current > 0)
         {
             damageTargetAlpha = lowHPAlpha;
         }
         else
         {
-            // si no está low HP y no está flasheando → se apaga
             if (damageTargetAlpha != damageFlashAlpha)
                 damageTargetAlpha = 0f;
         }
@@ -88,6 +91,18 @@ public class DamageVignetteController : MonoBehaviour
     {
         StopCoroutine(nameof(DamageFlashCoroutine));
         StartCoroutine(DamageFlashCoroutine());
+
+        PlayRandomDamageSound();
+    }
+
+    private void PlayRandomDamageSound()
+    {
+        if (damageAudios == null || damageAudios.Length == 0)
+            return;
+
+        int index = Random.Range(0, damageAudios.Length);
+        if (damageAudios[index] != null)
+            damageAudios[index].Play();
     }
 
     private System.Collections.IEnumerator DamageFlashCoroutine()
@@ -107,6 +122,9 @@ public class DamageVignetteController : MonoBehaviour
     {
         StopCoroutine(nameof(HealFlashCoroutine));
         StartCoroutine(HealFlashCoroutine());
+
+        if (healAudio != null)
+            healAudio.Play();
     }
 
     private System.Collections.IEnumerator HealFlashCoroutine()
@@ -118,4 +136,3 @@ public class DamageVignetteController : MonoBehaviour
         healTargetAlpha = 0f;
     }
 }
-

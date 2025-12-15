@@ -215,9 +215,16 @@ public class GameDataManager : MonoBehaviour
 
         // Borrar cualquier objeto colgado en DontDestroyOnLoad
         var ddolScene = gameObject.scene;
+   
         foreach (var go in ddolScene.GetRootGameObjects())
         {
-            if (go == this.gameObject) continue; // mantener GameDataManager
+            if (go == this.gameObject)
+                continue;
+
+            // 🛑 NO destruir objetos marcados como no reseteables
+            if (go.GetComponent<INonResettable>() != null)
+                continue;
+
             Destroy(go);
         }
 

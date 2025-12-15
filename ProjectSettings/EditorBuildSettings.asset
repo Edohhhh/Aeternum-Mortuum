@@ -105,6 +105,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bares/bar Rata.unity
     guid: 7ca354ffb3dea4baab778002d62aef3b
   - enabled: 1
+    path: Assets/Scenes/Bares/bar Ruletas.unity
+    guid: 7aa2081b2945e1745bacf99dcae94e83
+  - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 136785d227814ee4ca70b18b6daf9cd7
   m_configObjects:

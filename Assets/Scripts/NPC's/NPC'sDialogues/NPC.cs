@@ -1,6 +1,7 @@
 using System.Collections;
-using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
@@ -41,6 +42,10 @@ public class NPC : MonoBehaviour
     [Header("Distancia para mantener el diálogo")]
     public float maxDialogueDistance = 3.5f;
     private Transform player;
+
+    [Header("Diálogo dinámico por RunStats")]
+    public NPCDialogue defaultDialogue;
+    public List<DialogueCondition> conditionalDialogues = new List<DialogueCondition>();
 
     void Start()
     {
@@ -118,6 +123,25 @@ public class NPC : MonoBehaviour
                 EndDialogue();
         }
     }
+    NPCDialogue GetCurrentDialogue()
+    {
+        if (RunStatsManager.Instance == null)
+            return defaultDialogue;
+
+        int deaths = RunStatsManager.Instance.deaths;
+        int wins = RunStatsManager.Instance.wins;
+
+        foreach (var condition in conditionalDialogues)
+        {
+            if (deaths >= condition.minDeaths && wins >= condition.minWins)
+            {
+                if (condition.dialogueOverride != null)
+                    return condition.dialogueOverride;
+            }
+        }
+
+        return defaultDialogue;
+    }
 
     public bool CanInteract() => !isDialogueActive && currentActiveNPC == null;
 
@@ -136,6 +160,8 @@ public class NPC : MonoBehaviour
         currentActiveNPC = this;
         isDialogueActive = true;
         dialogueIndex = 0;
+
+        dialogueData = GetCurrentDialogue();
 
         if (nameText != null) nameText.SetText(dialogueData.npcName);
         if (portraitImage != null) portraitImage.sprite = dialogueData.npcPortrait;
