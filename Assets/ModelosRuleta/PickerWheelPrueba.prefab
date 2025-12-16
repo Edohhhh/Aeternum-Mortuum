@@ -198,8 +198,6 @@ MonoBehaviour:
   rewardPopup: {fileID: 0}
   linePrefab: {fileID: 1258666099951334, guid: 93bc1e8842fde884f878e59843c9706d, type: 3}
   linesParent: {fileID: 2845754903725659257}
-  selector: {fileID: 6718008529401278016}
-  PickerWheelTransform: {fileID: 3180750416933447464}
   wheelCircle: {fileID: 6979930054425753271}
   wheelPiecePrefab: {fileID: 1013547879587396, guid: a10fef7bc23b5a64a929387e97c9b936, type: 3}
   wheelPiecesParent: {fileID: 2091195014864347660}
@@ -207,8 +205,80 @@ MonoBehaviour:
   tickAudioClip: {fileID: 8300000, guid: 43186eb953e63e546b2c31cb280f58d8, type: 3}
   volume: 0.03
   pitch: 1
-  spinDuration: 2
-  wheelSize: 1
+  wheelOffset: 90
+  pointerDistance: 82
+  pointerSize: 2.5
+  spinDuration: 6
+  spinRounds: 10
+  spinCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5867783
+      value: 0.4993894
+      inSlope: 0.9501332
+      outSlope: 0.9501332
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.38463727
+      outWeight: 0.12668426
+    - serializedVersion: 3
+      time: 1.1892924
+      value: 0.7866912
+      inSlope: 0.12843823
+      outSlope: 0.12843823
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.4413633
+      value: 0.8018316
+      inSlope: 0.017671311
+      outSlope: 0.017671311
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.34951177
+      outWeight: 0.32305127
+    - serializedVersion: 3
+      time: 1.5483023
+      value: 0.8027804
+      inSlope: 0.002332048
+      outSlope: 0.002332048
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.7680736
+      value: 0.80306745
+      inSlope: 0.003022551
+      outSlope: 0.003022551
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.8771527
+      value: 0.803357
+      inSlope: 0.019523753
+      outSlope: 0.019523753
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.026159674
+      outWeight: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   wheelPieces:
   - Icon: {fileID: 1753655533966520807, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
     Label: 

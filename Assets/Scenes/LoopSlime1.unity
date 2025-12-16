@@ -448,13 +448,13 @@ MonoBehaviour:
   - prefab: {fileID: 531529343062115860, guid: b2900017f85b68f42a792aa741f69ba9, type: 3}
     weight: 55.5
   ruletaContainer: {fileID: 588630248}
-  selectedLabel: {fileID: 0}
   ruletaUISets:
   - {fileID: 576635356}
   - {fileID: 1174474507}
   - {fileID: 328972266}
-  confettiPrefab: {fileID: 1364281512}
   wheelUIController: {fileID: 1749465130}
+  selectedLabel: {fileID: 0}
+  confettiPrefab: {fileID: 0}
 --- !u!4 &86721582
 Transform:
   m_ObjectHideFlags: 0
@@ -17569,11 +17569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 1112052322}
-  linkedWheel: {fileID: 5049696205038239784}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
+  linkedWheel: {fileID: 0}
 --- !u!114 &328972267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19065,10 +19061,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 227393773}
   linkedWheel: {fileID: 0}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
 --- !u!114 &576635357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39774,10 +39766,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 481479847}
   linkedWheel: {fileID: 0}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
 --- !u!114 &1174474508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42168,7 +42156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   moveSpeed: 4
-  baseDamage: 1
+  baseDamage: 212
   extraSpins: 0
   dashSpeed: 10
   dashIframes: 10
@@ -45785,7 +45773,6 @@ MonoBehaviour:
   linePrefab: {fileID: 1258666099951334, guid: 052d5aa0d2632e04c90d4d5027f9dd37, type: 3}
   linesParent: {fileID: 5396449332336509900}
   selector: {fileID: 0}
-  PickerWheelTransform: {fileID: 4737336783272243357}
   wheelCircle: {fileID: 956905475104153858}
   wheelPiecePrefab: {fileID: 1013547879587396, guid: a10fef7bc23b5a64a929387e97c9b936, type: 3}
   wheelPiecesParent: {fileID: 8115284062775915961}
@@ -45794,7 +45781,31 @@ MonoBehaviour:
   volume: 0.03
   pitch: 1
   spinDuration: 8
-  wheelSize: 1
+  spinRounds: 10
+  spinCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   wheelPieces:
   - Icon: {fileID: 1753655533966520807, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
     Label: 

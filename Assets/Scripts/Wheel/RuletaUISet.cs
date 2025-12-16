@@ -1,128 +1,125 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using EasyUI.PickerWheelUI;
-using TMPro; // ✅ 1. AÑADIR: Importar TextMeshPro
+using TMPro;
 
 public class RuletaUISet : MonoBehaviour
 {
-    [Header("Contenedor donde se instancian los botones")]
+    [Header("Contenedor")]
     public Transform buttonsContainer;
 
     [HideInInspector] public PickerWheel linkedWheel;
 
-    public Button selectButton;
-    public Button spinButton;
-    public Button confirmButton;
-
-    // ✅ 2. MODIFICADO: Cambiar 'Text' por 'TextMeshProUGUI'
-    public TextMeshProUGUI spinButtonText;
+    private Button selectButton;
+    private Button spinButton;
+    private Button confirmButton;
+    private TextMeshProUGUI spinButtonText;
 
     private CanvasGroup ruletaCanvasGroup;
+    private WheelSelector mainSelector;
+
+    public void Limpiar()
+    {
+        if (buttonsContainer != null) foreach (Transform child in buttonsContainer) Destroy(child.gameObject);
+        linkedWheel = null;
+        selectButton = null;
+        spinButton = null;
+        confirmButton = null;
+    }
 
     public void Inicializar(PickerWheel wheel, WheelSelector selector)
     {
-        // ✅ 1. NUEVO: Limpiar botones antiguos antes de crear los nuevos
-        // Esto evita que se sobrepongan botones de temas anteriores o duplicados.
-        if (buttonsContainer != null)
-        {
-            foreach (Transform child in buttonsContainer)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-
+        Limpiar();
         linkedWheel = wheel;
+        mainSelector = selector;
 
-        // CanvasGroup para oscurecer la ruleta
         ruletaCanvasGroup = linkedWheel.GetComponent<CanvasGroup>();
-        if (ruletaCanvasGroup == null)
-            ruletaCanvasGroup = linkedWheel.gameObject.AddComponent<CanvasGroup>();
+        if (ruletaCanvasGroup == null) ruletaCanvasGroup = linkedWheel.gameObject.AddComponent<CanvasGroup>();
 
-        // 🎨 Buscar el tema configurado en el prefab de la ruleta
-        RuletaTheme theme = linkedWheel.GetComponent<RuletaTheme>();
+        var theme = linkedWheel.GetComponent<RuletaTheme>();
         if (theme != null)
         {
-            // Instanciar prefabs de botones
+            // Instanciar Select
             if (theme.selectButtonPrefab != null)
             {
-                var obj = Instantiate(theme.selectButtonPrefab, buttonsContainer);
+                GameObject obj = Instantiate(theme.selectButtonPrefab, buttonsContainer);
                 selectButton = obj.GetComponent<Button>();
+                if (selectButton == null) selectButton = obj.GetComponentInChildren<Button>();
+                selectButton.onClick.AddListener(() => mainSelector.SeleccionarRuleta(linkedWheel));
             }
-
+            // Instanciar Spin
             if (theme.spinButtonPrefab != null)
             {
-                var obj = Instantiate(theme.spinButtonPrefab, buttonsContainer);
+                GameObject obj = Instantiate(theme.spinButtonPrefab, buttonsContainer);
                 spinButton = obj.GetComponent<Button>();
-
-                // ✅ Buscar 'TextMeshProUGUI' (ajuste que ya tenías)
-                spinButtonText = spinButton.GetComponentInChildren<TextMeshProUGUI>();
+                if (spinButton == null) spinButton = obj.GetComponentInChildren<Button>();
+                spinButtonText = obj.GetComponentInChildren<TextMeshProUGUI>();
+                spinButton.onClick.AddListener(() => mainSelector.SpinRuleta(linkedWheel));
             }
-
+            // Instanciar Confirm
             if (theme.confirmButtonPrefab != null)
             {
-                var obj = Instantiate(theme.confirmButtonPrefab, buttonsContainer);
+                GameObject obj = Instantiate(theme.confirmButtonPrefab, buttonsContainer);
                 confirmButton = obj.GetComponent<Button>();
+                if (confirmButton == null) confirmButton = obj.GetComponentInChildren<Button>();
+                confirmButton.onClick.AddListener(() => mainSelector.ConfirmarRuleta(linkedWheel));
             }
         }
-
-        // 🔗 Listeners de botones
-        if (selectButton != null)
-            selectButton.onClick.AddListener(() => selector.SeleccionarRuletaDesdeBoton(this));
-
-        if (spinButton != null)
-        {
-            spinButton.onClick.AddListener(() => selector.SpinRuleta(linkedWheel));
-            spinButton.interactable = false;
-        }
-
-        if (confirmButton != null)
-        {
-            confirmButton.onClick.AddListener(() => selector.ConfirmarRuleta(linkedWheel));
-            confirmButton.interactable = false;
-        }
-
-        // 🔁 Actualizar texto de Spin después de girar
-        if (linkedWheel != null)
-            linkedWheel.AddSpinEndListener((_) => ActualizarTextoSpin());
-
-        ActualizarTextoSpin();
     }
 
-    public void Activar(bool estado)
+    // --- ESTADO 1: AL INICIAR (Todas esperando selección) ---
+    public void MostrarEstadoSeleccion()
     {
-        if (ruletaCanvasGroup != null)
-        {
-            ruletaCanvasGroup.alpha = estado ? 1f : 0.2f;
-            ruletaCanvasGroup.interactable = estado;
-            ruletaCanvasGroup.blocksRaycasts = estado;
-        }
-
-        // Habilitar 'Spin' solo si quedan usos
-        if (spinButton != null)
-        {
-            bool quedanUsos = linkedWheel != null && linkedWheel.UsosRestantes > 0;
-            spinButton.interactable = estado && quedanUsos;
-        }
-
-        // Habilitar 'Confirm' solo si ya se giró
-        if (confirmButton != null)
-        {
-            bool yaGiro = linkedWheel != null && linkedWheel.UsosRestantes < linkedWheel.UsosMaximos;
-            // Solo se puede confirmar si está activo, ya giró, y NO está girando
-            confirmButton.interactable = estado && yaGiro && !linkedWheel.IsSpinning;
-        }
+        if (ruletaCanvasGroup) ruletaCanvasGroup.alpha = 1f;
+        if (selectButton) selectButton.gameObject.SetActive(true);
+        if (spinButton) spinButton.gameObject.SetActive(false);
+        if (confirmButton) confirmButton.gameObject.SetActive(false);
     }
 
-    public void ActualizarTextoSpin()
+    // --- ESTADO 2: ELEGIDA (Esta es la que vas a jugar) ---
+    public void ActivarModoJuego()
     {
-        if (linkedWheel != null && spinButtonText != null)
+        if (ruletaCanvasGroup) ruletaCanvasGroup.alpha = 1f;
+        if (selectButton) selectButton.gameObject.SetActive(false); // Adios select
+        if (spinButton) spinButton.gameObject.SetActive(true);     // Hola Spin
+        // Confirm se gestiona en Update según si terminó de girar
+    }
+
+    // --- ESTADO 3: DESCARTADA (Las otras ruletas se apagan) ---
+    public void DesactivarTotalmente()
+    {
+        // Se ven muy transparentes para indicar que no son accesibles
+        if (ruletaCanvasGroup) ruletaCanvasGroup.alpha = 0.2f;
+
+        // Desactivamos TODOS los botones
+        if (selectButton) selectButton.gameObject.SetActive(false);
+        if (spinButton) spinButton.gameObject.SetActive(false);
+        if (confirmButton) confirmButton.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (linkedWheel == null) return;
+
+        // Solo ejecutamos lógica si el botón Spin está activo (significa que es la elegida)
+        if (spinButton != null && spinButton.gameObject.activeSelf)
         {
-            // ✅ 4. MODIFICADO: Usar UsosMaximos (requiere el Paso 2)
-            spinButtonText.text = $"Spin ({linkedWheel.UsosRestantes}/{linkedWheel.UsosMaximos})";
-        }
-        else if (spinButtonText == null && spinButton != null)
-        {
-            Debug.LogError($"❌ No se encontró el componente 'TextMeshProUGUI' dentro del prefab '{spinButton.name}'. Verifica el prefab.");
+            bool isSpinning = linkedWheel.IsSpinning;
+            bool hasUses = linkedWheel.UsosRestantes > 0;
+            bool finished = linkedWheel.UsosRestantes < linkedWheel.UsosMaximos && !isSpinning;
+
+            spinButton.interactable = hasUses || isSpinning;
+
+            if (spinButtonText != null)
+            {
+                spinButtonText.text = isSpinning ? "Skip >>" : (hasUses ? "Spin" : "Out Of Stock");
+            }
+
+            if (confirmButton != null)
+            {
+                confirmButton.gameObject.SetActive(finished); // Solo aparece al final
+                confirmButton.interactable = finished;
+            }
         }
     }
 }
