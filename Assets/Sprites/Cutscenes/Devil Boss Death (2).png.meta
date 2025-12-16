@@ -1,0 +1,2540 @@
+fileFormatVersion: 2
+guid: e0ef17a1f9bb24536966c6076aa16574
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6244575160464964513
+    second: Devil Boss Death (2)_0
+  - first:
+      213: -1136427106691197317
+    second: Devil Boss Death (2)_1
+  - first:
+      213: -8992329465967222730
+    second: Devil Boss Death (2)_2
+  - first:
+      213: 5984063335201534586
+    second: Devil Boss Death (2)_3
+  - first:
+      213: 3415467960501024668
+    second: Devil Boss Death (2)_4
+  - first:
+      213: -6496868249926713047
+    second: Devil Boss Death (2)_5
+  - first:
+      213: -2973473397354395205
+    second: Devil Boss Death (2)_6
+  - first:
+      213: 1453258421114508097
+    second: Devil Boss Death (2)_7
+  - first:
+      213: -6727403143548330176
+    second: Devil Boss Death (2)_8
+  - first:
+      213: 4510149339736505719
+    second: Devil Boss Death (2)_9
+  - first:
+      213: 6099418314857537664
+    second: Devil Boss Death (2)_10
+  - first:
+      213: -7813563818204112498
+    second: Devil Boss Death (2)_11
+  - first:
+      213: -1657243204694163257
+    second: Devil Boss Death (2)_12
+  - first:
+      213: -7403399077500443994
+    second: Devil Boss Death (2)_13
+  - first:
+      213: 8060024698429500128
+    second: Devil Boss Death (2)_14
+  - first:
+      213: -2785189345419073149
+    second: Devil Boss Death (2)_15
+  - first:
+      213: -1368187081638643789
+    second: Devil Boss Death (2)_16
+  - first:
+      213: -6458007913518627757
+    second: Devil Boss Death (2)_17
+  - first:
+      213: 2454654140742899728
+    second: Devil Boss Death (2)_18
+  - first:
+      213: 3956728063425514495
+    second: Devil Boss Death (2)_19
+  - first:
+      213: -1456421991383834398
+    second: Devil Boss Death (2)_20
+  - first:
+      213: 4815618476665315774
+    second: Devil Boss Death (2)_21
+  - first:
+      213: -175302931159082635
+    second: Devil Boss Death (2)_22
+  - first:
+      213: 5280185339716160535
+    second: Devil Boss Death (2)_23
+  - first:
+      213: -887190201172920689
+    second: Devil Boss Death (2)_24
+  - first:
+      213: -7896552614816535074
+    second: Devil Boss Death (2)_25
+  - first:
+      213: -7389132250999418511
+    second: Devil Boss Death (2)_26
+  - first:
+      213: 4016246107310900325
+    second: Devil Boss Death (2)_27
+  - first:
+      213: -8221529980153494469
+    second: Devil Boss Death (2)_28
+  - first:
+      213: 6985397119951325767
+    second: Devil Boss Death (2)_29
+  - first:
+      213: -9051448828468225632
+    second: Devil Boss Death (2)_30
+  - first:
+      213: -7883347483362636428
+    second: Devil Boss Death (2)_31
+  - first:
+      213: 422124910463810175
+    second: Devil Boss Death (2)_32
+  - first:
+      213: 146081373757165964
+    second: Devil Boss Death (2)_33
+  - first:
+      213: 6170105990997323964
+    second: Devil Boss Death (2)_34
+  - first:
+      213: -3890394911824807848
+    second: Devil Boss Death (2)_35
+  - first:
+      213: 821989585207979338
+    second: Devil Boss Death (2)_36
+  - first:
+      213: 8350570862580858403
+    second: Devil Boss Death (2)_37
+  - first:
+      213: 5699105916358583548
+    second: Devil Boss Death (2)_38
+  - first:
+      213: 5381696943127091124
+    second: Devil Boss Death (2)_39
+  - first:
+      213: 4529930768000535199
+    second: Devil Boss Death (2)_40
+  - first:
+      213: -7348604837210094837
+    second: Devil Boss Death (2)_41
+  - first:
+      213: 1065988681540858976
+    second: Devil Boss Death (2)_42
+  - first:
+      213: 2768964457381395081
+    second: Devil Boss Death (2)_43
+  - first:
+      213: -9021377352902656586
+    second: Devil Boss Death (2)_44
+  - first:
+      213: 2709564040477626594
+    second: Devil Boss Death (2)_45
+  - first:
+      213: 2833285133073426030
+    second: Devil Boss Death (2)_46
+  - first:
+      213: -5109272635081706536
+    second: Devil Boss Death (2)_47
+  - first:
+      213: 3144563971613500823
+    second: Devil Boss Death (2)_48
+  - first:
+      213: -1883440728789084614
+    second: Devil Boss Death (2)_49
+  - first:
+      213: -3729927753452332036
+    second: Devil Boss Death (2)_50
+  - first:
+      213: 2016827136523691096
+    second: Devil Boss Death (2)_51
+  - first:
+      213: -1973078812727615611
+    second: Devil Boss Death (2)_52
+  - first:
+      213: 2952298212224284072
+    second: Devil Boss Death (2)_53
+  - first:
+      213: 179304852809394301
+    second: Devil Boss Death (2)_54
+  - first:
+      213: -8756319514493730593
+    second: Devil Boss Death (2)_55
+  - first:
+      213: 314940703652219420
+    second: Devil Boss Death (2)_56
+  - first:
+      213: 8972010729978569164
+    second: Devil Boss Death (2)_57
+  - first:
+      213: -587126717558475999
+    second: Devil Boss Death (2)_58
+  - first:
+      213: 3165896283057600959
+    second: Devil Boss Death (2)_59
+  - first:
+      213: -3690918926949994616
+    second: Devil Boss Death (2)_60
+  - first:
+      213: 6686307957821645811
+    second: Devil Boss Death (2)_61
+  - first:
+      213: 7367201626220793026
+    second: Devil Boss Death (2)_62
+  - first:
+      213: -7136610218968555785
+    second: Devil Boss Death (2)_63
+  - first:
+      213: 8685308258200911064
+    second: Devil Boss Death (2)_64
+  - first:
+      213: 3392305689743932061
+    second: Devil Boss Death (2)_65
+  - first:
+      213: 230321369850182981
+    second: Devil Boss Death (2)_66
+  - first:
+      213: 65551528606469509
+    second: Devil Boss Death (2)_67
+  - first:
+      213: 382421619970908386
+    second: Devil Boss Death (2)_68
+  - first:
+      213: -7674475608207849124
+    second: Devil Boss Death (2)_69
+  - first:
+      213: -5776301903193379353
+    second: Devil Boss Death (2)_70
+  - first:
+      213: -8065626308742013302
+    second: Devil Boss Death (2)_71
+  - first:
+      213: -566800384036697949
+    second: Devil Boss Death (2)_72
+  - first:
+      213: 5330235885953619814
+    second: Devil Boss Death (2)_73
+  - first:
+      213: -8419086571660404241
+    second: Devil Boss Death (2)_74
+  - first:
+      213: 216884616251282228
+    second: Devil Boss Death (2)_75
+  - first:
+      213: -4194612853112979341
+    second: Devil Boss Death (2)_76
+  - first:
+      213: 3074197432530000441
+    second: Devil Boss Death (2)_77
+  - first:
+      213: 5021091774240507597
+    second: Devil Boss Death (2)_78
+  - first:
+      213: 7711236213658704044
+    second: Devil Boss Death (2)_79
+  - first:
+      213: 806337955614199638
+    second: Devil Boss Death (2)_80
+  - first:
+      213: 5312296020446059024
+    second: Devil Boss Death (2)_81
+  - first:
+      213: -6386631439420994998
+    second: Devil Boss Death (2)_82
+  - first:
+      213: -3772918924465808675
+    second: Devil Boss Death (2)_83
+  - first:
+      213: 4779070618847606655
+    second: Devil Boss Death (2)_84
+  - first:
+      213: -3732671977807182914
+    second: Devil Boss Death (2)_85
+  - first:
+      213: 8642853441635369742
+    second: Devil Boss Death (2)_86
+  - first:
+      213: 2370950096202742925
+    second: Devil Boss Death (2)_87
+  - first:
+      213: 530616041505657960
+    second: Devil Boss Death (2)_88
+  - first:
+      213: 2106833254715571312
+    second: Devil Boss Death (2)_89
+  - first:
+      213: -851043871158250321
+    second: Devil Boss Death (2)_90
+  - first:
+      213: -8847971637270942970
+    second: Devil Boss Death (2)_91
+  - first:
+      213: 6785721945751053913
+    second: Devil Boss Death (2)_92
+  - first:
+      213: 6017393369440185972
+    second: Devil Boss Death (2)_93
+  - first:
+      213: 6995363901318987572
+    second: Devil Boss Death (2)_94
+  - first:
+      213: 3011358907746357921
+    second: Devil Boss Death (2)_95
+  - first:
+      213: -5148649730195505229
+    second: Devil Boss Death (2)_96
+  - first:
+      213: 8914426756233855388
+    second: Devil Boss Death (2)_97
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abfdb4f50039a650800000000000000
+      internalID: 6244575160464964513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b76db8841999a30f0800000000000000
+      internalID: -1136427106691197317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630eebd7ef3d43380800000000000000
+      internalID: -8992329465967222730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72702006e9ab0350800000000000000
+      internalID: 5984063335201534586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97346f930e266f20800000000000000
+      internalID: 3415467960501024668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921ca92afbc76d5a0800000000000000
+      internalID: -6496868249926713047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb90e9103b91cb6d0800000000000000
+      internalID: -2973473397354395205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143106595d20b2410800000000000000
+      internalID: 1453258421114508097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f94f7fb7673a2a0800000000000000
+      internalID: -6727403143548330176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77df4febde4479e30800000000000000
+      internalID: 4510149339736505719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080689924ac75a450800000000000000
+      internalID: 6099418314857537664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89591afa15a09390800000000000000
+      internalID: -7813563818204112498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c046c5f51a4009e0800000000000000
+      internalID: -1657243204694163257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2a12f83c7d14990800000000000000
+      internalID: -7403399077500443994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eae3c662c5fadf60800000000000000
+      internalID: 8060024698429500128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389e7120c050959d0800000000000000
+      internalID: -2785189345419073149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1000
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b776a42919330de0800000000000000
+      internalID: -1368187081638643789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3548f06c40c8066a0800000000000000
+      internalID: -6458007913518627757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0181c698feea01220800000000000000
+      internalID: 2454654140742899728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb0c45c53f19e630800000000000000
+      internalID: 3956728063425514495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0ef705aefb9cbe0800000000000000
+      internalID: -1456421991383834398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1a1738d7384d240800000000000000
+      internalID: 4815618476665315774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5799d24b9e2319df0800000000000000
+      internalID: -175302931159082635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_23
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71cc102479cf64940800000000000000
+      internalID: 5280185339716160535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_24
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8671ea663110b3f0800000000000000
+      internalID: -887190201172920689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eddadab0c3fc96290800000000000000
+      internalID: -7896552614816535074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_26
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1711cc4fd57847990800000000000000
+      internalID: -7389132250999418511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_27
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564cfcc3e829cb730800000000000000
+      internalID: 4016246107310900325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b340ab6ea0247ed80800000000000000
+      internalID: -8221529980153494469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_29
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a4cbd9bad11f060800000000000000
+      internalID: 6985397119951325767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_30
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a996844f3bc26280800000000000000
+      internalID: -9051448828468225632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d433d4b39b89290800000000000000
+      internalID: -7883347483362636428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_32
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7af90b9e50bbd500800000000000000
+      internalID: 422124910463810175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_33
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 800
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81d8174c3cf60200800000000000000
+      internalID: 146081373757165964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0b7eb45be90a550800000000000000
+      internalID: 6170105990997323964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858f1bc907a820ac0800000000000000
+      internalID: -3890394911824807848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d64633c2b486b00800000000000000
+      internalID: 821989585207979338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32efbdfc4ff23e370800000000000000
+      internalID: 8350570862580858403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf461e1c2aa471f40800000000000000
+      internalID: 5699105916358583548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b755e73bd0afaa40800000000000000
+      internalID: 5381696943127091124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ac8cb680c8dde30800000000000000
+      internalID: 4529930768000535199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_41
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03006bc5d2840a90800000000000000
+      internalID: -7348604837210094837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06474d9de072bce00800000000000000
+      internalID: 1065988681540858976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_43
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a76edd0865d6620800000000000000
+      internalID: 2768964457381395081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdbb774811adc280800000000000000
+      internalID: -9021377352902656586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_45
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e057d0932e4a9520800000000000000
+      internalID: 2709564040477626594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_46
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66ac3031d9d15720800000000000000
+      internalID: 2833285133073426030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_47
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3b455cb973819b0800000000000000
+      internalID: -5109272635081706536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_48
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795a385854cb3ab20800000000000000
+      internalID: 3144563971613500823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_49
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a361605d2acacd5e0800000000000000
+      internalID: -1883440728789084614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_50
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 600
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb5a916872ac3cc0800000000000000
+      internalID: -3729927753452332036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854ecd558953dfb10800000000000000
+      internalID: 2016827136523691096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_52
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f558d06473e94e0800000000000000
+      internalID: -1973078812727615611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a536a2059ba8f820800000000000000
+      internalID: 2952298212224284072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78253a40d40d7200800000000000000
+      internalID: 179304852809394301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_55
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0c7c66bcd4b7680800000000000000
+      internalID: -8756319514493730593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_56
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a808eb6e4ee5400800000000000000
+      internalID: 314940703652219420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc1ad51293cf28c70800000000000000
+      internalID: 8972010729978569164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_58
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12339c17c5b1ad7f0800000000000000
+      internalID: -587126717558475999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_59
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9b06355e58feb20800000000000000
+      internalID: 3165896283057600959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_60
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f21609ac837ccc0800000000000000
+      internalID: -3690918926949994616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_61
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3a3dc79a98acc50800000000000000
+      internalID: 6686307957821645811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_62
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc029f88de8d3660800000000000000
+      internalID: 7367201626220793026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_63
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fed4f531daa5fc90800000000000000
+      internalID: -7136610218968555785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_64
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcf4d618d9688870800000000000000
+      internalID: 8685308258200911064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_65
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a39b63d04e31f20800000000000000
+      internalID: 3392305689743932061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_66
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54df91ac014423300800000000000000
+      internalID: 230321369850182981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_67
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 400
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d821994c2e8e000800000000000000
+      internalID: 65551528606469509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0abccef62ae4500800000000000000
+      internalID: 382421619970908386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c590f5f6819ce7590800000000000000
+      internalID: -7674475608207849124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_70
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edeeb0f50476dfa0800000000000000
+      internalID: -5776301903193379353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_71
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e13601b93211090800000000000000
+      internalID: -8065626308742013302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_72
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a800f2cd025228f0800000000000000
+      internalID: -566800384036697949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_73
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6671e472c4dc8f940800000000000000
+      internalID: 5330235885953619814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_74
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe99bea8e55692b80800000000000000
+      internalID: -8419086571660404241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_75
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43397ecc867820300800000000000000
+      internalID: 216884616251282228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_76
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370c9e785ddb9c5c0800000000000000
+      internalID: -4194612853112979341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_77
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a5e5fe64eb9aa20800000000000000
+      internalID: 3074197432530000441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_78
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6cd34ad508ea540800000000000000
+      internalID: 5021091774240507597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_79
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8514efa70d30b60800000000000000
+      internalID: 7711236213658704044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_80
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f8c453910b03b00800000000000000
+      internalID: 806337955614199638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_81
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a9868b51119b940800000000000000
+      internalID: 5312296020446059024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_82
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a48fd2b802e57a0800000000000000
+      internalID: -6386631439420994998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_83
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddadddc5a36e3abc0800000000000000
+      internalID: -3772918924465808675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_84
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 200
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77fae0486ba25240800000000000000
+      internalID: 4779070618847606655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb38fbbdc92e23cc0800000000000000
+      internalID: -3732671977807182914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_86
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e034072d96591f770800000000000000
+      internalID: 8642853441635369742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_87
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8cb758fc8e47e020800000000000000
+      internalID: 2370950096202742925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_88
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864911a7a702d5700800000000000000
+      internalID: 530616041505657960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_89
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c3d44cea9fc3d10800000000000000
+      internalID: 2106833254715571312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_90
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4d653bb1c7034f0800000000000000
+      internalID: -851043871158250321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Boss Death (2)_91
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bebb9aca0b53580800000000000000
+      internalID: -8847971637270942970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f873be99c54b94313963554869c1782d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Devil Boss Death (2)_0: 6244575160464964513
+      Devil Boss Death (2)_1: -1136427106691197317
+      Devil Boss Death (2)_10: 6099418314857537664
+      Devil Boss Death (2)_11: -7813563818204112498
+      Devil Boss Death (2)_12: -1657243204694163257
+      Devil Boss Death (2)_13: -7403399077500443994
+      Devil Boss Death (2)_14: 8060024698429500128
+      Devil Boss Death (2)_15: -2785189345419073149
+      Devil Boss Death (2)_16: -1368187081638643789
+      Devil Boss Death (2)_17: -6458007913518627757
+      Devil Boss Death (2)_18: 2454654140742899728
+      Devil Boss Death (2)_19: 3956728063425514495
+      Devil Boss Death (2)_2: -8992329465967222730
+      Devil Boss Death (2)_20: -1456421991383834398
+      Devil Boss Death (2)_21: 4815618476665315774
+      Devil Boss Death (2)_22: -175302931159082635
+      Devil Boss Death (2)_23: 5280185339716160535
+      Devil Boss Death (2)_24: -887190201172920689
+      Devil Boss Death (2)_25: -7896552614816535074
+      Devil Boss Death (2)_26: -7389132250999418511
+      Devil Boss Death (2)_27: 4016246107310900325
+      Devil Boss Death (2)_28: -8221529980153494469
+      Devil Boss Death (2)_29: 6985397119951325767
+      Devil Boss Death (2)_3: 5984063335201534586
+      Devil Boss Death (2)_30: -9051448828468225632
+      Devil Boss Death (2)_31: -7883347483362636428
+      Devil Boss Death (2)_32: 422124910463810175
+      Devil Boss Death (2)_33: 146081373757165964
+      Devil Boss Death (2)_34: 6170105990997323964
+      Devil Boss Death (2)_35: -3890394911824807848
+      Devil Boss Death (2)_36: 821989585207979338
+      Devil Boss Death (2)_37: 8350570862580858403
+      Devil Boss Death (2)_38: 5699105916358583548
+      Devil Boss Death (2)_39: 5381696943127091124
+      Devil Boss Death (2)_4: 3415467960501024668
+      Devil Boss Death (2)_40: 4529930768000535199
+      Devil Boss Death (2)_41: -7348604837210094837
+      Devil Boss Death (2)_42: 1065988681540858976
+      Devil Boss Death (2)_43: 2768964457381395081
+      Devil Boss Death (2)_44: -9021377352902656586
+      Devil Boss Death (2)_45: 2709564040477626594
+      Devil Boss Death (2)_46: 2833285133073426030
+      Devil Boss Death (2)_47: -5109272635081706536
+      Devil Boss Death (2)_48: 3144563971613500823
+      Devil Boss Death (2)_49: -1883440728789084614
+      Devil Boss Death (2)_5: -6496868249926713047
+      Devil Boss Death (2)_50: -3729927753452332036
+      Devil Boss Death (2)_51: 2016827136523691096
+      Devil Boss Death (2)_52: -1973078812727615611
+      Devil Boss Death (2)_53: 2952298212224284072
+      Devil Boss Death (2)_54: 179304852809394301
+      Devil Boss Death (2)_55: -8756319514493730593
+      Devil Boss Death (2)_56: 314940703652219420
+      Devil Boss Death (2)_57: 8972010729978569164
+      Devil Boss Death (2)_58: -587126717558475999
+      Devil Boss Death (2)_59: 3165896283057600959
+      Devil Boss Death (2)_6: -2973473397354395205
+      Devil Boss Death (2)_60: -3690918926949994616
+      Devil Boss Death (2)_61: 6686307957821645811
+      Devil Boss Death (2)_62: 7367201626220793026
+      Devil Boss Death (2)_63: -7136610218968555785
+      Devil Boss Death (2)_64: 8685308258200911064
+      Devil Boss Death (2)_65: 3392305689743932061
+      Devil Boss Death (2)_66: 230321369850182981
+      Devil Boss Death (2)_67: 65551528606469509
+      Devil Boss Death (2)_68: 382421619970908386
+      Devil Boss Death (2)_69: -7674475608207849124
+      Devil Boss Death (2)_7: 1453258421114508097
+      Devil Boss Death (2)_70: -5776301903193379353
+      Devil Boss Death (2)_71: -8065626308742013302
+      Devil Boss Death (2)_72: -566800384036697949
+      Devil Boss Death (2)_73: 5330235885953619814
+      Devil Boss Death (2)_74: -8419086571660404241
+      Devil Boss Death (2)_75: 216884616251282228
+      Devil Boss Death (2)_76: -4194612853112979341
+      Devil Boss Death (2)_77: 3074197432530000441
+      Devil Boss Death (2)_78: 5021091774240507597
+      Devil Boss Death (2)_79: 7711236213658704044
+      Devil Boss Death (2)_8: -6727403143548330176
+      Devil Boss Death (2)_80: 806337955614199638
+      Devil Boss Death (2)_81: 5312296020446059024
+      Devil Boss Death (2)_82: -6386631439420994998
+      Devil Boss Death (2)_83: -3772918924465808675
+      Devil Boss Death (2)_84: 4779070618847606655
+      Devil Boss Death (2)_85: -3732671977807182914
+      Devil Boss Death (2)_86: 8642853441635369742
+      Devil Boss Death (2)_87: 2370950096202742925
+      Devil Boss Death (2)_88: 530616041505657960
+      Devil Boss Death (2)_89: 2106833254715571312
+      Devil Boss Death (2)_9: 4510149339736505719
+      Devil Boss Death (2)_90: -851043871158250321
+      Devil Boss Death (2)_91: -8847971637270942970
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

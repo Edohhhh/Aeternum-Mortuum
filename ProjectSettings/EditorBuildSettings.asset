@@ -45,6 +45,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Cutscene Final Neutral.unity
     guid: 5180d12273d494c83b4f24f0fbceb74c
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene Final Bueno.unity
+    guid: 386c23f1a2a0545019f43d1b2e31b67a
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene Final Malo.unity
+    guid: 51a555dbb48374b3f808d014008519ab
+  - enabled: 1
     path: "Assets/Scenes/EspecialAra\xF1a.unity"
     guid: 46697b24f5e454ec9b0b6a002677938e
   - enabled: 0

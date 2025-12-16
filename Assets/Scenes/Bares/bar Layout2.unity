@@ -523,8 +523,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9901d54866ec45c5aafbbd3a9333bf3, type: 2}
   rewardPool:
   - {fileID: 11400000, guid: 4d1040544f876c745b1265be94c9d358, type: 2}
-  successMessage: "Gracias, Aqu\xED tienes tu recompensa."
-  missingItemsMessage: "A\xFAn no tienes lo que te ped\xED..."
+  successMessage: Gracias, toma tu recompensa. Un libro elemental de Fuego
+  missingItemsMessage: "No tienes lo que te ped\xED..."
   inventoryFullMessage: No tienes espacio para la recompensa.
 --- !u!61 &41684386
 BoxCollider2D:

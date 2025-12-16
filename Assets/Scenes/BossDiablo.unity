@@ -17939,8 +17939,8 @@ MonoBehaviour:
   requiredEnemyHealth: {fileID: 2364529305559481950}
   requireEnemyDeadToInteract: 1
   scenesToLoad:
-  - Cutscene Final Neutral
-  - Cutscene Final Neutral
+  - Cutscene Final Bueno
+  - Cutscene Final Malo
   avoidCurrentScene: 1
   fadeImage: {fileID: 281935137}
   fadeDuration: 0.7

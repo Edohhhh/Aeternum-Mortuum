@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98845fb8652284d9caf1c1de16fafd3f, type: 3}
   m_Name: Mage
   m_EditorClassIdentifier: 
-  npcName: 
-  npcPortrait: {fileID: -4828916991762750089, guid: 6228d509dbe65d949ac98c50c038e46a, type: 3}
+  npcName: Mage
+  npcPortrait: {fileID: 3420995227509557832, guid: 1bb6d05ad26a746d99634a6997412827, type: 3}
   dialogueLines:
   - Necesito un libro...
   - Dame un libro.
