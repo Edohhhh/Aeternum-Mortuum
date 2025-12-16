@@ -2246,10 +2246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 403607892}
   linkedWheel: {fileID: 0}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
 --- !u!114 &361078569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4982,6 +4978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2854ce4e31d9bc47bf11f20e786093d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runResult: 0
 --- !u!114 &578414649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7985,7 +7982,7 @@ MonoBehaviour:
   rewardName: {fileID: 175326926}
   rewardDescription: {fileID: 1936215548}
   fadeDuration: 0.3
-  autoHideTime: 3
+  closeKey: 102
 --- !u!225 &1143901009
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8546,13 +8543,13 @@ MonoBehaviour:
   - prefab: {fileID: 531529343062115860, guid: b2900017f85b68f42a792aa741f69ba9, type: 3}
     weight: 55.5
   ruletaContainer: {fileID: 1425373441}
-  selectedLabel: {fileID: 0}
   ruletaUISets:
   - {fileID: 1288667804}
   - {fileID: 361078568}
   - {fileID: 1457125707}
-  confettiPrefab: {fileID: 1951237453}
   wheelUIController: {fileID: 1391429}
+  selectedLabel: {fileID: 0}
+  confettiPrefab: {fileID: 1951237453}
 --- !u!4 &1255194626
 Transform:
   m_ObjectHideFlags: 0
@@ -8652,10 +8649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 1362062079}
   linkedWheel: {fileID: 0}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
 --- !u!114 &1288667805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9468,10 +9461,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsContainer: {fileID: 842764840}
   linkedWheel: {fileID: 0}
-  selectButton: {fileID: 0}
-  spinButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  spinButtonText: {fileID: 0}
 --- !u!114 &1457125708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12274,7 +12263,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -38.317383, y: 0, z: -40.9906, w: 0}
+  m_margin: {x: -133.51021, y: 0, z: -132.97449, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12304,7 +12293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.649, y: 129}
+  m_AnchoredPosition: {x: -8.649, y: 96}
   m_SizeDelta: {x: 162.7561, y: 35.1025}
   m_Pivot: {x: 0.5, y: 0.49999994}
 --- !u!1 &1936215546
@@ -13457,10 +13446,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -29759,8 +29748,6 @@ MonoBehaviour:
   rewardPopup: {fileID: 0}
   linePrefab: {fileID: 1258666099951334, guid: 052d5aa0d2632e04c90d4d5027f9dd37, type: 3}
   linesParent: {fileID: 5396449332336509900}
-  selector: {fileID: 0}
-  PickerWheelTransform: {fileID: 4737336783272243357}
   wheelCircle: {fileID: 956905475104153858}
   wheelPiecePrefab: {fileID: 1013547879587396, guid: a10fef7bc23b5a64a929387e97c9b936, type: 3}
   wheelPiecesParent: {fileID: 8115284062775915961}
@@ -29768,8 +29755,35 @@ MonoBehaviour:
   tickAudioClip: {fileID: 8300000, guid: 43186eb953e63e546b2c31cb280f58d8, type: 3}
   volume: 0.03
   pitch: 1
+  wheelOffset: 90
+  pointerDistance: 150
+  pointerSize: 15
   spinDuration: 2
-  wheelSize: 1
+  spinRounds: 10
+  spinCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   wheelPieces:
   - Icon: {fileID: 1753655533966520807, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
     Label: 
