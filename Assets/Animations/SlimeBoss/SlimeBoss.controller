@@ -39,7 +39,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 21142a1a9c431a34a9978f666d307e58, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 0.02
+  volume: 0.4
   spatial3D: 0
 --- !u!91 &9100000
 AnimatorController:

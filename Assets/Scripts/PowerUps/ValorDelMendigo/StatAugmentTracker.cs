@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [DisallowMultipleComponent]
 public class StatAugmentTracker : MonoBehaviour
@@ -8,9 +8,17 @@ public class StatAugmentTracker : MonoBehaviour
     private float appliedMaxHealth;
     private float appliedMultiplier = 1f;
 
-    public void ApplyTo(PlayerController player, int addDamage, float addMoveSpeed, float addMaxHealth, float moveSpeedMultiplier)
+    // ✅ NUEVO: spins
+    private int appliedExtraSpins;
+
+    public void ApplyTo(PlayerController player,
+        int addDamage,
+        float addMoveSpeed,
+        float addMaxHealth,
+        float moveSpeedMultiplier,
+        int addExtraSpins)
     {
-        // Aplicar da�o
+        // Aplicar daño
         player.baseDamage = (int)(player.baseDamage + addDamage);
         appliedDamage = addDamage;
 
@@ -19,7 +27,11 @@ public class StatAugmentTracker : MonoBehaviour
         appliedMoveSpeed = addMoveSpeed;
         appliedMultiplier = moveSpeedMultiplier;
 
-        // Aplicar vida m�xima
+        // ✅ Aplicar spins extra
+        player.extraSpins += addExtraSpins;
+        appliedExtraSpins = addExtraSpins;
+
+        // Aplicar vida máxima
         var ph = player.GetComponent<PlayerHealth>();
         if (ph != null)
         {
@@ -37,10 +49,16 @@ public class StatAugmentTracker : MonoBehaviour
 
     public void RemoveFrom(PlayerController player)
     {
+        // Revertir daño
         player.baseDamage = (int)(player.baseDamage - appliedDamage);
 
+        // Revertir velocidad
         player.moveSpeed = (player.moveSpeed - appliedMoveSpeed) / appliedMultiplier;
 
+        // ✅ Revertir spins extra
+        player.extraSpins -= appliedExtraSpins;
+
+        // Revertir vida máxima
         var ph = player.GetComponent<PlayerHealth>();
         if (ph != null)
         {
@@ -58,5 +76,8 @@ public class StatAugmentTracker : MonoBehaviour
         appliedMoveSpeed = 0f;
         appliedMaxHealth = 0f;
         appliedMultiplier = 1f;
+
+        // ✅ reset spins
+        appliedExtraSpins = 0;
     }
 }

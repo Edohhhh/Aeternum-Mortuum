@@ -20336,7 +20336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   moveSpeed: 5
-  baseDamage: 1
+  baseDamage: 3
   extraSpins: 0
   dashSpeed: 10
   dashIframes: 10

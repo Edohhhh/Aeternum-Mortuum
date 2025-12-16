@@ -5259,7 +5259,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b8136a7ae38baee4ca474abb73725d52, type: 3}
   m_Resource: {fileID: 8300000, guid: b8136a7ae38baee4ca474abb73725d52, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13369,7 +13369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025a25d76b781a543aa8f27ec206d1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 776748322}
   maxHealthText: {fileID: 58952476}
 --- !u!1 &1676897428
 GameObject:
