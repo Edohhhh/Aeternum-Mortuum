@@ -8220,6 +8220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4bebc7bfe9d394592353853ce4bc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minVueltasSkip: 3
+  maxVueltasSkip: 5
   powerUpPools: []
   powerUpPool: {fileID: 0}
   rewardPopup: {fileID: 0}
@@ -17629,7 +17631,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 17
   m_TargetDisplay: 0
 --- !u!1001 &2051498435
 PrefabInstance:
