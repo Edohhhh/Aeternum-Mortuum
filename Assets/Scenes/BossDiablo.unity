@@ -17543,13 +17543,33 @@ PrefabInstance:
       propertyPath: damageNumberPrefab
       value: 
       objectReference: {fileID: 784950756064908022, guid: cb52f7cb821b7499cbf468b37d6727fa, type: 3}
+    - target: {fileID: 3531027491510926401, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: m_Size.x
+      value: 3.4584212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531027491510926401, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9465227
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531027491510926401, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531027491510926401, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.024617195
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531027491510926401, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.150352
+      objectReference: {fileID: 0}
     - target: {fileID: 4665812981307029301, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 4665812981307029301, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9
+      value: 6.95
       objectReference: {fileID: 0}
     - target: {fileID: 4665812981307029301, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17696,7 +17716,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1698751630}
     - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a1_fireBeamPrefab
+      value: 
+      objectReference: {fileID: 910327751285373208, guid: 16189c09aad7b1d44b05c5f94ebebda3, type: 3}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a1_warnBeamPrefab
+      value: 
+      objectReference: {fileID: 910327751285373208, guid: fe526a7930b836d4cb679f713b117723, type: 3}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a4_timeMulPerWave
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
       propertyPath: a6_impactHoldTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a4_speedMulPerWave
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a1_colliderSizeMul.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}
+      propertyPath: a1_colliderSizeMul.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8938823856803099788, guid: 65b3dd1001982684695ee6c7c9145c96, type: 3}

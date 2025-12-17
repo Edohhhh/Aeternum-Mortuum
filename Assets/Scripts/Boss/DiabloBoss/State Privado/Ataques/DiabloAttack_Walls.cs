@@ -29,6 +29,13 @@ public class DiabloAttack_Walls : IDiabloAttack
     private float fadeInDuration = 0.25f;
     private float fadeOutDuration = 0.25f;
 
+    // Colliders
+    private bool collidersOffThisWave = false;
+
+    // Escalado por ola
+    private float WaveSpeedMul() => Mathf.Pow(ctrl.A4_SpeedMulPerWave, waveIndex);
+    private float WaveTimeMul() => Mathf.Pow(ctrl.A4_TimeMulPerWave, waveIndex);
+
     public void Start(DiabloController c)
     {
         ctrl = c;
@@ -100,6 +107,24 @@ public class DiabloAttack_Walls : IDiabloAttack
         SetAlpha(rightInst, alpha);
     }
 
+    // ---------- Helpers colliders ----------
+
+    private void SetCollidersEnabled(GameObject go, bool on)
+    {
+        if (!go) return;
+        foreach (var c in go.GetComponentsInChildren<Collider2D>(true))
+            c.enabled = on;
+    }
+
+    private void DisableCollidersForFade()
+    {
+        if (collidersOffThisWave) return;
+        collidersOffThisWave = true;
+
+        SetCollidersEnabled(leftInst, false);
+        SetCollidersEnabled(rightInst, false);
+    }
+
     // ---------- FASE WARNING ----------
 
     private void StartWarning()
@@ -111,7 +136,8 @@ public class DiabloAttack_Walls : IDiabloAttack
 
     private void UpdateWarning()
     {
-        if (timer >= ctrl.A4_WarnTime)
+        // 👇 cada ola: warning un poco más corto si A4_TimeMulPerWave < 1
+        if (timer >= ctrl.A4_WarnTime * WaveTimeMul())
         {
             StartWave();
         }
@@ -143,6 +169,11 @@ public class DiabloAttack_Walls : IDiabloAttack
             ctrl.A4_RightSpawn.position,
             ctrl.A4_RightSpawn.rotation);
 
+        // Reset colliders para esta ola (por si quedaron apagados)
+        collidersOffThisWave = false;
+        SetCollidersEnabled(leftInst, true);
+        SetCollidersEnabled(rightInst, true);
+
         // Al spawnear: arrancan invisibles (alpha 0)
         SetBothAlpha(0f);
 
@@ -171,7 +202,8 @@ public class DiabloAttack_Walls : IDiabloAttack
             return;
         }
 
-        float speed = ctrl.A4_MoveSpeed;
+        // 👇 cada ola más rápida
+        float speed = ctrl.A4_MoveSpeed * WaveSpeedMul();
 
         // ir desde spawn -> mid
         Vector3 lTarget = ctrl.A4_LeftMid.position;
@@ -208,7 +240,8 @@ public class DiabloAttack_Walls : IDiabloAttack
             return;
         }
 
-        float speed = ctrl.A4_MoveSpeed;
+        // 👇 cada ola más rápida
+        float speed = ctrl.A4_MoveSpeed * WaveSpeedMul();
 
         Vector3 lTarget = ctrl.A4_LeftSpawn.position;
         Vector3 rTarget = ctrl.A4_RightSpawn.position;
@@ -243,7 +276,9 @@ public class DiabloAttack_Walls : IDiabloAttack
             return;
         }
 
-        float speed = useFancyMovement ? ctrl.A4_FastMoveSpeed : ctrl.A4_MoveSpeed;
+        // 👇 cada ola más rápida
+        float speedBase = useFancyMovement ? ctrl.A4_FastMoveSpeed : ctrl.A4_MoveSpeed;
+        float speed = speedBase * WaveSpeedMul();
 
         Vector3 lp = leftInst.transform.position;
         Vector3 rp = rightInst.transform.position;
@@ -313,8 +348,11 @@ public class DiabloAttack_Walls : IDiabloAttack
             return;
         }
 
-        // tiempo total que se quedan apretando
-        float holdTime = ctrl.A4_HoldTime;
+        // ✅ apenas empieza el fade, apagamos colliders (1 sola vez)
+        DisableCollidersForFade();
+
+        // 👇 cada ola: hold un poco más corto si A4_TimeMulPerWave < 1
+        float holdTime = ctrl.A4_HoldTime * WaveTimeMul();
 
         // Durante los primeros fadeOutDuration segundos, vamos bajando alpha de 1 a 0
         float tFade = Mathf.Clamp01(timer / fadeOutDuration);
@@ -333,7 +371,8 @@ public class DiabloAttack_Walls : IDiabloAttack
 
     private void UpdateGap()
     {
-        if (timer >= ctrl.A4_WaveGap)
+        // 👇 cada ola: gap un poco más corto si A4_TimeMulPerWave < 1
+        if (timer >= ctrl.A4_WaveGap * WaveTimeMul())
         {
             waveIndex++;
 
@@ -351,8 +390,6 @@ public class DiabloAttack_Walls : IDiabloAttack
 
     private void StartGapAfterError()
     {
-        // Si por algún motivo las paredes desaparecen antes,
-        // evitamos que se quede colgado el ataque.
         DestroyWalls();
         phase = Phase.Gap;
         timer = 0f;
@@ -381,7 +418,7 @@ public class DiabloAttack_Walls : IDiabloAttack
 //    //  - SlowIn: van desde spawn -> mid (lento)
 //    //  - BackOut: vuelven desde mid -> spawn (lento)
 //    //  - FastIn: van desde spawn -> centro (rápido, se frenan al chocar)
-//    //  - Holding: se quedan un rato apretando
+//    //  - Holding: se quedan un rato apretando (acá hacemos fade out)
 //    //  - Gap: pausa entre olas
 //    private enum Phase { Warning, SlowIn, BackOut, FastIn, Holding, Gap }
 //    private Phase phase;
@@ -394,6 +431,15 @@ public class DiabloAttack_Walls : IDiabloAttack
 
 //    // Para fallback si no hay mid-points
 //    private bool useFancyMovement = false;
+
+//    // Fade
+//    private float fadeInDuration = 0.25f;
+//    private float fadeOutDuration = 0.25f;
+
+//    private bool collidersOffThisWave = false;
+
+//    private float WaveSpeedMul() => Mathf.Pow(ctrl.A4_SpeedMulPerWave, waveIndex);
+//    private float WaveTimeMul() => Mathf.Pow(ctrl.A4_TimeMulPerWave, waveIndex);
 
 //    public void Start(DiabloController c)
 //    {
@@ -447,6 +493,25 @@ public class DiabloAttack_Walls : IDiabloAttack
 //        IsFinished = true;
 //    }
 
+//    // ---------- Helpers de fade ----------
+
+//    private void SetAlpha(GameObject go, float alpha)
+//    {
+//        if (!go) return;
+//        var sr = go.GetComponentInChildren<SpriteRenderer>();
+//        if (!sr) return;
+
+//        var col = sr.color;
+//        col.a = alpha;
+//        sr.color = col;
+//    }
+
+//    private void SetBothAlpha(float alpha)
+//    {
+//        SetAlpha(leftInst, alpha);
+//        SetAlpha(rightInst, alpha);
+//    }
+
 //    // ---------- FASE WARNING ----------
 
 //    private void StartWarning()
@@ -490,6 +555,9 @@ public class DiabloAttack_Walls : IDiabloAttack
 //            ctrl.A4_RightSpawn.position,
 //            ctrl.A4_RightSpawn.rotation);
 
+//        // Al spawnear: arrancan invisibles (alpha 0)
+//        SetBothAlpha(0f);
+
 //        useFancyMovement = (ctrl.A4_LeftMid && ctrl.A4_RightMid);
 
 //        if (useFancyMovement)
@@ -527,6 +595,10 @@ public class DiabloAttack_Walls : IDiabloAttack
 //        rightInst.transform.position =
 //            Vector3.MoveTowards(rightInst.transform.position, rTarget, speed * dt);
 
+//        // FADE IN mientras están en SlowIn
+//        float tFade = Mathf.Clamp01(timer / fadeInDuration);
+//        SetBothAlpha(tFade);
+
 //        bool leftReached = Vector3.Distance(leftInst.transform.position, lTarget) < 0.01f;
 //        bool rightReached = Vector3.Distance(rightInst.transform.position, rTarget) < 0.01f;
 
@@ -559,6 +631,9 @@ public class DiabloAttack_Walls : IDiabloAttack
 //        rightInst.transform.position =
 //            Vector3.MoveTowards(rightInst.transform.position, rTarget, speed * dt);
 
+//        // En BackOut ya están full alpha (1)
+//        SetBothAlpha(1f);
+
 //        bool leftReached = Vector3.Distance(leftInst.transform.position, lTarget) < 0.01f;
 //        bool rightReached = Vector3.Distance(rightInst.transform.position, rTarget) < 0.01f;
 
@@ -590,6 +665,9 @@ public class DiabloAttack_Walls : IDiabloAttack
 
 //        leftInst.transform.position = lp;
 //        rightInst.transform.position = rp;
+
+//        // aseguramos que estén visibles mientras rushéan
+//        SetBothAlpha(1f);
 
 //        // Comprobamos colisión usando los colliders
 //        var leftCol = leftInst.GetComponent<Collider2D>();
@@ -637,7 +715,7 @@ public class DiabloAttack_Walls : IDiabloAttack
 //        }
 //    }
 
-//    // ---------- HOLDING (SE QUEDAN APRETANDO) ----------
+//    // ---------- HOLDING (SE QUEDAN APRETANDO + FADE OUT) ----------
 
 //    private void UpdateHolding()
 //    {
@@ -647,7 +725,15 @@ public class DiabloAttack_Walls : IDiabloAttack
 //            return;
 //        }
 
-//        if (timer >= ctrl.A4_HoldTime)
+//        // tiempo total que se quedan apretando
+//        float holdTime = ctrl.A4_HoldTime;
+
+//        // Durante los primeros fadeOutDuration segundos, vamos bajando alpha de 1 a 0
+//        float tFade = Mathf.Clamp01(timer / fadeOutDuration);
+//        float alpha = Mathf.Lerp(1f, 0f, tFade);
+//        SetBothAlpha(alpha);
+
+//        if (timer >= holdTime)
 //        {
 //            DestroyWalls();
 //            phase = Phase.Gap;
@@ -692,6 +778,21 @@ public class DiabloAttack_Walls : IDiabloAttack
 //        leftInst = null;
 //        rightInst = null;
 //    }
-//}
 
+//    private void SetCollidersEnabled(GameObject go, bool on)
+//    {
+//        if (!go) return;
+//        foreach (var c in go.GetComponentsInChildren<Collider2D>(true))
+//            c.enabled = on;
+//    }
+
+//    private void DisableCollidersForFade()
+//    {
+//        if (collidersOffThisWave) return;
+//        collidersOffThisWave = true;
+
+//        SetCollidersEnabled(leftInst, false);
+//        SetCollidersEnabled(rightInst, false);
+//    }
+//}
 

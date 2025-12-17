@@ -8,95 +8,43 @@ public class DiabloAttack_XPlus : IDiabloAttack
     private float t;
 
     private BeamSegment[] beams = null;
-
     public bool IsFinished { get; private set; }
 
-    // ---- helper interno ----
     private class BeamSegment
     {
         public GameObject go;
-        public Transform tr;
-        public SpriteRenderer sr;
-        public BoxCollider2D col;
-        public DevilBeamDamage dmg;
+        public BeamVisual2D beam;
     }
 
-    // Crea UN rayo entre dos puntos
     private BeamSegment SpawnBeamBetween(
         DiabloController ctrl,
         Transform from,
         Transform to,
         float width,
         Color color,
-        bool damageOn
+        bool damageOn,
+        bool colliderOn,
+        GameObject prefab
     )
     {
-        if (!ctrl.A1_BeamPrefab || !from || !to)
-            return null;
+        if (!prefab || !from || !to) return null;
 
-        var go = Object.Instantiate(ctrl.A1_BeamPrefab, ctrl.transform);
-        var tr = go.transform;
+        var go = Object.Instantiate(prefab, ctrl.transform);
 
-        var sr = go.GetComponentInChildren<SpriteRenderer>();
-        var col = go.GetComponent<BoxCollider2D>();
-        var dmg = go.GetComponent<DevilBeamDamage>();
-
-        Vector3 a = from.position;
-        Vector3 b = to.position;
-        Vector3 dir = b - a;
-        float len = dir.magnitude;
-
-        if (len < 0.001f)
+        var beam = go.GetComponent<BeamVisual2D>();
+        if (!beam)
         {
             Object.Destroy(go);
+            Debug.LogWarning("[XPlus] El prefab no tiene BeamVisual2D.");
             return null;
         }
 
-        // posición en el medio
-        tr.position = (a + b) * 0.5f;
-        // rotar para que mire de A hacia B (usamos Vector2.right como referencia)
-        tr.rotation = Quaternion.FromToRotation(Vector2.right, dir.normalized);
+        // Tuning de collider (si tu BeamVisual2D lo usa)
+        beam.SetColliderTuning(ctrl.A1_ColliderSizeMul, ctrl.A1_ColliderOffset);
 
-        // Escala del sprite para que cubra de punta a punta
-        float sx = 1f;
-        float sy = 1f;
+        beam.ConfigureBetween(from.position, to.position, width, color, damageOn, colliderOn);
 
-        if (sr && sr.sprite)
-        {
-            var size = sr.sprite.bounds.size;
-            sx = len / Mathf.Max(0.0001f, size.x);
-            sy = width / Mathf.Max(0.0001f, size.y);
-        }
-
-        tr.localScale = new Vector3(sx, sy, 1f);
-
-        if (sr)
-            sr.color = color;
-
-        // Ajustar collider a largo+ancho
-        if (col)
-        {
-            col.size = new Vector2(len, width);
-            col.offset = Vector2.zero;
-            col.enabled = damageOn;
-        }
-            
-        if (dmg)
-        {
-            dmg.enabled = damageOn;
-            //dmg.damagePerSecond = ctrl.A1_DamagePerSecond;
-            //dmg.damageInterval = ctrl.A1_DamageInterval;
-            //dmg.targetMask = ctrl.A1_PlayerMask;
-        }
-
-        return new BeamSegment
-        {
-            go = go,
-            tr = tr,
-            sr = sr,
-            col = col,
-            dmg = dmg
-        };
+        return new BeamSegment { go = go, beam = beam };
     }
 
     private void DestroyBeams()
@@ -104,15 +52,10 @@ public class DiabloAttack_XPlus : IDiabloAttack
         if (beams == null) return;
 
         foreach (var b in beams)
-        {
-            if (b != null && b.go)
-                Object.Destroy(b.go);
-        }
+            if (b != null && b.go) Object.Destroy(b.go);
 
         beams = null;
     }
-
-    // ================== IDiabloAttack ==================
 
     public void Start(DiabloController ctrl)
     {
@@ -122,17 +65,29 @@ public class DiabloAttack_XPlus : IDiabloAttack
 
         ctrl.SpawnExtraEnemiesForAttack(0);
 
-        // AVISO de la X: dos rayos diagonales entre las esquinas
+        // ===== WARN X (diagonales) =====
         beams = new[]
         {
-            SpawnBeamBetween(ctrl, ctrl.A1_TopLeft,     ctrl.A1_BottomRight, ctrl.A1_WarnWidth, ctrl.A1_WarnColor, false),
-            SpawnBeamBetween(ctrl, ctrl.A1_TopRight,    ctrl.A1_BottomLeft,  ctrl.A1_WarnWidth, ctrl.A1_WarnColor, false),
+            SpawnBeamBetween(ctrl, ctrl.A1_TopLeft,  ctrl.A1_BottomRight, ctrl.A1_WarnWidth, ctrl.A1_WarnColor,
+                damageOn:false, colliderOn:false, prefab: ctrl.A1_WarnBeamPrefab),
+
+            SpawnBeamBetween(ctrl, ctrl.A1_TopRight, ctrl.A1_BottomLeft,  ctrl.A1_WarnWidth, ctrl.A1_WarnColor,
+                damageOn:false, colliderOn:false, prefab: ctrl.A1_WarnBeamPrefab),
         };
     }
 
     public void Tick(DiabloController ctrl)
     {
         if (IsFinished) return;
+
+        // ===== PARA QUE SE VEA EN VIVO EL CAMBIO DE COLLIDER TUNING =====
+        // (si modificás A1_ColliderSizeMul / Offset en Play Mode)
+        if (beams != null)
+        {
+            for (int i = 0; i < beams.Length; i++)
+                if (beams[i] != null && beams[i].beam != null)
+                    beams[i].beam.SetColliderTuning(ctrl.A1_ColliderSizeMul, ctrl.A1_ColliderOffset);
+        }
 
         t += Time.deltaTime;
 
@@ -141,13 +96,17 @@ public class DiabloAttack_XPlus : IDiabloAttack
             case Phase.WarnX:
                 if (t >= ctrl.A1_WarnTime)
                 {
-                    // destruir aviso y spawnear X de daño
+                    // ===== FIRE X (diagonales con daño) =====
                     DestroyBeams();
                     beams = new[]
                     {
-                        SpawnBeamBetween(ctrl, ctrl.A1_TopLeft,  ctrl.A1_BottomRight, ctrl.A1_FireWidth, ctrl.A1_FireColor, true),
-                        SpawnBeamBetween(ctrl, ctrl.A1_TopRight, ctrl.A1_BottomLeft,  ctrl.A1_FireWidth, ctrl.A1_FireColor, true),
+                        SpawnBeamBetween(ctrl, ctrl.A1_TopLeft,  ctrl.A1_BottomRight, ctrl.A1_FireWidth, ctrl.A1_FireColor,
+                            damageOn:true, colliderOn:true, prefab: ctrl.A1_FireBeamPrefab),
+
+                        SpawnBeamBetween(ctrl, ctrl.A1_TopRight, ctrl.A1_BottomLeft,  ctrl.A1_FireWidth, ctrl.A1_FireColor,
+                            damageOn:true, colliderOn:true, prefab: ctrl.A1_FireBeamPrefab),
                     };
+
                     t = 0f;
                     phase = Phase.FireX;
                 }
@@ -157,7 +116,6 @@ public class DiabloAttack_XPlus : IDiabloAttack
                 if (t >= ctrl.A1_FireTime)
                 {
                     DestroyBeams();
-                    beams = null;
                     t = 0f;
                     phase = Phase.Gap;
                 }
@@ -166,15 +124,17 @@ public class DiabloAttack_XPlus : IDiabloAttack
             case Phase.Gap:
                 if (t >= ctrl.A1_GapAfterX)
                 {
-                    // AVISO del +
+                    // ===== WARN PLUS (vertical + horizontal) =====
                     DestroyBeams();
                     beams = new[]
                     {
-                        // vertical (top-bottom)
-                        SpawnBeamBetween(ctrl, ctrl.A1_Top,    ctrl.A1_Bottom, ctrl.A1_WarnWidth, ctrl.A1_WarnColor, false),
-                        // horizontal (left-right)
-                        SpawnBeamBetween(ctrl, ctrl.A1_Left,   ctrl.A1_Right,  ctrl.A1_WarnWidth, ctrl.A1_WarnColor, false),
+                        SpawnBeamBetween(ctrl, ctrl.A1_Top,  ctrl.A1_Bottom, ctrl.A1_WarnWidth, ctrl.A1_WarnColor,
+                            damageOn:false, colliderOn:false, prefab: ctrl.A1_WarnBeamPrefab),
+
+                        SpawnBeamBetween(ctrl, ctrl.A1_Left, ctrl.A1_Right,  ctrl.A1_WarnWidth, ctrl.A1_WarnColor,
+                            damageOn:false, colliderOn:false, prefab: ctrl.A1_WarnBeamPrefab),
                     };
+
                     t = 0f;
                     phase = Phase.WarnPlus;
                 }
@@ -183,13 +143,17 @@ public class DiabloAttack_XPlus : IDiabloAttack
             case Phase.WarnPlus:
                 if (t >= ctrl.A1_WarnTime)
                 {
-                    // destruir aviso y spawnear + de daño
+                    // ===== FIRE PLUS (vertical + horizontal con daño) =====
                     DestroyBeams();
                     beams = new[]
                     {
-                        SpawnBeamBetween(ctrl, ctrl.A1_Top,  ctrl.A1_Bottom, ctrl.A1_FireWidth, ctrl.A1_FireColor, true),
-                        SpawnBeamBetween(ctrl, ctrl.A1_Left, ctrl.A1_Right,  ctrl.A1_FireWidth, ctrl.A1_FireColor, true),
+                        SpawnBeamBetween(ctrl, ctrl.A1_Top,  ctrl.A1_Bottom, ctrl.A1_FireWidth, ctrl.A1_FireColor,
+                            damageOn:true, colliderOn:true, prefab: ctrl.A1_FireBeamPrefab),
+
+                        SpawnBeamBetween(ctrl, ctrl.A1_Left, ctrl.A1_Right,  ctrl.A1_FireWidth, ctrl.A1_FireColor,
+                            damageOn:true, colliderOn:true, prefab: ctrl.A1_FireBeamPrefab),
                     };
+
                     t = 0f;
                     phase = Phase.FirePlus;
                 }
@@ -199,7 +163,6 @@ public class DiabloAttack_XPlus : IDiabloAttack
                 if (t >= ctrl.A1_FireTime)
                 {
                     DestroyBeams();
-                    beams = null;
                     phase = Phase.End;
                     IsFinished = true;
                 }

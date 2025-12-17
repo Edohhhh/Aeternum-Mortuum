@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6295088706921755173}
   - component: {fileID: 7710371796030971626}
   m_Layer: 0
-  m_Name: LaserXY
+  m_Name: LaserXY Warn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

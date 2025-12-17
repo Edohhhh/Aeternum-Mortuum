@@ -14,8 +14,11 @@ public class DiabloIdleState : State<EnemyInputs>
 
         if (ctrl.Anim)
         {
-            ctrl.Anim.ResetTrigger("Idle");
-            ctrl.Anim.SetTrigger("Idle");
+            //ctrl.Anim.ResetTrigger("Idle");
+            //ctrl.Anim.SetTrigger("Idle");
+            for (int i = 1; i <= ctrl.AnimCount; i++)
+                ctrl.Anim.SetBool($"Anim{i}", false);
+            ctrl.Anim.Play("Idle", 0, 0f);
         }
 
         if (ctrl.Body)

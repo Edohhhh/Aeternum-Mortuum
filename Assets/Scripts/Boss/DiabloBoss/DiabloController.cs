@@ -28,7 +28,9 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
 
     // ==== Attack 1 — X + Plus (visual, daño y centro) ====
     [Header("Attack 1 — X + Plus")]
-    [SerializeField] private GameObject a1_beamPrefab;
+    //[SerializeField] private GameObject a1_beamPrefab;
+    [SerializeField] private GameObject a1_warnBeamPrefab; // aviso (sprite que quieras)
+    [SerializeField] private GameObject a1_fireBeamPrefab; // daño (tu LaserXY)
     [SerializeField] private Transform[] a1_waypointsX = new Transform[4]; // Waypoints para X (4 direcciones diagonales)
     [SerializeField] private Transform[] a1_waypointsPlus = new Transform[4]; // Waypoints para + (4 direcciones ortogonales)
 
@@ -51,6 +53,10 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     [SerializeField] private float a1_beamLength = 18f;
     [SerializeField] private float a1_warnWidth = 0.12f;
     [SerializeField] private float a1_fireWidth = 0.60f;
+
+    [Header("Attack 1 — Collider tuning")]
+    [SerializeField] private Vector2 a1_colliderSizeMul = new Vector2(1f, 1f);
+    [SerializeField] private Vector2 a1_colliderOffset = Vector2.zero;
 
     [Tooltip("Offset LOCAL respecto al Diablo para el origen de los rayos")]
     [SerializeField] private Vector2 a1_centerOffset = Vector2.zero;
@@ -118,7 +124,14 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     [SerializeField] private Transform a4_leftSpawn;
     [SerializeField] private Transform a4_rightSpawn;
 
-  
+    [Header("Attack 4 — Wave scaling")]
+    [SerializeField, Tooltip("Multiplicador de velocidad por ola. Ej: 1.2 => cada ola 20% más rápida")]
+    private float a4_speedMulPerWave = 1.2f;
+
+    [SerializeField, Tooltip("Multiplicador de tiempos por ola. Ej: 0.9 => cada ola 10% más corta")]
+    private float a4_timeMulPerWave = 0.9f;
+
+
     [SerializeField] private Transform a4_leftMid;
     [SerializeField] private Transform a4_rightMid;
 
@@ -142,6 +155,9 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     [SerializeField] private float a5_spinSpeed = 90f;       // grados por segundo (sentido horario)
     [SerializeField] private float a5_beamLength = 10f;      // largo de cada “pata” de la X (escala Y)
     [SerializeField] private float a5_beamWidth = 0.6f;      // ancho (escala X)
+    [SerializeField] private Vector2 a5_colliderSizeMul = new Vector2(1f, 1f);
+    [SerializeField] private Vector2 a5_colliderOffset = Vector2.zero;
+
     [SerializeField] private Vector2 a5_centerOffset = Vector2.zero;
 
     // ==== Attack 6 — Air Punch ====
@@ -163,6 +179,10 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     [SerializeField] private float a6_damageRadius = 1.0f;   // radio de daño del impacto
     [SerializeField] private int a6_damage = 1;            // daño del impacto
     [SerializeField] private LayerMask a6_playerMask;        // capa del jugador
+
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer sr;
 
     [System.Serializable]
     public class ExtraSpawn
@@ -194,9 +214,9 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
 
     // Runtime
     private FSM<EnemyInputs> fsm;
-    private Animator animator;
+    //private Animator animator;
     private Rigidbody2D rb;
-    private SpriteRenderer sr;
+    //private SpriteRenderer sr;
 
     // “Número elegido” por Random (1..animCount)
     public int Roll { get; private set; } = -1;
@@ -209,9 +229,12 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     // ========= Unity =========
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
+        if (!animator) animator = GetComponentInChildren<Animator>(true);
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
+        if (!sr) sr = animator ? animator.GetComponent<SpriteRenderer>() : GetComponentInChildren<SpriteRenderer>(true);
+
         health = GetComponent<EnemyHealth>();
 
         if (rb) rb.constraints |= RigidbodyConstraints2D.FreezeRotation;
@@ -372,7 +395,11 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
 
     // Getters Attack 1 
 
-    public GameObject A1_BeamPrefab => a1_beamPrefab;
+    //public GameObject A1_BeamPrefab => a1_beamPrefab;
+
+    public GameObject A1_WarnBeamPrefab => a1_warnBeamPrefab;
+    public GameObject A1_FireBeamPrefab => a1_fireBeamPrefab;
+
     public Transform[] A1_WaypointsX => a1_waypointsX;
     public Transform[] A1_WaypointsPlus => a1_waypointsPlus;
 
@@ -392,6 +419,9 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     public float A1_WarnWidth => a1_warnWidth;
     public float A1_FireWidth => a1_fireWidth;
     public Vector2 A1_CenterOffset => a1_centerOffset;
+
+    public Vector2 A1_ColliderSizeMul => a1_colliderSizeMul;
+    public Vector2 A1_ColliderOffset => a1_colliderOffset;
 
     public Color A1_WarnColor => a1_warnColor;
     public Color A1_FireColor => a1_fireColor;
@@ -450,6 +480,8 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     public float A4_HoldTime => a4_holdTime;
     public int A4_Waves => a4_waves;
     public float A4_WaveGap => a4_waveGap;
+    public float A4_SpeedMulPerWave => a4_speedMulPerWave;
+    public float A4_TimeMulPerWave => a4_timeMulPerWave;
 
     // Getters Attack 5
     public GameObject A5_BeamPrefab => a5_beamPrefab;
@@ -460,6 +492,9 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     public float A5_SpinSpeed => a5_spinSpeed;
     public float A5_BeamLength => a5_beamLength;
     public float A5_BeamWidth => a5_beamWidth;
+
+    public Vector2 A5_ColliderSizeMul => a5_colliderSizeMul;
+    public Vector2 A5_ColliderOffset => a5_colliderOffset;
     public Vector2 A5_CenterOffset => a5_centerOffset;
 
     // Getters Attack 6
