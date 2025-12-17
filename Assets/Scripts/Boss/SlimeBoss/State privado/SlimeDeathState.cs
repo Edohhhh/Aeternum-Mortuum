@@ -36,8 +36,8 @@ public class SlimeDeathState : State<EnemyInputs>
 
             // Instanciar nuevos slimes
             GameObject prefab = slime.GetMiniSlimePrefab();
-            GameObject.Instantiate(prefab, slime.transform.position + Vector3.right * 1.5f, Quaternion.identity);
-            GameObject.Instantiate(prefab, slime.transform.position + Vector3.left * 1.5f, Quaternion.identity);
+            GameObject.Instantiate(prefab, slime.transform.position + Vector3.right * 0.5f, Quaternion.identity);
+            GameObject.Instantiate(prefab, slime.transform.position + Vector3.left * 0.5f, Quaternion.identity);
 
             // Desregistrar y destruir
             EnemyManager.Instance.UnregisterEnemy();

@@ -17,7 +17,7 @@ MonoBehaviour:
   effect: {fileID: 11400000, guid: 5ec49369cfde9425d8b8092a079a84ce, type: 2}
   chargeRate: 0.1
   dischargeRate: 0.05
-  laserBeamPrefab: {fileID: 8118559782372147317, guid: cf21406cf77ab4ad39fdc0063dd1b812, type: 3}
+  laserBeamPrefab: {fileID: 8118559782372147317, guid: 77582167552da304fbab9197c7a94fd4, type: 3}
   baseDamagePerSecond: 6
   baseMaxDistance: 15
   baseDuration: 4

@@ -33,8 +33,8 @@ public class MiniSlimeDeathState : State<EnemyInputs>
             slime.transform.position = originalPos;
 
             GameObject prefab = slime.miniSlimePrefab;
-            GameObject.Instantiate(prefab, slime.transform.position + new Vector3(1.5f, 1.5f, 0), Quaternion.identity);
-            GameObject.Instantiate(prefab, slime.transform.position + new Vector3(-1.5f, -1.5f, 0), Quaternion.identity);
+            GameObject.Instantiate(prefab, slime.transform.position + new Vector3(0.5f, 0.5f, 0), Quaternion.identity);
+            GameObject.Instantiate(prefab, slime.transform.position + new Vector3(-0.5f, -0.5f, 0), Quaternion.identity);
 
             EnemyManager.Instance.UnregisterEnemy();
             GameObject.Destroy(slime.gameObject);

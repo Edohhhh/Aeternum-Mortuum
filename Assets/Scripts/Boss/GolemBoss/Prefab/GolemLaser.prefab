@@ -116,6 +116,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   warmupTime: 1
+  warmupAlpha: 0.35
   followDelay: 0.5
   historyWindow: 2
   turnRateDegPerSec: 120
@@ -127,10 +128,15 @@ MonoBehaviour:
   sortingLayerName: Effects
   sortingOrder: 100
   beamSpritePrefab: {fileID: 6879444206096958541, guid: 0e06bc0d7d02f2344a83b1f8ffb29dc0, type: 3}
+  spriteChildName: LaserSpriteFX
   spriteOrderOffset: 1
   spriteHeight: 0.6
   useTiledSprite: 0
   spritePerpOffset: 0.1
+  hitboxLengthMultiplier: 1
+  hitboxThicknessMultiplier: 0.3
+  hitboxForwardOffset: 0
+  hitboxPerpOffset: 0.1
 --- !u!61 &-7980806444761499937
 BoxCollider2D:
   m_ObjectHideFlags: 0

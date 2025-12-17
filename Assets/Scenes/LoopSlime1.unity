@@ -42166,7 +42166,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   hitbox: {fileID: 1715398195}
-  initialPowerUps: []
+  initialPowerUps:
+  - {fileID: 11400000, guid: eca52cc6fcef64cc5b24c52170419da3, type: 2}
   lastNonZeroMoveInput: {x: 1, y: 0}
   dashCooldownTimer: 0
   knockbackDecay: 18
