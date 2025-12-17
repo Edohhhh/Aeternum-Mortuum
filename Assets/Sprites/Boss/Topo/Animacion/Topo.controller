@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8509d5e5dad49ad47aad6c0d088f499f, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 0.2
+  volume: 0.4
   spatial3D: 0
 --- !u!91 &9100000
 AnimatorController:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: bac0e6cf54a8ddc4db478658ebdb7b97, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 0.02
+  volume: 0.4
   spatial3D: 0
 --- !u!1101 &7352098574403473244
 AnimatorStateTransition:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8509d5e5dad49ad47aad6c0d088f499f, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 0.2
+  volume: 0.4
   spatial3D: 0
 --- !u!1101 &8504064375719238979
 AnimatorStateTransition:
@@ -565,5 +565,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f37ae9fc686b5df45a1c33b211cd8990, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 0.2
+  volume: 0.4
   spatial3D: 0

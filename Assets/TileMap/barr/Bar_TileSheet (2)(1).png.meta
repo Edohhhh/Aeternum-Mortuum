@@ -1,0 +1,757 @@
+fileFormatVersion: 2
+guid: ff3d3b4ebe8962f4cb0d91e9611116f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8078990515505098550
+    second: Bar_TileSheet (2)(1)_0
+  - first:
+      213: -1151686383413786396
+    second: Bar_TileSheet (2)(1)_1
+  - first:
+      213: -5442089499660697715
+    second: Bar_TileSheet (2)(1)_2
+  - first:
+      213: -5053299153844278947
+    second: Bar_TileSheet (2)(1)_3
+  - first:
+      213: 7797999369706886339
+    second: Bar_TileSheet (2)(1)_4
+  - first:
+      213: 8879835515191008674
+    second: Bar_TileSheet (2)(1)_5
+  - first:
+      213: -8541302015363496615
+    second: Bar_TileSheet (2)(1)_6
+  - first:
+      213: -599617466145451219
+    second: Bar_TileSheet (2)(1)_7
+  - first:
+      213: 4702416276471362370
+    second: Bar_TileSheet (2)(1)_8
+  - first:
+      213: -6217315576878041200
+    second: Bar_TileSheet (2)(1)_9
+  - first:
+      213: -8902788240523042736
+    second: Bar_TileSheet (2)(1)_10
+  - first:
+      213: -5580312954783032289
+    second: Bar_TileSheet (2)(1)_11
+  - first:
+      213: 4400963619517792710
+    second: Bar_TileSheet (2)(1)_12
+  - first:
+      213: 4913989386060988332
+    second: Bar_TileSheet (2)(1)_13
+  - first:
+      213: -8999089805575149411
+    second: Bar_TileSheet (2)(1)_14
+  - first:
+      213: -1857709892818090861
+    second: Bar_TileSheet (2)(1)_15
+  - first:
+      213: -5069756099264023002
+    second: Bar_TileSheet (2)(1)_16
+  - first:
+      213: 6531863205057201418
+    second: Bar_TileSheet (2)(1)_17
+  - first:
+      213: 3349049166617387787
+    second: Bar_TileSheet (2)(1)_18
+  - first:
+      213: 7512814919029382936
+    second: Bar_TileSheet (2)(1)_19
+  - first:
+      213: -6574226219443311119
+    second: Bar_TileSheet (2)(1)_20
+  - first:
+      213: -1692824683636998699
+    second: Bar_TileSheet (2)(1)_21
+  - first:
+      213: 7113845605745244569
+    second: Bar_TileSheet (2)(1)_22
+  - first:
+      213: 7991094290092370405
+    second: Bar_TileSheet (2)(1)_23
+  - first:
+      213: 4388172441409420922
+    second: Bar_TileSheet (2)(1)_24
+  - first:
+      213: 1898552197993222336
+    second: Bar_TileSheet (2)(1)_25
+  - first:
+      213: -6185412373880750505
+    second: Bar_TileSheet (2)(1)_26
+  - first:
+      213: 7509082464403388797
+    second: Bar_TileSheet (2)(1)_27
+  - first:
+      213: -604719941601618676
+    second: Bar_TileSheet (2)(1)_28
+  - first:
+      213: 7664588862794825461
+    second: Bar_TileSheet (2)(1)_29
+  - first:
+      213: -286558402621919091
+    second: Bar_TileSheet (2)(1)_30
+  - first:
+      213: -3672697458003438115
+    second: Bar_TileSheet (2)(1)_31
+  - first:
+      213: 1606845011808912389
+    second: Bar_TileSheet (2)(1)_32
+  - first:
+      213: -2874223748197942957
+    second: Bar_TileSheet (2)(1)_33
+  - first:
+      213: 2349633294940074067
+    second: Bar_TileSheet (2)(1)_34
+  - first:
+      213: -6611397605396513531
+    second: Bar_TileSheet (2)(1)_35
+  - first:
+      213: -402378056175268314
+    second: Bar_TileSheet (2)(1)_36
+  - first:
+      213: -2662901818973708358
+    second: Bar_TileSheet (2)(1)_37
+  - first:
+      213: 2392763710462038789
+    second: Bar_TileSheet (2)(1)_38
+  - first:
+      213: -6807865942349665171
+    second: Bar_TileSheet (2)(1)_39
+  - first:
+      213: -922802927809861252
+    second: Bar_TileSheet (2)(1)_40
+  - first:
+      213: 2064530022964688855
+    second: Bar_TileSheet (2)(1)_41
+  - first:
+      213: 932633134347607962
+    second: Bar_TileSheet (2)(1)_42
+  - first:
+      213: -2082349725861656459
+    second: Bar_TileSheet (2)(1)_43
+  - first:
+      213: 7058219950460530876
+    second: Bar_TileSheet (2)(1)_44
+  - first:
+      213: -3033672994698326215
+    second: Bar_TileSheet (2)(1)_45
+  - first:
+      213: 209164074080327259
+    second: Bar_TileSheet (2)(1)_46
+  - first:
+      213: 1768313517963171033
+    second: Bar_TileSheet (2)(1)_47
+  - first:
+      213: 8422370971294221190
+    second: Bar_TileSheet (2)(1)_48
+  - first:
+      213: -7671552909314153084
+    second: Bar_TileSheet (2)(1)_49
+  - first:
+      213: 6362172232334528905
+    second: Bar_TileSheet (2)(1)_50
+  - first:
+      213: -8546085879556569238
+    second: Bar_TileSheet (2)(1)_51
+  - first:
+      213: -6433605323893861158
+    second: Bar_TileSheet (2)(1)_52
+  - first:
+      213: -113876266134992952
+    second: Bar_TileSheet (2)(1)_53
+  - first:
+      213: -8129083807301012318
+    second: Bar_TileSheet (2)(1)_54
+  - first:
+      213: -2097433384835872232
+    second: Bar_TileSheet (2)(1)_55
+  - first:
+      213: -6673718673287911423
+    second: Bar_TileSheet (2)(1)_56
+  - first:
+      213: -7707791374250587646
+    second: Bar_TileSheet (2)(1)_57
+  - first:
+      213: -1722625247261792438
+    second: Bar_TileSheet (2)(1)_58
+  - first:
+      213: -3818233401209322824
+    second: Bar_TileSheet (2)(1)_59
+  - first:
+      213: 5352073162555770022
+    second: Bar_TileSheet (2)(1)_60
+  - first:
+      213: 1489624917761668402
+    second: Bar_TileSheet (2)(1)_61
+  - first:
+      213: 1124118195896790654
+    second: Bar_TileSheet (2)(1)_62
+  - first:
+      213: 4947908621562986344
+    second: Bar_TileSheet (2)(1)_63
+  - first:
+      213: -6206094264315560772
+    second: Bar_TileSheet (2)(1)_64
+  - first:
+      213: 3828182765390408277
+    second: Bar_TileSheet (2)(1)_65
+  - first:
+      213: -9156556550182307209
+    second: Bar_TileSheet (2)(1)_66
+  - first:
+      213: -9084549811318096328
+    second: Bar_TileSheet (2)(1)_67
+  - first:
+      213: -9217136958535384236
+    second: Bar_TileSheet (2)(1)_68
+  - first:
+      213: 8527798415969979589
+    second: Bar_TileSheet (2)(1)_69
+  - first:
+      213: 3477591091635722167
+    second: Bar_TileSheet (2)(1)_70
+  - first:
+      213: 3703508558657424560
+    second: Bar_TileSheet (2)(1)_71
+  - first:
+      213: -962133658062096950
+    second: Bar_TileSheet (2)(1)_72
+  - first:
+      213: -5477117617123270490
+    second: Bar_TileSheet (2)(1)_73
+  - first:
+      213: 3619109743497373875
+    second: Bar_TileSheet (2)(1)_74
+  - first:
+      213: -1574219501883685976
+    second: Bar_TileSheet (2)(1)_75
+  - first:
+      213: -7277270177257903130
+    second: Bar_TileSheet (2)(1)_76
+  - first:
+      213: 401936622005914487
+    second: Bar_TileSheet (2)(1)_77
+  - first:
+      213: -5620403747493574248
+    second: Bar_TileSheet (2)(1)_78
+  - first:
+      213: 4922953934444353980
+    second: Bar_TileSheet (2)(1)_79
+  - first:
+      213: 6003508789322737776
+    second: Bar_TileSheet (2)(1)_80
+  - first:
+      213: 3596756015058921015
+    second: Bar_TileSheet (2)(1)_81
+  - first:
+      213: 1724853580842892289
+    second: Bar_TileSheet (2)(1)_82
+  - first:
+      213: 2696111395388280950
+    second: Bar_TileSheet (2)(1)_83
+  - first:
+      213: 7461773527499439159
+    second: Bar_TileSheet (2)(1)_84
+  - first:
+      213: -5759464234087064467
+    second: Bar_TileSheet (2)(1)_85
+  - first:
+      213: -8346381572691608969
+    second: Bar_TileSheet (2)(1)_86
+  - first:
+      213: 5634010633777643190
+    second: Bar_TileSheet (2)(1)_87
+  - first:
+      213: -8063470509950665856
+    second: Bar_TileSheet (2)(1)_88
+  - first:
+      213: -6399760730666299141
+    second: Bar_TileSheet (2)(1)_89
+  - first:
+      213: 882360505289823521
+    second: Bar_TileSheet (2)(1)_90
+  - first:
+      213: 584922096721068208
+    second: Bar_TileSheet (2)(1)_91
+  - first:
+      213: 34674712832018892
+    second: Bar_TileSheet (2)(1)_92
+  - first:
+      213: -3404176007703989348
+    second: Bar_TileSheet (2)(1)_93
+  - first:
+      213: 3707146384231076981
+    second: Bar_TileSheet (2)(1)_94
+  - first:
+      213: 7597411630888928360
+    second: Bar_TileSheet (2)(1)_95
+  - first:
+      213: 1961588932370800175
+    second: Bar_TileSheet (2)(1)_96
+  - first:
+      213: 961555974488156303
+    second: Bar_TileSheet (2)(1)_97
+  - first:
+      213: -8524364917299404248
+    second: Bar_TileSheet (2)(1)_98
+  - first:
+      213: 5442997480559913699
+    second: Bar_TileSheet (2)(1)_99
+  - first:
+      213: 1269585078598954911
+    second: Bar_TileSheet (2)(1)_100
+  - first:
+      213: 8911124080460160652
+    second: Bar_TileSheet (2)(1)_101
+  - first:
+      213: 5787965670200167308
+    second: Bar_TileSheet (2)(1)_102
+  - first:
+      213: -4946148785244682384
+    second: Bar_TileSheet (2)(1)_103
+  - first:
+      213: 8512477314096231169
+    second: Bar_TileSheet (2)(1)_104
+  - first:
+      213: -5072532856173959544
+    second: Bar_TileSheet (2)(1)_105
+  - first:
+      213: -472983612073793125
+    second: Bar_TileSheet (2)(1)_106
+  - first:
+      213: -3524838100565538021
+    second: Bar_TileSheet (2)(1)_107
+  - first:
+      213: 5435164216356584381
+    second: Bar_TileSheet (2)(1)_108
+  - first:
+      213: 8166259251005175947
+    second: Bar_TileSheet (2)(1)_109
+  - first:
+      213: 3928963127321293054
+    second: Bar_TileSheet (2)(1)_110
+  - first:
+      213: -2991930851507632466
+    second: Bar_TileSheet (2)(1)_111
+  - first:
+      213: -7187741310566781054
+    second: Bar_TileSheet (2)(1)_112
+  - first:
+      213: 5985189078283429204
+    second: Bar_TileSheet (2)(1)_113
+  - first:
+      213: 8019049316376525878
+    second: Bar_TileSheet (2)(1)_114
+  - first:
+      213: -3299010287319259667
+    second: Bar_TileSheet (2)(1)_115
+  - first:
+      213: 566154392889842194
+    second: Bar_TileSheet (2)(1)_116
+  - first:
+      213: 2639579166862904511
+    second: Bar_TileSheet (2)(1)_117
+  - first:
+      213: -3856892029111555662
+    second: Bar_TileSheet (2)(1)_118
+  - first:
+      213: 6492836292199740897
+    second: Bar_TileSheet (2)(1)_119
+  - first:
+      213: 1615418168232451315
+    second: Bar_TileSheet (2)(1)_120
+  - first:
+      213: 4139804827032428083
+    second: Bar_TileSheet (2)(1)_121
+  - first:
+      213: -3361417695343452415
+    second: Bar_TileSheet (2)(1)_122
+  - first:
+      213: 5599759414667220914
+    second: Bar_TileSheet (2)(1)_123
+  - first:
+      213: -5035397019738344130
+    second: Bar_TileSheet (2)(1)_124
+  - first:
+      213: 2277546629606907193
+    second: Bar_TileSheet (2)(1)_125
+  - first:
+      213: 1392363687297012305
+    second: Bar_TileSheet (2)(1)_126
+  - first:
+      213: 4317053099931277602
+    second: Bar_TileSheet (2)(1)_127
+  - first:
+      213: -9128821137733739168
+    second: Bar_TileSheet (2)(1)_128
+  - first:
+      213: -4882114782162232267
+    second: Bar_TileSheet (2)(1)_129
+  - first:
+      213: 7320302213902220148
+    second: Bar_TileSheet (2)(1)_130
+  - first:
+      213: 425605875006453732
+    second: Bar_TileSheet (2)(1)_131
+  - first:
+      213: -2353452790280958789
+    second: Bar_TileSheet (2)(1)_132
+  - first:
+      213: 8862864584396199977
+    second: Bar_TileSheet (2)(1)_133
+  - first:
+      213: 7690045385234943854
+    second: Bar_TileSheet (2)(1)_134
+  - first:
+      213: -7591231592112661886
+    second: Bar_TileSheet (2)(1)_135
+  - first:
+      213: 3817316766402314856
+    second: Bar_TileSheet (2)(1)_136
+  - first:
+      213: -3764676279423402141
+    second: Bar_TileSheet (2)(1)_137
+  - first:
+      213: 8808539419379391387
+    second: Bar_TileSheet (2)(1)_138
+  - first:
+      213: 4767983901681280270
+    second: Bar_TileSheet (2)(1)_139
+  - first:
+      213: -6700458948582481614
+    second: Bar_TileSheet (2)(1)_140
+  - first:
+      213: 4140368837508832431
+    second: Bar_TileSheet (2)(1)_141
+  - first:
+      213: 1587832023240271235
+    second: Bar_TileSheet (2)(1)_142
+  - first:
+      213: 4092641751479058096
+    second: Bar_TileSheet (2)(1)_143
+  - first:
+      213: -1758355377364379057
+    second: Bar_TileSheet (2)(1)_144
+  - first:
+      213: -1568360776880848442
+    second: Bar_TileSheet (2)(1)_145
+  - first:
+      213: -395644051295499226
+    second: Bar_TileSheet (2)(1)_146
+  - first:
+      213: 3572202018316536653
+    second: Bar_TileSheet (2)(1)_147
+  - first:
+      213: -218425717054280005
+    second: Bar_TileSheet (2)(1)_148
+  - first:
+      213: -3420613823839746405
+    second: Bar_TileSheet (2)(1)_149
+  - first:
+      213: 7878578588765886253
+    second: Bar_TileSheet (2)(1)_150
+  - first:
+      213: 5984665772262827949
+    second: Bar_TileSheet (2)(1)_151
+  - first:
+      213: 7730722776770599336
+    second: Bar_TileSheet (2)(1)_152
+  - first:
+      213: 1593684759715731069
+    second: Bar_TileSheet (2)(1)_153
+  - first:
+      213: 1451060112359522635
+    second: Bar_TileSheet (2)(1)_154
+  - first:
+      213: 8550787459566103786
+    second: Bar_TileSheet (2)(1)_155
+  - first:
+      213: 8950485489177013359
+    second: Bar_TileSheet (2)(1)_156
+  - first:
+      213: 9206359910807571971
+    second: Bar_TileSheet (2)(1)_157
+  - first:
+      213: 2962595515817094796
+    second: Bar_TileSheet (2)(1)_158
+  - first:
+      213: 5190770180130317885
+    second: Bar_TileSheet (2)(1)_159
+  - first:
+      213: 7109596997291332513
+    second: Bar_TileSheet (2)(1)_160
+  - first:
+      213: -5386892977437862130
+    second: Bar_TileSheet (2)(1)_161
+  - first:
+      213: 5219619063018185619
+    second: Bar_TileSheet (2)(1)_162
+  - first:
+      213: -6723779327501545222
+    second: Bar_TileSheet (2)(1)_163
+  - first:
+      213: 7464020678923710019
+    second: Bar_TileSheet (2)(1)_164
+  - first:
+      213: -2334047223548766579
+    second: Bar_TileSheet (2)(1)_165
+  - first:
+      213: 3379141180468580360
+    second: Bar_TileSheet (2)(1)_166
+  - first:
+      213: -7933207168715630742
+    second: Bar_TileSheet (2)(1)_167
+  - first:
+      213: 7435798375219759692
+    second: Bar_TileSheet (2)(1)_168
+  - first:
+      213: -7480499315799667150
+    second: Bar_TileSheet (2)(1)_169
+  - first:
+      213: 8177498641847760691
+    second: Bar_TileSheet (2)(1)_170
+  - first:
+      213: -668560806836370351
+    second: Bar_TileSheet (2)(1)_171
+  - first:
+      213: 3520401638516762086
+    second: Bar_TileSheet (2)(1)_172
+  - first:
+      213: 2163690402627189818
+    second: Bar_TileSheet (2)(1)_173
+  - first:
+      213: 4193905486033298601
+    second: Bar_TileSheet (2)(1)_174
+  - first:
+      213: 6283061590316022552
+    second: Bar_TileSheet (2)(1)_175
+  - first:
+      213: 5127638734939512419
+    second: Bar_TileSheet (2)(1)_176
+  - first:
+      213: -1530130012748870359
+    second: Bar_TileSheet (2)(1)_177
+  - first:
+      213: 3979797703632024050
+    second: Bar_TileSheet (2)(1)_178
+  - first:
+      213: 4407236883438261761
+    second: Bar_TileSheet (2)(1)_179
+  - first:
+      213: 1722566186592795958
+    second: Bar_TileSheet (2)(1)_180
+  - first:
+      213: -6910294701600645060
+    second: Bar_TileSheet (2)(1)_181
+  - first:
+      213: 4106557134287683736
+    second: Bar_TileSheet (2)(1)_182
+  - first:
+      213: 124053222403918123
+    second: Bar_TileSheet (2)(1)_183
+  - first:
+      213: 674981874210228209
+    second: Bar_TileSheet (2)(1)_184
+  - first:
+      213: -7081592703138186612
+    second: Bar_TileSheet (2)(1)_185
+  - first:
+      213: -188583113493299031
+    second: Bar_TileSheet (2)(1)_186
+  - first:
+      213: -8288146529744788805
+    second: Bar_TileSheet (2)(1)_187
+  - first:
+      213: 1179794143104369049
+    second: Bar_TileSheet (2)(1)_188
+  - first:
+      213: -8163879812370660540
+    second: Bar_TileSheet (2)(1)_189
+  - first:
+      213: -3370319509629010245
+    second: Bar_TileSheet (2)(1)_190
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bar_TileSheet (2)(1)_98
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 239
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8222190954f53b980800000000000000
+      internalID: -8524364917299404248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar_TileSheet (2)(1)_99
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 239
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eaae1ece59698b40800000000000000
+      internalID: 5442997480559913699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar_TileSheet (2)(1)_100
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 239
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fe60607e87e9110800000000000000
+      internalID: 1269585078598954911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7a18bb57b5384da43a48185a7a31da09
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bar_TileSheet (2)(1)_0: -1276278231
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

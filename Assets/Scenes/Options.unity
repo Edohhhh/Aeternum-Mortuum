@@ -2167,56 +2167,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4558552268858977443, guid: 5f358491fc0a43148ab8933f1c1e1dd6, type: 3}
   m_PrefabInstance: {fileID: 881270787}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &514051632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 514051634}
-  - component: {fileID: 514051633}
-  m_Layer: 0
-  m_Name: 'AudioManager '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &514051633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514051632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fb24be053d5e5479ac4551d8830478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  mixerGroups:
-  - {fileID: -6735070044237822930, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  - {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  poolSize: 16
-  minDb: -80
---- !u!4 &514051634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514051632}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4147553, y: 2.4035227, z: 0.023650255}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &519591165 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4558552268858977443, guid: 5f358491fc0a43148ab8933f1c1e1dd6, type: 3}
@@ -2373,7 +2323,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   hoverClip: {fileID: 8300000, guid: 27cef8486ea541e43ab90a4f2fc0e450, type: 3}
   clickClip: {fileID: 0}
-  volume: 0.02
+  volume: 0.4
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
 --- !u!114 &547454614
 MonoBehaviour:
@@ -3614,7 +3564,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5da4d9880584622428419a650c97079f, type: 3}
   m_Resource: {fileID: 8300000, guid: 5da4d9880584622428419a650c97079f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.015
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4409,85 +4359,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f358491fc0a43148ab8933f1c1e1dd6, type: 3}
---- !u!1 &1085206735
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1085206737}
-  - component: {fileID: 1085206736}
-  m_Layer: 0
-  m_Name: RoomRandomizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1085206736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085206735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fbbc2a935cf38c4cb6da98763a6ca26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startRoom:
-    id: 0
-    roomName: Tutorial
-  finalCombatRoom:
-    id: 0
-    roomName: 
-  winRoom:
-    id: 0
-    roomName: 
-  easyRooms:
-  - id: 1
-    roomName: LoopSlime1
-  - id: 2
-    roomName: LoopSlime1
-  intermediateRooms: []
-  mediumRooms:
-  - id: 3
-    roomName: LoopEsqueleto1
-  - id: 4
-    roomName: LoopMiniSlimes
-  - id: 5
-    roomName: LoopMiniEsqueletos
-  hardRooms:
-  - id: 6
-    roomName: BossGolem
-  - id: 7
-    roomName: BossTopo
-  - id: 8
-    roomName: LoopMiniEsqueletosYSlimes
-  easyCount: 2
-  intermediateCount: 1
-  mediumCount: 3
-  intermediate2Count: 1
-  hardCount: 3
-  generatedRun: []
---- !u!4 &1085206737
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085206735}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.643295, y: 410.5975, z: -5.425287}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1100861683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8509,11 +8380,9 @@ SceneRoots:
   - {fileID: 1015738097}
   - {fileID: 194338759}
   - {fileID: 1877057132}
-  - {fileID: 1085206737}
   - {fileID: 1280713938}
   - {fileID: 978609794}
   - {fileID: 651241014}
-  - {fileID: 514051634}
   - {fileID: 1604276503}
   - {fileID: 1296840842}
   - {fileID: 213816808}

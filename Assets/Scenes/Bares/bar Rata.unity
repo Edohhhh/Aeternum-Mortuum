@@ -1147,6 +1147,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58952474}
   m_CullTransparentMesh: 1
+--- !u!1 &62224660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62224661}
+  - component: {fileID: 62224663}
+  - component: {fileID: 62224662}
+  m_Layer: 5
+  m_Name: tab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &62224661
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62224660}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.71428996, z: 0.71428996}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1328595592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -856, y: 224}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &62224662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62224660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -319956432761255471, guid: 4e3fded2fdfafab42a6d61a003d1c5d1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &62224663
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62224660}
+  m_CullTransparentMesh: 1
 --- !u!1 &64562777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4660,7 +4735,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a2be76d0f2f8b9940b74de7cb5f17941, type: 3}
   m_Resource: {fileID: 8300000, guid: a2be76d0f2f8b9940b74de7cb5f17941, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7390,7 +7465,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b803f0260e4343b489a7b5edc9fb1fab, type: 3}
   m_Resource: {fileID: 8300000, guid: b803f0260e4343b489a7b5edc9fb1fab, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7523,7 +7598,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a2b6765868ca91148b65ca001b5768e1, type: 3}
   m_Resource: {fileID: 8300000, guid: a2b6765868ca91148b65ca001b5768e1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9807,7 +9882,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: fe093a5f255b4f8499e2c7eb39dda61f, type: 3}
   m_Resource: {fileID: 8300000, guid: fe093a5f255b4f8499e2c7eb39dda61f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16182,6 +16257,7 @@ RectTransform:
   m_Children:
   - {fileID: 197768203}
   - {fileID: 23258909}
+  - {fileID: 62224661}
   - {fileID: 402052135}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16614,7 +16690,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7617813f1e84ab2498c2ca685d143d4b, type: 3}
   m_Resource: {fileID: 8300000, guid: 7617813f1e84ab2498c2ca685d143d4b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22492,7 +22568,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_TargetDisplay: 0
 --- !u!224 &1688735316
 RectTransform:
@@ -23072,7 +23148,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!1 &1834033885
 GameObject:
@@ -24132,7 +24208,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 8bf8a7cbe2e6a0b44afe8ce204da0bc3, type: 3}
   m_Resource: {fileID: 8300000, guid: 8bf8a7cbe2e6a0b44afe8ce204da0bc3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

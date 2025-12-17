@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: cc460b3f11a938e4781ef4565efefe14, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 1
+  volume: 0.4
   spatial3D: 0
 --- !u!1102 &-2418622648504907122
 AnimatorState:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 5283dfe0db8918f4e8a6bba2aad2d2ff, type: 3}
   mixerGroup: {fileID: -948031095554008997, guid: 2589dda68bd2be64cbfc6d2537e9369f, type: 2}
-  volume: 1
+  volume: 0.4
   spatial3D: 0
 --- !u!1102 &-1181347550357658521
 AnimatorState:

@@ -1,3 +1,5 @@
+
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
@@ -49,3 +51,4 @@ public class SpritePivotBatchEditor
         Debug.Log(" Pivot del spritesheet actualizado (API U2D).");
     }
 }
+#endif

@@ -17,6 +17,13 @@ namespace EasyUI.PickerWheelUI
 
     public class PickerWheel : MonoBehaviour
     {
+        [Header("Skip Spin Feel")]
+        [SerializeField] private int minVueltasSkip = 3;
+        [SerializeField] private int maxVueltasSkip = 5;
+
+        private bool skipForzado = false;
+        private WheelPiece premioForzado = null;
+
         [Header("Pools ponderados")]
         [SerializeField] private List<WeightedPowerUpPool> powerUpPools = new List<WeightedPowerUpPool>();
         [SerializeField] private PowerUpPool powerUpPool;
@@ -109,12 +116,38 @@ namespace EasyUI.PickerWheelUI
             if (_isSpinning)
             {
                 if (_pickerTween != null) _pickerTween.Kill();
-                Debug.Log("⏩ Spin Saltado.");
-                // Al saltar, no forzamos la posición. Dejamos que se frene donde esté 
-                // y que FinalizarGiro calcule quién está más cerca.
-                FinalizarGiro();
+
+                // 1️⃣ Elegimos premio aleatorio
+                int index = GetRandomPieceIndex();
+                premioForzado = wheelPieces[index];
+                skipForzado = true;
+
+                // 2️⃣ Obtenemos la pieza visual correspondiente
+                Transform pieza = wheelPiecesParent.GetChild(index);
+
+                Transform referencia = pieza.Find("IconContainer");
+                if (referencia == null) referencia = pieza.GetChild(0);
+
+                // 3️⃣ Giramos hasta que ESA pieza quede bajo el puntero
+                float targetZ = CalcularRotacionParaAlinearReferencia(referencia);
+
+                // 🔹 Vueltas extra para evitar percepción de premio cercano
+                int vueltasExtra = UnityEngine.Random.Range(minVueltasSkip, maxVueltasSkip + 1);
+                float direccion = UnityEngine.Random.value < 0.5f ? -1f : 1f;
+
+
+                targetZ += 360f * vueltasExtra * direccion;
+
+
+                _pickerTween = wheelCircle
+                    .DORotate(new Vector3(0, 0, targetZ), 0.4f)
+                    .SetEase(Ease.OutCubic)
+                    .SetUpdate(true)
+                    .OnComplete(FinalizarGiro);
+
                 return;
             }
+
 
             // 2. VALIDACIÓN
             if (usosRestantes <= 0)
@@ -171,6 +204,29 @@ namespace EasyUI.PickerWheelUI
                 });
         }
 
+        private float CalcularRotacionParaAlinearReferencia(Transform referencia)
+        {
+            // Dirección del puntero
+            float angleRad = wheelOffset * Mathf.Deg2Rad;
+            Vector3 localDir = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad), 0);
+            Vector3 worldDir = wheelCircle.parent != null
+                ? wheelCircle.parent.TransformDirection(localDir)
+                : localDir;
+
+            Vector3 pointerPos = wheelCircle.position + worldDir * pointerDistance;
+
+            // Dirección desde el centro a la referencia
+            Vector3 dirReferencia = referencia.position - wheelCircle.position;
+            Vector3 dirPuntero = pointerPos - wheelCircle.position;
+
+            float angleReferencia = Mathf.Atan2(dirReferencia.y, dirReferencia.x) * Mathf.Rad2Deg;
+            float anglePuntero = Mathf.Atan2(dirPuntero.y, dirPuntero.x) * Mathf.Rad2Deg;
+
+            float delta = anglePuntero - angleReferencia;
+
+            return wheelCircle.eulerAngles.z + delta;
+        }
+
         // --- NUEVA LÓGICA PARA DETERMINAR GANADOR ---
 
         private void FinalizarGiro()
@@ -181,7 +237,18 @@ namespace EasyUI.PickerWheelUI
 
             // AQUÍ ESTÁ EL CAMBIO CLAVE:
             // En lugar de usar el índice pre-calculado, calculamos visualmente quién ganó ahora que se detuvo.
-            ultimoPremio = CalcularGanadorVisualmente();
+            if (skipForzado && premioForzado != null)
+            {
+                ultimoPremio = premioForzado;
+            }
+            else
+            {
+                ultimoPremio = CalcularGanadorVisualmente();
+            }
+
+            skipForzado = false;
+            premioForzado = null;
+
 
             Debug.Log($"🎯 Ganador visual determinado: {ultimoPremio.Label}");
 
