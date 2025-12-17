@@ -224,7 +224,7 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     // Refs de estados para reenviar Animation Events
     private DiabloAnimState _animRef;
     private DiabloAttackState _attackRef;
-    private EnemyDeathState _deathRef;
+    private DiabloDeathState _deathRef;
 
     // ========= Unity =========
     private void Awake()
@@ -250,7 +250,7 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
         var rand = new DiabloRandomState(this);
         var animSt = new DiabloAnimState(this);
         var atk = new DiabloAttackRouterState(this);
-        var death = new EnemyDeathState(this);
+        var death = new DiabloDeathState(this);
 
         fsm = new FSM<EnemyInputs>(idle);
 
@@ -375,7 +375,7 @@ public class DiabloController : MonoBehaviour, IEnemyDataProvider
     // ========= Animation Events (desde clips) =========
     public void RegisterAnimState(DiabloAnimState s) => _animRef = s;
     public void RegisterAttackState(DiabloAttackState s) => _attackRef = s;
-    public void RegisterDeathState(EnemyDeathState s) => _deathRef = s;
+    public void RegisterDeathState(DiabloDeathState s) => _deathRef = s;
 
     // Llamar al final de cada clip de presentación (Anim1..Anim6)
     public void OnAnimEnd()
