@@ -359,9 +359,11 @@ namespace EasyUI.PickerWheelUI
 
         private void Generate()
         {
+            // Limpiar hijos anteriores
             foreach (Transform child in wheelPiecesParent) Destroy(child.gameObject);
             foreach (Transform child in linesParent) Destroy(child.gameObject);
 
+            // Cálculos de tamaño
             pieceAngle = 360f / wheelPieces.Length;
             halfPieceAngle = pieceAngle / 2f;
 
@@ -369,32 +371,75 @@ namespace EasyUI.PickerWheelUI
             float pieceWidth = Mathf.Lerp(pieceMaxSize.x, pieceMinSize.x, t);
             float pieceHeight = Mathf.Lerp(pieceMaxSize.y, pieceMinSize.y, t);
 
+            // Bucle de creación de piezas
             for (int i = 0; i < wheelPieces.Length; i++)
             {
                 WheelPiece piece = wheelPieces[i];
                 GameObject pieceObj = Instantiate(wheelPiecePrefab, wheelPiecesParent);
                 Transform pieceTrns = pieceObj.transform.GetChild(0);
 
-                // Configurar visuales
+                // --- 1. CONFIGURACIÓN DEL ÍCONO Y VFX (RECUPERADO) ---
                 Transform iconContainer = pieceTrns.Find("IconContainer");
                 if (iconContainer != null)
                 {
+                    // A) Poner el Sprite
                     Transform iconTransform = iconContainer.Find("Icon");
-                    if (iconTransform != null) iconTransform.GetComponent<Image>().sprite = piece.Icon;
+                    if (iconTransform != null)
+                        iconTransform.GetComponent<Image>().sprite = piece.Icon;
+
+                    // B) LOGICA DE VFX (PARTÍCULAS DE FONDO)
+                    Transform vfxIconObject = iconContainer.Find("Icon_VFX");
+                    if (vfxIconObject != null)
+                    {
+                        if (piece.Effect != null)
+                        {
+                            bool vfxActive = false;
+
+                            // Cambiar Material (si usas distintos materiales)
+                            ParticleSystemRenderer vfxRenderer = vfxIconObject.GetComponent<ParticleSystemRenderer>();
+                            if (piece.Effect.vfxMaterial != null && vfxRenderer != null)
+                            {
+                                vfxRenderer.material = piece.Effect.vfxMaterial;
+                                vfxActive = true;
+                            }
+
+                            // Cambiar Color Base (si usas el mismo material pero tintado)
+                            ParticleSystem pSystem = vfxIconObject.GetComponent<ParticleSystem>();
+                            if (pSystem != null)
+                            {
+                                var mainModule = pSystem.main;
+                                mainModule.startColor = piece.Effect.vfxStartColor;
+                                vfxActive = true;
+                            }
+
+                            vfxIconObject.gameObject.SetActive(vfxActive);
+                        }
+                        else
+                        {
+                            vfxIconObject.gameObject.SetActive(false);
+                        }
+                    }
                 }
-                Transform labelTrns = pieceTrns.Find("Label");
-                if (labelTrns != null) labelTrns.gameObject.SetActive(false);
-                pieceTrns.Find("Amount").GetComponent<Text>().text = piece.Amount.ToString();
+
+                // --- 2. OCULTAR EL LABEL (LO QUE PEDISTE ANTES) ---
+                Transform labelTransform = pieceTrns.Find("Label");
+                if (labelTransform != null)
+                {
+                    labelTransform.gameObject.SetActive(false);
+                }
+
+                // --- 3. CONFIGURAR CANTIDAD Y TAMAÑO ---
+                Transform amountObj = pieceTrns.Find("Amount");
+                if (amountObj != null)
+                    amountObj.GetComponent<Text>().text = piece.Amount.ToString();
 
                 RectTransform rt = pieceTrns.GetComponent<RectTransform>();
                 rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, pieceWidth);
                 rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, pieceHeight);
                 rt.localScale = Vector3.one;
 
-                // Rotar el gajo a su posición
+                // --- 4. ROTACIÓN Y LÍNEAS SEPARADORAS ---
                 pieceTrns.RotateAround(wheelPiecesParent.position, Vector3.back, pieceAngle * i);
-
-                // Crear línea separadora
                 Transform lineTrns = Instantiate(linePrefab, linesParent.position, Quaternion.identity, linesParent).transform;
                 lineTrns.RotateAround(wheelPiecesParent.position, Vector3.back, (pieceAngle * i) + halfPieceAngle);
             }
