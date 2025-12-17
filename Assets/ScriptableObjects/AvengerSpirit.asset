@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AvengerSpirit
   m_EditorClassIdentifier: 
   label: Avenger Spirit
-  description: "Al recibir un ataque invoca dos espiritus que provocan da\xF1o"
+  description: 'Al recibir un ataque invoca dos espiritus que provocan heridas '
   icon: {fileID: 8414560473326998778, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PowerDash
   m_EditorClassIdentifier: 
   label: Power Dash
-  description: "Al realizar 2 dashes consecutivos le otorga un escudo al jugador
-    que lo protege del da\xF1o."
+  description: Al realizar 1 dash crea un una marca en el suelo que genera un escudo
+    al jugador.
   icon: {fileID: -8718327823764212122, guid: cdc969f50f2e740daaabc3d8c5f1c507, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

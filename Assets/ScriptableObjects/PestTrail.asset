@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PestTrail
   m_EditorClassIdentifier: 
   label: Pest Trail
-  description: "Cada 3 segundos invoca una nube de gas venenoso que provoca da\xF1o."
+  description: Cada 3 segundos invoca una nube de gas venenoso para el enemigo.
   icon: {fileID: 3622378070614508730, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

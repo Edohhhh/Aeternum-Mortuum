@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
@@ -15,12 +15,29 @@ public class DiceRNGPowerUp : PowerUp
     [Tooltip("Segundos que el resultado final queda visible")]
     public float showFinalFor = 1.2f;
 
+    // ✅ Marker global: si existe, esta perk ya se ejecutó en esta run
+    private const string AppliedOnceMarkerName = "DiceRNG_APPLIED_ONCE";
+
     public override void Apply(PlayerController player)
     {
-        // Evita doble aplicaci�n en el mismo frame/escena
+        if (player == null) return;
+
+        // ✅ Si ya se ejecutó una vez en la run, NO volver a ejecutar
+        if (GameObject.Find(AppliedOnceMarkerName) != null)
+        {
+            // Igual limpiamos de la lista por si volvió a aparecer
+            RemoveFromPlayerList(player);
+            return;
+        }
+
+        // Evita doble aplicación en el mismo frame/escena
         if (GameObject.Find("DiceRNGMarker") != null) return;
 
-        // Marcador temporal para bloquear reprocesos
+        // ✅ Marcador permanente de “ya se ejecutó”
+        var appliedOnce = new GameObject(AppliedOnceMarkerName);
+        Object.DontDestroyOnLoad(appliedOnce);
+
+        // Marcador temporal para bloquear reprocesos inmediatos
         var marker = new GameObject("DiceRNGMarker");
         Object.DontDestroyOnLoad(marker);
 
@@ -30,12 +47,21 @@ public class DiceRNGPowerUp : PowerUp
         overlay.Initialize(player, diceFaces, rollAnimPerStat, showFinalFor, marker);
 
         // Remover la perk de initialPowerUps (one-shot)
+        RemoveFromPlayerList(player);
+    }
+
+    private void RemoveFromPlayerList(PlayerController player)
+    {
+        if (player.initialPowerUps == null || player.initialPowerUps.Length == 0) return;
+
         var list = new List<PowerUp>(player.initialPowerUps);
-        if (list.Contains(this))
-        {
-            list.Remove(this);
+        bool removedAny = false;
+
+        while (list.Remove(this))
+            removedAny = true;
+
+        if (removedAny)
             player.initialPowerUps = list.ToArray();
-        }
     }
 
     public override void Remove(PlayerController player) { }

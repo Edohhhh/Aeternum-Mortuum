@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThornsPath
   m_EditorClassIdentifier: 
   label: Thorns Path
-  description: "Cada combo de jugador crea un camino de espinas que provoca da\xF1o."
+  description: Cada combo de jugador crea un camino de espinas.
   icon: {fileID: -7896028604689211231, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 0.7376066, g: 0, b: 0.8301887, a: 1}

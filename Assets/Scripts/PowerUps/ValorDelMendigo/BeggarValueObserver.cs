@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
@@ -7,7 +8,9 @@ public class BeggarValueObserver : MonoBehaviour
     [HideInInspector] public float bonusPerStat = 1f; // +1 por stack
 
     private readonly List<PowerUp> targetPerks = new();
-    private readonly Dictionary<PowerUp, int> appliedStacksByPerk = new();
+
+    // ✅ FIX: Stacks por tipo (no por referencia del ScriptableObject)
+    private readonly Dictionary<Type, int> appliedStacksByType = new();
 
     // LifeUp: stacks permanentes
     private int lifeUpStacks = 0;
@@ -43,18 +46,33 @@ public class BeggarValueObserver : MonoBehaviour
         var obs = go.GetComponent<BeggarValueObserver>();
         if (obs == null) return;
 
-        if (!obs.targetPerks.Contains(appliedPerk))
-            return;
+        // ✅ Validar por TIPO contra targetPerks (no por referencia)
+        var appliedType = appliedPerk.GetType();
+        bool isTarget = false;
 
-        if (!obs.appliedStacksByPerk.ContainsKey(appliedPerk))
-            obs.appliedStacksByPerk[appliedPerk] = 0;
+        for (int i = 0; i < obs.targetPerks.Count; i++)
+        {
+            var t = obs.targetPerks[i];
+            if (t == null) continue;
 
-        obs.appliedStacksByPerk[appliedPerk] += 1;
+            if (t.GetType() == appliedType)
+            {
+                isTarget = true;
+                break;
+            }
+        }
+
+        if (!isTarget) return;
+
+        if (!obs.appliedStacksByType.ContainsKey(appliedType))
+            obs.appliedStacksByType[appliedType] = 0;
+
+        obs.appliedStacksByType[appliedType] += 1;
 
         obs.ReapplyNow();
     }
 
-    // ✅ LifeUp: suma stack y reaplica (sin flags)
+    // ✅ LifeUp: suma stack y reaplica
     public static void NotifyLifeUpApplied()
     {
         var go = GameObject.Find("BeggarValueObserver");
@@ -86,25 +104,25 @@ public class BeggarValueObserver : MonoBehaviour
         float multMoveSpeed = 1f;
         int addExtraSpins = 0;
 
-        foreach (var kv in appliedStacksByPerk)
+        // ✅ Aplicar bonus por stacks (por tipo)
+        foreach (var kv in appliedStacksByType)
         {
-            var perkAsset = kv.Key;
+            var type = kv.Key;
             int stacks = kv.Value;
 
-            if (perkAsset == null || stacks <= 0) continue;
-            if (!targetPerks.Contains(perkAsset)) continue;
+            if (type == null || stacks <= 0) continue;
 
-            if (perkAsset is AttackUp)
+            if (type == typeof(AttackUp))
                 addDamage += Mathf.RoundToInt(bonusPerStat * stacks);
 
-            if (perkAsset is PlayerSpeedPowerUp)
+            if (type == typeof(PlayerSpeedPowerUp))
                 addMoveSpeed += bonusPerStat * stacks;
 
-            if (perkAsset is ExtraSpinUp)
+            if (type == typeof(ExtraSpinUp))
                 addExtraSpins += Mathf.RoundToInt(bonusPerStat * stacks);
         }
 
-        // ✅ LifeUp SIEMPRE suma mientras haya stacks
+        // LifeUp SIEMPRE suma mientras haya stacks
         if (lifeUpStacks > 0)
             addMaxHealth += bonusPerStat * lifeUpStacks;
 

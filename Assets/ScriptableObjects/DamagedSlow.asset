@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DamagedSlow
   m_EditorClassIdentifier: 
   label: Damaged Slow
-  description: "Al recibir da\xF1o de un enemigo el enemigo recibe congelacion. (dura
-    5 segundos)"
+  description: Al recibir un golpe de un enemigo el enemigo recibe congelacion. (dura
+    5 segundos)
   icon: {fileID: -5874140283895155960, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 0, g: 0.77781105, b: 1, a: 0}

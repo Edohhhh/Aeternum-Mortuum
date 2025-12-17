@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ChargedLaser
   m_EditorClassIdentifier: 
   label: Excalibur
-  description: "(Click Derecho para cargar) Dispara un rayo hacia donde apunte el
-    jugador y provoca da\xF1o."
+  description: (Click Derecho para cargar) Dispara un rayo hacia donde apunte el
+    jugador.
   icon: {fileID: 7511617788268671622, guid: 8f66222187e68cc42bb5cb49fcbc6096, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 0.6886828, g: 0, b: 0.8490566, a: 1}

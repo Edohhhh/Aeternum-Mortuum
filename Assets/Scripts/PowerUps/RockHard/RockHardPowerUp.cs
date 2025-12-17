@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
+using Object = UnityEngine.Object;
 
 public enum RockHardDamageMode { AddFlat, ExponentialSteps }
 
@@ -26,7 +29,7 @@ public class RockHardPowerUp : PowerUp
     [Tooltip("Multiplicador al cooldown del dash (1.5 = +50%).")]
     public float dashCooldownMultiplier = 1.5f;
 
-    // Estado para revertir cooldown
+    // Estado para revertir cooldown (no lo usamos para one-shot, pero lo dejo intacto)
     private object dashHost;
     private FieldInfo dashCooldownField;
     private float originalDashCooldown;
@@ -35,6 +38,26 @@ public class RockHardPowerUp : PowerUp
     public override void Apply(PlayerController player)
     {
         if (player == null) return;
+
+        // ✅ Evitar doble aplicación entre escenas / dobles flujos
+        if (GameObject.Find("RockHardMarker") != null) return;
+
+        GameObject marker = new GameObject("RockHardMarker");
+        Object.DontDestroyOnLoad(marker);
+
+        // ✅ Aplicar diferido (misma idea que LifeUp)
+        player.StartCoroutine(ApplyDelayed(player, marker));
+    }
+
+    private IEnumerator ApplyDelayed(PlayerController player, GameObject marker)
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (player == null)
+        {
+            Object.Destroy(marker);
+            yield break;
+        }
 
         dashPatched = false;
         dashHost = null;
@@ -57,13 +80,28 @@ public class RockHardPowerUp : PowerUp
 
         // ====== DASH COOLDOWN (por reflexión) ======
         PatchDashCooldown(player, dashCooldownMultiplier);
+
+        // ✅ One-shot: borrar de la lista para que no vuelva a aplicarse al cambiar de escena
+        var list = new List<PowerUp>(player.initialPowerUps);
+        bool removedAny = false;
+        while (list.Remove(this))
+            removedAny = true;
+
+        if (removedAny)
+            player.initialPowerUps = list.ToArray();
+
+        // ✅ Guardar al final: stats aplicadas + lista ya limpia
+        if (GameDataManager.Instance != null)
+            GameDataManager.Instance.SavePlayerData(player);
+
+        Object.Destroy(marker);
     }
 
     public override void Remove(PlayerController player)
     {
+        // One-shot: normalmente no se llama.
+        // Lo dejo como estaba por compatibilidad (por si lo usás en algún reset / remover manual).
         if (player == null) return;
-
-        // Inverso de lo que hicimos en Apply:
 
         if (damageMode == RockHardDamageMode.AddFlat)
         {
@@ -77,7 +115,7 @@ public class RockHardPowerUp : PowerUp
             player.baseDamage = Mathf.RoundToInt(player.baseDamage * invMult);
         }
 
-        player.moveSpeed = player.moveSpeed - moveSpeedDelta; // inverso: si sumé -3, ahora resto -3 (= +3)
+        player.moveSpeed = player.moveSpeed - moveSpeedDelta;
 
         if (dashPatched && dashHost != null && dashCooldownField != null)
         {

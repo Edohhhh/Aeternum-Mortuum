@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Effect Dash
   m_EditorClassIdentifier: 
   label: Acid Dash
-  description: "Al dashear, dejas un rastro de acido que da\xF1a al enemigo."
+  description: Al dashear, dejas un rastro de acido que quema al enemigo.
   icon: {fileID: -3436129635470280944, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

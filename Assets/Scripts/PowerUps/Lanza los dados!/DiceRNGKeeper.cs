@@ -13,14 +13,27 @@ public class DiceRNGKeeper : MonoBehaviour
 
     private int lastAppliedSceneIndex = int.MinValue;
 
+    // ✅ Singleton para evitar múltiples keepers
+    private static DiceRNGKeeper instance;
+
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded -= OnSceneLoaded; // extra safety
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
+        if (instance == this) instance = null;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -38,7 +51,6 @@ public class DiceRNGKeeper : MonoBehaviour
         // Si ya aplicamos en esta escena (por ejemplo la actual donde se tiraron los dados), no repetir
         if (scene.buildIndex == lastAppliedSceneIndex) return;
 
-        // Reaplicar en nueva escena
         ApplyOnceInThisScene();
         lastAppliedSceneIndex = scene.buildIndex;
     }

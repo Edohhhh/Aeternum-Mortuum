@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Orbital
   m_EditorClassIdentifier: 
   label: Orbital
-  description: "Genera un slime orbital que gira alrededor del jugador y provoca
-    da\xF1o (Acumulables)"
+  description: Genera un slime orbital que gira alrededor del jugador que hiere al
+    enemigo (Acumulables).
   icon: {fileID: -4959892866274008609, guid: adcd403d90671493fa6fe1e6ffe46c01, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

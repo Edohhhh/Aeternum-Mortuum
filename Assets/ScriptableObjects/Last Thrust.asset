@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Last Thrust
   m_EditorClassIdentifier: 
   label: Last Thrust
-  description: "Cada combo de jugador crea repele a los enemigos alrededor y provoca
-    da\xF1o."
+  description: Cada combo de jugador crea repele a los enemigos alrededor.
   icon: {fileID: 2646508460080752575, guid: 4f706def4c0d68845858ebae892dc1b3, type: 3}
   vfxMaterial: {fileID: 0}
   vfxStartColor: {r: 1, g: 1, b: 1, a: 0}

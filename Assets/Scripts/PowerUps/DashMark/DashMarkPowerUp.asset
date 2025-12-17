@@ -16,7 +16,7 @@ MonoBehaviour:
   isPermanent: 0
   effect: {fileID: 0}
   markPrefab: {fileID: 4228098805220149113, guid: c51dce0c5ca9ef94abcb031bae4c3f6e, type: 3}
-  markLifetime: 3
+  markLifetime: 1
   shieldIconSprite: {fileID: 21300000, guid: 5e61fec3f8e7bbb4c950b3641c53c1ce, type: 3}
   iconOffset: {x: 0, y: 1.2, z: 0}
   iconSortingLayer: 
