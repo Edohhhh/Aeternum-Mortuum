@@ -2373,7 +2373,10 @@ MonoBehaviour:
   importantIconOffsetY: 2.7
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: 0f734e9cdc81c4480b7d683ba01f2717, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 7
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: 48af3ce4f021a4781b8fc0f5ac67f034, type: 2}
 --- !u!212 &386435981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4324,7 +4327,10 @@ MonoBehaviour:
   importantIconOffsetY: 1
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: df646e50bc5504acc81aa7fc55aa21cb, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 3
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: 6ea35735597764a6db0872b157df0d84, type: 2}
 --- !u!212 &615929221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14563,7 +14569,10 @@ MonoBehaviour:
   importantIconOffsetY: 2.7
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: 2e90d6d7db9a046189f77ffb376a66fa, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 7
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: bf7ee5f25428d430a8e9ac9b9e12cc20, type: 2}
 --- !u!212 &1491440909
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -17,10 +17,10 @@ MonoBehaviour:
   dialogueLines:
   - Jo Jo Jo, Soy Araquiel
   - Ilustre Maga, que maravilla de ojos tiene!
-  - "Oh... Hola compa\xF1ero \xBFya conocio a la maga?"
-  - Creo que me hizo un hechizo...
-  - Porque por alguna razon tengo Aracnofobia
-  - pero es que esos ojos me encantaron.
+  - Oh... Hola camarada, ya haz conocio a la maga?
+  - Creo que me lanzo un hechizo...
+  - Porque por alguna razon desarolle Aracnofobia
+  - Pero es que esos ojos me encantaron.
   autoProgressLines: 010101010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05

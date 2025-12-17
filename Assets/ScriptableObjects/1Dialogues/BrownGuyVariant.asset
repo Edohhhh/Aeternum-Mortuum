@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98845fb8652284d9caf1c1de16fafd3f, type: 3}
-  m_Name: BrownGuy
+  m_Name: BrownGuyVariant
   m_EditorClassIdentifier: 
   npcName: BrownFella
   npcPortrait: {fileID: 5187719381752478824, guid: a7492f625b20a4c5b902f16cfce61807, type: 3}
   dialogueLines:
-  - TAN CERCA! NUNCA TOCARA NADA BUENO?!
-  - Oh, hola, buen dia supongo...
-  - Estoy muy cerca del pity yo se que mi momento llegara.
-  - Ademas mientras el ricachon tenga monedas...
-  - Yo Seguire jugando JAJAJA.
-  autoProgressLines: 01010101
+  - Ojala este sujeto se quedase sin monedas...
+  autoProgressLines: 01
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 0}

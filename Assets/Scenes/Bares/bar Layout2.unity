@@ -4302,7 +4302,10 @@ MonoBehaviour:
   importantIconOffsetY: 2.7
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: 2e90d6d7db9a046189f77ffb376a66fa, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 7
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: bf7ee5f25428d430a8e9ac9b9e12cc20, type: 2}
 --- !u!212 &526924327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6451,7 +6454,10 @@ MonoBehaviour:
   importantIconOffsetY: 2.7
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: 0f734e9cdc81c4480b7d683ba01f2717, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 7
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: 48af3ce4f021a4781b8fc0f5ac67f034, type: 2}
 --- !u!212 &664694976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10560,7 +10566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   condition: 1
-  requiredAmount: 3
+  requiredAmount: 7
   objectsToMove:
   - {fileID: 1144125860}
   targetWaypoint: {fileID: 1769063493}
@@ -10711,7 +10717,7 @@ MonoBehaviour:
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: aef383e582c30ed41b975114f3764667, type: 2}
   conditionalDialogues:
-  - minDeaths: 3
+  - minDeaths: 7
     minWins: 0
     dialogueOverride: {fileID: 11400000, guid: aef383e582c30ed41b975114f3764667, type: 2}
 --- !u!95 &1144125866
@@ -15331,7 +15337,10 @@ MonoBehaviour:
   importantIconOffsetY: 1
   maxDialogueDistance: 3.5
   defaultDialogue: {fileID: 11400000, guid: df646e50bc5504acc81aa7fc55aa21cb, type: 2}
-  conditionalDialogues: []
+  conditionalDialogues:
+  - minDeaths: 3
+    minWins: 0
+    dialogueOverride: {fileID: 11400000, guid: 6ea35735597764a6db0872b157df0d84, type: 2}
 --- !u!212 &1503647261
 SpriteRenderer:
   m_ObjectHideFlags: 0
