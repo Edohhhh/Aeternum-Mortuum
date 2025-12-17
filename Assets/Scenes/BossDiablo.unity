@@ -17971,7 +17971,7 @@ MonoBehaviour:
   interactKey: 102
   interactIcon: {fileID: 3586741604311950002, guid: e5c2a70ce542543008496729a857058b, type: 3}
   interactRendererInScene: {fileID: 0}
-  spriteOffsetY: 5.5
+  spriteOffsetY: 2.5
   playerTag: Player
   iconSortingLayer: UI
   iconSortingOrder: 50
@@ -17979,7 +17979,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   interactBoxSize: {x: 3.24, y: 2}
-  interactBoxOffset: {x: 0, y: 2.65}
+  interactBoxOffset: {x: 0, y: -0.61}
   requiredEnemyHealth: {fileID: 2364529305559481950}
   requireEnemyDeadToInteract: 1
   scenesToLoad:
